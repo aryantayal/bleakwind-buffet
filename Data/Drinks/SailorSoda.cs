@@ -3,13 +3,14 @@
  * Class name: SailorSoda.cs
  * Purpose: Class used to represent the Sailor Soda drink 
  */
+using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
-using Data.Enums;
+using BleakwindBuffet.Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
     public class SailorSoda
     {

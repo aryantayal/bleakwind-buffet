@@ -7,10 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
-using Data.Enums;
-namespace Data.Sides
+
+namespace BleakwindBuffet.Data.Sides
 {
-    class FriedMiraak
+    public class FriedMiraak
     {
         /// <summary>
         /// Gets/sets the size for the side

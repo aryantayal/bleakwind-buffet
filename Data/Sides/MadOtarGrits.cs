@@ -7,11 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
-using Data.Enums;
+using BleakwindBuffet.Data.Sides;
 
-namespace Data.Sides
+namespace BleakwindBuffet.Data.Sides
 {
-    class MadOtarGrits
+    public class MadOtarGrits
     {
         /// <summary>
         /// Gets/sets the size of the side

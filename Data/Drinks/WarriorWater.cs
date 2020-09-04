@@ -6,12 +6,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
-using Data.Enums;
+using BleakwindBuffet.Data;
 
-namespace Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
-    class WarriorWater
+    public class WarriorWater
     {
         /// <summary>
         /// Gets/sets the size of the drink.

@@ -6,8 +6,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using BleakwindBuffet.Data.Entree;
+using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data;
 
-namespace Data.Entree
+namespace BleakwindBuffet.Data.Entree
 {
     public class BriarheartBurger
     {
