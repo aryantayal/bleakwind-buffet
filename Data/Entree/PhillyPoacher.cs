@@ -27,6 +27,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// Gets/sets the sirloin for the entree. 
         /// </summary>
+        /// <param name="sirloin">bool for sirloin</param>
         private bool sirloin = true;
         public bool Sirloin
         {
@@ -37,6 +38,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// Gets/sets the mushrooms for the entree. 
         /// </summary>
+        /// <param name="onion">bool for onion</param>
         private bool onion = true;
         public bool Onion
         {
@@ -47,6 +49,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// Gets/sets the rolls for the entree. 
         /// </summary>
+        /// <param name="roll">bool for roll</param>
         private bool roll = true;
         public bool Roll
         {
@@ -58,6 +61,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// Gets/sets the instructions for the entree 
         /// </summary>
+        /// <param name="instructions">instructions for the entree</param>
         public List<string> SpecialInstructions
         {
             get

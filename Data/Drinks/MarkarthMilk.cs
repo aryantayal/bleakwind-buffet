@@ -12,6 +12,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets/sets the size of the drink.
         /// </summary>
+        /// <param name="size">size of the drink</param>
         private Size size = Size.Small;
         public Size Size
         {
@@ -28,6 +29,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the price of the drink
         /// </summary>
+        /// /// <param name="size">size of the drink</param>
         public double Price
         {
             get
@@ -42,6 +44,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the calories of the drink
         /// </summary>
+        /// /// <param name="size">size of the drink</param>
         public uint Calories
         {
             get
@@ -57,6 +60,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets/sets ice for the drink.
         /// </summary>
+        /// <param name="ice">ice</param>
         private bool ice = false;
         public bool Ice
         {
@@ -64,25 +68,11 @@ namespace BleakwindBuffet.Data.Drinks
             set { ice = value; }
         }
 
-        /// <summary>
-        /// Gets the price of the drink
-        /// </summary>
-        private SodaFlavor flavor = SodaFlavor.Cherry;
-        public SodaFlavor Flavor
-        {
-            get
-            {
-                return flavor;
-            }
-            set
-            {
-                flavor = value;
-            }
-        }
 
         /// <summary>
         /// Gets the instructions for the drink. 
         /// </summary>
+        /// <param name="ice">ice</param>
         public List<string> SpecialInstructions
         {
             get
@@ -96,9 +86,10 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// ToString override for the drink. 
         /// </summary>
+        /// <param name="size">size of the drink</param>
         public override string ToString()
         {
-            return Size + " " + Flavor + " Markath Milk";
+            return Size + " Markarth Milk";
         }
     }
 }

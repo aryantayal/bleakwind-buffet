@@ -12,9 +12,10 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class VokunSalad
     {
-     /// <summary>
-     /// Gets/sets the size of the drink.
-     /// </summary>
+        /// <summary>
+        /// Gets/sets the size of the drink.
+        /// </summary>
+        /// /// <param name="size">the size</param>
         private Size size = Size.Small;
         public Size Size
         {
@@ -30,6 +31,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// get/set for the price
         /// </summary>
+        /// /// <param name="size">the size</param>
         public double Price
         {
             get
@@ -43,6 +45,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Gets the calories of the drink
         /// </summary>
+        /// /// <param name="size">the size</param>
         public uint Calories
         {
             get
@@ -56,6 +59,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Gets the instructions for the drink. 
         /// </summary>
+        /// /// <param name="instructions">the instructions for the item</param>
         public List<string> SpecialInstructions
         {
             get

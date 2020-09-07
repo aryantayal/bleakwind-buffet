@@ -18,6 +18,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets/sets the size of the drink.
         /// </summary>
+        /// <param name="size">the size</param>
         private Size size = Size.Small;
         public Size Size
         {
@@ -34,6 +35,8 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the price of the drink
         /// </summary>
+        /// <param name="size"> the size</param>
+        /// <param name="price">the price based on the size</param>
         public double Price
         {
             get
@@ -48,6 +51,8 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the calories of the drink
         /// </summary>
+        /// <param name="size"> the size</param>
+        /// <param name="price">the price based on the size</param>
         public uint Calories
         {
             get
@@ -63,6 +68,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets/sets room for the ice
         /// </summary>
+        /// <param name="ice">ice for drink</param>
         private bool ice = false;
         public bool Ice
         {
@@ -74,13 +80,13 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the instructions for the drink. 
         /// </summary>
+        /// <param name="instructions">the instructions for the item</param>
         public List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Ice) instructions.Add("Add ice");
-                
+                if (Ice) instructions.Add("Add ice");
                 return instructions;
             }
         }
@@ -88,9 +94,10 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// ToString override for the drink. 
         /// </summary>
+        /// <param name="size">size of the drink</param>
         public override string ToString()
         {
-            return Size + " Aretino Appple Juice";
+            return Size + " Aretino Apple Juice";
         }
     }
 }

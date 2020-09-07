@@ -26,6 +26,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// get/set for ketchup
         /// </summary>
+        /// <param name="ketchup">ketchup</param>
         public bool Ketchup
         {
             get
@@ -41,6 +42,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// get/set for mustard
         /// </summary>
+        /// <param name="mustard">mustard for the burger</param> 
         private bool mustard = true;
         public bool Mustard
         {
@@ -51,6 +53,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// get/set for pickle
         /// </summary>
+        /// <param name="pickle">bool for pickle on the burger</param>
         private bool pickle = true;
         public bool Pickle
         {
@@ -61,6 +64,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// get/set for cheese
         /// </summary>
+        /// <param name="cheese">bool for the cheese on the burger</param>
         private bool cheese = true;
         public bool Cheese
         {
@@ -71,6 +75,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// get/set for lettuce
         /// </summary>
+        /// <param name="lettuce">bool for lettuce</param>
         private bool lettuce = true;
         public bool Lettuce
         {
@@ -81,6 +86,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// get/set for tomato
         /// </summary>
+        /// <param name="tomato">bool for tomato</param>
         private bool tomato = true;
         public bool Tomato
         {
@@ -91,6 +97,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// get/set for mayo
         /// </summary>
+        ///<param name="mayo">bool for mayo</param>
         private bool mayo = true;
         public bool Mayo
         {
@@ -103,6 +110,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// get/set instructions
         /// </summary>
+        ///  /// <param name="instructions">the instructions for the burger</param>
         public List<string> SpecialInstructions
         {
             get {

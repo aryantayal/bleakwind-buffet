@@ -17,6 +17,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets/sets the size of the drink.
         /// </summary>
+        /// <param name="size">size of the drink</param>
         private Size size = Size.Small;
         public Size Size
         {
@@ -33,6 +34,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the price of the drink
         /// </summary>
+        /// <param name="size">size of the drink</param>
         public double Price
         {
             get
@@ -46,6 +48,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the calories of the drink
         /// </summary>
+        /// <param name="size">size of the drink</param>
         public uint Calories
         {
             get
@@ -60,6 +63,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets/sets ice for the drink.
         /// </summary>
+        /// <param name="ice">ice</param> 
         private bool ice = true;
         public bool Ice
         {
@@ -70,6 +74,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the price of the drink
         /// </summary>
+        /// <param name="flavor">flavor of the drink</param>
         private SodaFlavor flavor = SodaFlavor.Cherry;
         public SodaFlavor Flavor
         {
@@ -86,6 +91,8 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the instructions for the drink. 
         /// </summary>
+        /// <param name="ice">ice</param>
+        /// <param name="instructions">the instructions for the drink</param>
         public List<string> SpecialInstructions
         {
             get
@@ -99,6 +106,8 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// ToString override for the drink. 
         /// </summary>
+        /// <param name="ice">ice</param>
+        /// <param name="ice">ice</param>
         public override string ToString()
         {
             return Size + " " + Flavor + " Sailor Soda";

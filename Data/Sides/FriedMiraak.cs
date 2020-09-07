@@ -15,6 +15,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Gets/sets the size for the side
         /// </summary>
+        /// /// <param name="size">the size</param>
         private Size size = Size.Small;
         public Size Size
         {
@@ -30,32 +31,36 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// get/set for the price
         /// </summary>
+        /// /// <param name="size">the size</param>
         public double Price
         {
             get
             {
-                if (Size == Size.Medium) return 2.88;
-                if (Size == Size.Large) return 2.01;
+                if (Size == Size.Medium) return 2.01;
+                if (Size == Size.Large) return 2.88;
                 return 1.78;
+
             }
         }
 
         /// <summary>
         /// Gets the calories of the side
         /// </summary>
+        /// /// <param name="size">the size</param>
         public uint Calories
         {
             get
             {
-                if (Size == Size.Medium) return 142;
-                if (Size == Size.Large) return 179;
-                return 105;
+                if (Size == Size.Medium) return 236;
+                if (Size == Size.Large) return 306;
+                return 151;
 
             }
         }
         /// <summary>
         /// sends an empty list
         /// </summary>
+        /// /// <param name="instructions">the instructions for the item</param>
         public List<string> SpecialInstructions
         {
             get

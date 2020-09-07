@@ -17,6 +17,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets/sets the size of the drink.
         /// </summary>
+        /// <param name="size">size of the drink</param>
         private Size size = Size.Small;
         public Size Size
         {
@@ -33,6 +34,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the price of the drink
         /// </summary>
+        /// /// <param name="size">size of the drink</param>
         public double Price
         {
             get
@@ -47,6 +49,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the calories of the drink
         /// </summary>
+        /// /// <param name="size">size of the drink</param>
         public uint Calories
         {
             get
@@ -62,6 +65,8 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets/sets ice for the drink.
         /// </summary>
+        /// <param name="size">size of the drink</param>
+        /// <param name="ice">ice</param>
         private bool ice = false;
         public bool Ice
         {
@@ -72,6 +77,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// get/set the room for cream
         /// </summary>
+        /// <param name="roomForCream"> the bool for the cream</param>
         public bool RoomForCream
         {
             get { return roomForCream; }
@@ -81,6 +87,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// get/set decaf
         /// </summary>
+        /// <param name="decaf">decaf bool for the drink</param>
         public bool Decaf
         {
             get { return decaf; }
@@ -90,14 +97,15 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the instructions for the drink. 
         /// </summary>
+        /// <param name="ice">ice for drink</param>
+        /// <param name="roomForCream"> the bool for the cream</param>
         public List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Ice) instructions.Add("Add ice");
-                if (!RoomForCream) instructions.Add("Add cream");
-                if (!Decaf) instructions.Add("Ad");
+                if (Ice) instructions.Add("Add ice");
+                if (RoomForCream) instructions.Add("Add cream");
                 return instructions;
             }
         }
@@ -105,6 +113,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// ToString override for the drink. 
         /// </summary>
+        /// <param name="size">size of the drink</param>
         public override string ToString()
         {
             if(Decaf) return Size + " Decaf Candlehearth Coffee";

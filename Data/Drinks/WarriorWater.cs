@@ -17,6 +17,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets/sets the size of the drink.
         /// </summary>
+        /// <param name="size">size</param>
         private Size size = Size.Small;
         public Size Size
         {
@@ -55,6 +56,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets/sets ice for the drink.
         /// </summary>
+        /// <param name="ice">ice</param>
         private bool ice = true;
         public bool Ice
         {
@@ -65,6 +67,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// get/set the lemon
         /// </summary>
+        /// <param name="lemon">bool lemon for water</param>
         public bool Lemon
         {
             get { return lemon; }
@@ -74,13 +77,14 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the instructions for the drink. 
         /// </summary>
+        /// <param name="ice">ice</param>
         public List<string> SpecialInstructions
         {
             get
             {
                 List<string> instructions = new List<string>();
                 if (!Ice) instructions.Add("Hold ice");
-                if (!Lemon) instructions.Add("Add lemon");
+                if (Lemon) instructions.Add("Add lemon");
                 return instructions;
             }
         }
@@ -88,6 +92,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// ToString override for the drink. 
         /// </summary>
+        /// <param name="size">size of the drink</param>
         public override string ToString()
         {
             return Size + " Warrior Water";

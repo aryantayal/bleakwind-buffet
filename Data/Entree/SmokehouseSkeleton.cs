@@ -27,6 +27,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// Gets/sets the sausage for the entree. 
         /// </summary>
+        /// <param name="sausageLink">bool for the sausage</param>
         private bool sausageLink = true;
         public bool SausageLink
         {
@@ -37,6 +38,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// Gets/sets the eggs for the entree. 
         /// </summary>
+        /// <param name="egg">bool for egg</param>
         private bool egg = true;
         public bool Egg
         {
@@ -47,6 +49,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// Gets/sets the hash browns for the entree. 
         /// </summary>
+        /// <param name="hashbrown">bool for hashbrown</param>
         private bool hashBrowns = true;
         public bool HashBrowns
         {
@@ -57,6 +60,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// Gets/sets the pancakes for the entree. 
         /// </summary>
+        /// <param name="pancake">bool for pancake</param>
         private bool pancake = true;
         public bool Pancake
         {
@@ -67,6 +71,7 @@ namespace BleakwindBuffet.Data.Entree
         /// <summary>
         /// Gets/sets the instructions for the entree 
         /// </summary>
+        /// <param name="instructions">the instructions for the burger</param>
         public List<string> SpecialInstructions
         {
             get

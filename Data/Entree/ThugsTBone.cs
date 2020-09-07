@@ -24,11 +24,12 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         public uint Calories => 982;
 
-       
+
 
         /// <summary>
         /// Gets/sets the instructions for the entree 
         /// </summary>
+        /// /// <param name="instructions">the instructions for the burger</param>
         public List<string> SpecialInstructions
         {
             get
@@ -43,7 +44,7 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         public override string ToString()
         {
-            return "Thugs T-Bone  ";
+            return "Thugs T-Bone";
         }
     }
 }
