@@ -13,35 +13,17 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class AretinoAppleJuice
+    public class AretinoAppleJuice : Drink
     {
-        /// <summary>
-        /// Gets/sets the size of the drink.
-        /// </summary>
-        /// <param name="size">the size</param>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        }
-
         /// <summary>
         /// Gets the price of the drink
         /// </summary>
         /// <param name="size"> the size</param>
         /// <param name="price">the price based on the size</param>
-        public double Price
+        public override double Price
         {
             get
             {
-
                 if (Size == Size.Medium) return .87;
                 if (Size == Size.Large) return 1.01;
                 return .62;
@@ -53,7 +35,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         /// <param name="size"> the size</param>
         /// <param name="price">the price based on the size</param>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -81,7 +63,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// Gets the instructions for the drink. 
         /// </summary>
         /// <param name="instructions">the instructions for the item</param>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

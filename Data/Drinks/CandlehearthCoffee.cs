@@ -12,30 +12,14 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class CandlehearthCoffee
+    public class CandlehearthCoffee : Drink
     {
-        /// <summary>
-        /// Gets/sets the size of the drink.
-        /// </summary>
-        /// <param name="size">size of the drink</param>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        }
-
+       
         /// <summary>
         /// Gets the price of the drink
         /// </summary>
         /// /// <param name="size">size of the drink</param>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -50,7 +34,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// Gets the calories of the drink
         /// </summary>
         /// /// <param name="size">size of the drink</param>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -99,7 +83,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         /// <param name="ice">ice for drink</param>
         /// <param name="roomForCream"> the bool for the cream</param>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

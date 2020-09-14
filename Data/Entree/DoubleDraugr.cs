@@ -12,16 +12,16 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class DoubleDraugr
+    public class DoubleDraugr : Entree
     {
         /// <summary>
         /// Gets the price for the burger
         /// </summary>
-        public double Price => 7.32;
+        public override double Price => 7.32;
         /// <summary>
         /// gets the calories for the burger
         /// </summary>
-        public uint Calories => 843;
+        public override uint Calories => 843;
         private bool ketchup = true;
         /// <summary>
         /// get/set for ketchup
@@ -111,7 +111,7 @@ namespace BleakwindBuffet.Data.Entree
         /// get/set instructions
         /// </summary>
         ///  /// <param name="instructions">the instructions for the burger</param>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get {
 

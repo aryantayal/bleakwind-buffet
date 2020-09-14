@@ -10,29 +10,13 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class DragonbornWaffleFries
+    public class DragonbornWaffleFries : Side
     {
-        /// <summary>
-        /// Gets/sets the size of the side
-        /// </summary>
-        /// <param name="size">size of the side</param>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        }
         /// <summary>
         /// get/set for the price of the side
         /// </summary>
         /// <param name="size">size of the side</param>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -46,7 +30,7 @@ namespace BleakwindBuffet.Data.Sides
         /// Gets the calories of the side
         /// </summary>
         /// /// <param name="size">size of the side</param>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -60,7 +44,7 @@ namespace BleakwindBuffet.Data.Sides
         /// sends an empty list
         /// </summary>
         /// /// <param name="instructions">the instructions for the burger</param>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

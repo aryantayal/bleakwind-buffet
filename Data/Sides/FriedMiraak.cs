@@ -10,29 +10,14 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class FriedMiraak
+    public class FriedMiraak: Side
     {
-        /// <summary>
-        /// Gets/sets the size for the side
-        /// </summary>
-        /// /// <param name="size">the size</param>
-        private Size size = Size.Small;
-        public Size Size
-        {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        }
+        
         /// <summary>
         /// get/set for the price
         /// </summary>
         /// /// <param name="size">the size</param>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -47,7 +32,7 @@ namespace BleakwindBuffet.Data.Sides
         /// Gets the calories of the side
         /// </summary>
         /// /// <param name="size">the size</param>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -61,7 +46,7 @@ namespace BleakwindBuffet.Data.Sides
         /// sends an empty list
         /// </summary>
         /// /// <param name="instructions">the instructions for the item</param>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
