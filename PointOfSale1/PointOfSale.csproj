@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DoubleDragur - Copy %282%29.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DoubleDragur - Copy (2).xaml</DependentUpon>
+    </Compile>
+    <Compile Update="DoubleDragur - Copy.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>DoubleDragur - Copy.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="DoubleDragur - Copy %282%29.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>
