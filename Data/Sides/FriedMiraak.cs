@@ -5,41 +5,39 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class FriedMiraak: Side
+    public class FriedMiraak: Side 
     {
-        
-        /// <summary>
-        /// get/set for the price
-        /// </summary>
-        /// /// <param name="size">the size</param>
-        public override double Price
+
+        public override Size Size
         {
-            get
+            get => size;
+            set
             {
-                if (Size == Size.Medium) return 2.01;
-                if (Size == Size.Large) return 2.88;
-                return 1.78;
-
-            }
-        }
-
-        /// <summary>
-        /// Gets the calories of the side
-        /// </summary>
-        /// /// <param name="size">the size</param>
-        public override uint Calories
-        {
-            get
-            {
-                if (Size == Size.Medium) return 236;
-                if (Size == Size.Large) return 306;
-                return 151;
-
+                size = value;
+                switch (value)
+                {
+                    case Size.Small:
+                        this.Price = .75;
+                        this.Calories = 7;
+                        break;
+                    case Size.Medium:
+                        this.Price = 1.25;
+                        this.Calories = 10;
+                        break;
+                    case Size.Large:
+                        this.Price = 1.75;
+                        this.Calories = 20;
+                        break;
+                }
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Price");
             }
         }
         /// <summary>
@@ -51,6 +49,7 @@ namespace BleakwindBuffet.Data.Sides
             get
             {
                 List<string> instructions = new List<string>();
+                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

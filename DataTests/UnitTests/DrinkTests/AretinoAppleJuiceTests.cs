@@ -100,5 +100,45 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             aj.Size = size;
             Assert.Equal(name, aj.ToString());
         }
+
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var AJ = new AretinoAppleJuice();
+            Assert.PropertyChanged(AJ, "Ice", () => { AJ.Ice = true; });
+            Assert.PropertyChanged(AJ, "Ice", () => { AJ.Ice = false; });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            var AJ = new AretinoAppleJuice();
+            Assert.PropertyChanged(AJ, "Calories", () => { AJ.Size = Size.Small; });
+            Assert.PropertyChanged(AJ, "Calories", () => { AJ.Size = Size.Medium; });
+            Assert.PropertyChanged(AJ, "Calories", () => { AJ.Size = Size.Large; });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            var AJ = new AretinoAppleJuice();
+            Assert.PropertyChanged(AJ, "Price", () => { AJ.Size = Size.Small; });
+            Assert.PropertyChanged(AJ, "Price", () => { AJ.Size = Size.Medium; });
+            Assert.PropertyChanged(AJ, "Price", () => { AJ.Size = Size.Medium; });
+        }
+        [Fact]
+        public void ChangingIceNotifiesSpecialInstructionsProperty()
+        {
+            var AJ = new AretinoAppleJuice();
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () => { AJ.Ice = true; });
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () => { AJ.Ice = false; });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesSpecialInstructionsProperty()
+        {
+            var AJ = new AretinoAppleJuice();
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () => { AJ.Size = Size.Small; });
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () => { AJ.Size = Size.Medium; });
+            Assert.PropertyChanged(AJ, "SpecialInstructions", () => { AJ.Size = Size.Large; });
+        }
+
     }
 }

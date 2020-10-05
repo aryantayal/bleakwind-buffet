@@ -77,5 +77,37 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             fm.Size = size;
             Assert.Equal(name, fm.ToString());
         }
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            var FM = new FriedMiraak();
+            Assert.PropertyChanged(FM, "Size", () => { FM.Size = Size.Small; });
+            Assert.PropertyChanged(FM, "Size", () => { FM.Size = Size.Medium; });
+            Assert.PropertyChanged(FM, "Size", () => { FM.Size = Size.Large; });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            var FM = new FriedMiraak();
+            Assert.PropertyChanged(FM, "Price", () => { FM.Size = Size.Small; });
+            Assert.PropertyChanged(FM, "Price", () => { FM.Size = Size.Medium; });
+            Assert.PropertyChanged(FM, "Price", () => { FM.Size = Size.Medium; });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            var FM = new FriedMiraak();
+            Assert.PropertyChanged(FM, "Calories", () => { FM.Size = Size.Small; });
+            Assert.PropertyChanged(FM, "Calories", () => { FM.Size = Size.Medium; });
+            Assert.PropertyChanged(FM, "Calories", () => { FM.Size = Size.Large; });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesSpecialInstructionsProperty()
+        {
+            var FM = new FriedMiraak();
+            Assert.PropertyChanged(FM, "SpecialInstructions", () => { FM.Size = Size.Small; });
+            Assert.PropertyChanged(FM, "SpecialInstructions", () => { FM.Size = Size.Medium; });
+            Assert.PropertyChanged(FM, "SpecialInstructions", () => { FM.Size = Size.Large; });
+        }
     }
 }

@@ -5,6 +5,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
@@ -12,31 +13,38 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class WarriorWater : Drink 
+    public class WarriorWater : Drink , INotifyPropertyChanged
     {
-        
-        /// <summary>
-        /// Gets the price of the drink
-        /// </summary>
-        public override double Price
+       
+
+        public override Size Size
         {
-            get
+            get => size;
+            set
             {
-                return 0;
+                size = value;
+                switch (value)
+                {
+                    case Size.Large:
+                        this.Price = 0;
+                        this.Calories = 0;
+                        break;
+                    case Size.Medium:
+                        this.Price = 0;
+                        this.Calories = 0;
+                        break;
+                    case Size.Small:
+                        this.Price = 0;
+                        this.Calories = 0;
+                        break;
+                }
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
 
-        /// <summary>
-        /// Gets the calories of the drink
-        /// </summary>
-        public override uint Calories
-        {
-            get
-            {
-                return 0;
-            }
-        }
-        
         /// <summary>
         /// Gets/sets ice for the drink.
         /// </summary>
@@ -45,7 +53,12 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChanged("Ice");
+                NotifyOfPropertyChanged("SpecialInstructions");
+            }
         }
         private bool lemon = false;
         /// <summary>
@@ -55,7 +68,12 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Lemon
         {
             get { return lemon; }
-            set { lemon = value; }
+            set
+            {
+                lemon = value;
+                NotifyOfPropertyChanged("Lemon");
+                NotifyOfPropertyChanged("SpecialInstructions");
+            }
         }
 
         /// <summary>
@@ -69,6 +87,7 @@ namespace BleakwindBuffet.Data.Drinks
                 List<string> instructions = new List<string>();
                 if (!Ice) instructions.Add("Hold ice");
                 if (Lemon) instructions.Add("Add lemon");
+                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

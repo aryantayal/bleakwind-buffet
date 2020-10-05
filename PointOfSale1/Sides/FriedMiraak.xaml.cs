@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using PointOfSale1;
+using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace PointOfSale.Sides
 {
@@ -20,9 +21,11 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class FriedMiraak : UserControl
     {
+        private BleakwindBuffet.Data.Sides.FriedMiraak fm = new BleakwindBuffet.Data.Sides.FriedMiraak();
         public FriedMiraak()
         {
             InitializeComponent();
+            DataContext = fm;
         }
         /// <summary>
         /// After user selects the specification the done button it takes it back to the main menu selector
@@ -34,6 +37,19 @@ namespace PointOfSale.Sides
             var orderControl = this.FindAncestor<MainWindow>();
             MenuSelector ms = new MenuSelector();
             orderControl.swapScreen(ms);
+        }
+
+        private void ComboBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is FriedMiraak)
+            {
+                foreach (ComboBox s in e.AddedItems)
+                {
+                    if (s.Name == "Small") fm.Size = BleakwindBuffet.Data.Enums.Size.Small;
+                    if (s.Name == "Medium") fm.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+                    if (s.Name == "Large") fm.Size = Size.Large;
+                }
+            }
         }
     }
 }

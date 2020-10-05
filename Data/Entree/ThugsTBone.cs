@@ -5,6 +5,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Entree;
 using BleakwindBuffet.Data.Enums;
@@ -12,8 +13,9 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class ThugsTBone : Entree
+    public class ThugsTBone : Entree 
     {
+        
         /// <summary>
         /// Gets the price of the entree.
         /// </summary>
@@ -35,6 +37,7 @@ namespace BleakwindBuffet.Data.Entree
             get
             {
                 List<string> instructions = new List<string>();
+                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

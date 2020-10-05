@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using PointOfSale1;
+using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace PointOfSale.Drink
 {
@@ -20,9 +21,11 @@ namespace PointOfSale.Drink
     /// </summary>
     public partial class WarriorWater : UserControl
     {
+        private BleakwindBuffet.Data.Drinks.WarriorWater ww = new BleakwindBuffet.Data.Drinks.WarriorWater();
         public WarriorWater()
         {
             InitializeComponent();
+            DataContext = ww;
         }
         /// <summary>
         /// After user selects the specification the done button it takes it back to the main menu selector
@@ -34,6 +37,19 @@ namespace PointOfSale.Drink
             var orderControl = this.FindAncestor<MainWindow>();
             MenuSelector ms = new MenuSelector();
             orderControl.swapScreen(ms);
+        }
+
+        private void ComboBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is WarriorWater)
+            {
+                foreach (ComboBox s in e.AddedItems)
+                {
+                    if (s.Name == "Small") ww.Size = BleakwindBuffet.Data.Enums.Size.Small;
+                    if (s.Name == "Medium") ww.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+                    if (s.Name == "Large") ww.Size = Size.Large;
+                }
+            }
         }
     }
 }

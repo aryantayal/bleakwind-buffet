@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public abstract class Entree : IOrderItem
+    public abstract class Entree : IOrderItem , INotifyPropertyChanged
     {
         /// <summary>
         /// the price of the entree
@@ -20,5 +21,12 @@ namespace BleakwindBuffet.Data.Entree
         /// the special instructions to prepare the entree
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
     }
 }

@@ -8,13 +8,16 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <ListBox>
-            <CheckBox>Ice</CheckBox>
-            <TextBlock>Size:</TextBlock>
-            <CheckBox>Small</CheckBox>
-            <CheckBox>Medium</CheckBox>
-            <CheckBox>Large</CheckBox>
-            <CheckBox>Room for Cream</CheckBox>
-            <CheckBox>Decaf</CheckBox>
+            <CheckBox Name="IceBox" Click="IceBox_OnClick" IsChecked="{Binding Path=Ice}">Ice</CheckBox>
+            <CheckBox Name="CreamBox" Click="CreamBox_OnClick"  IsChecked="{Binding Path=RoomForCream}">Room for Cream</CheckBox>
+            <CheckBox Name="DecafBox" Click="DecafBox_OnClick" IsChecked="{Binding Path=Decaf}">Decaf</CheckBox>
+            <TextBlock >Size:</TextBlock>
+            <ComboBox Height="40" Name="ComboBox1" SelectionChanged="ComboBox1_OnSelectionChanged" Width="120" SelectedItem="{Binding Path=Size}">
+                <ComboBoxItem Content="Small"/>
+                <ComboBoxItem Content="Medium"/>
+                <ComboBoxItem Content="Large"/>
+            </ComboBox>
+
         </ListBox>
         <Button Click="doneButton_Click" Name="DoneButton" Margin="200,200,200,200">Done</Button>
     </Grid>

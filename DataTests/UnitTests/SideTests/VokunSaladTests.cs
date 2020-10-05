@@ -77,5 +77,29 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             vs.Size = size;
             Assert.Equal(name, vs.ToString());
         }
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            var VS = new VokunSalad();
+            Assert.PropertyChanged(VS, "Size", () => { VS.Size = Size.Small; });
+            Assert.PropertyChanged(VS, "Size", () => { VS.Size = Size.Medium; });
+            Assert.PropertyChanged(VS, "Size", () => { VS.Size = Size.Large; });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            var VS = new VokunSalad();
+            Assert.PropertyChanged(VS, "Price", () => { VS.Size = Size.Small; });
+            Assert.PropertyChanged(VS, "Price", () => { VS.Size = Size.Medium; });
+            Assert.PropertyChanged(VS, "Price", () => { VS.Size = Size.Medium; });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            var VS = new VokunSalad();
+            Assert.PropertyChanged(VS, "Calories", () => { VS.Size = Size.Small; });
+            Assert.PropertyChanged(VS, "Calories", () => { VS.Size = Size.Medium; });
+            Assert.PropertyChanged(VS, "Calories", () => { VS.Size = Size.Large; });
+        }
     }
 }

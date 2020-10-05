@@ -5,6 +5,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Entree;
 using BleakwindBuffet.Data.Enums;
@@ -12,7 +13,7 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class ThalmorTriple : Entree
+    public class ThalmorTriple : Entree 
     {
         /// <summary>
         /// Gets the price for the burger
@@ -35,6 +36,8 @@ namespace BleakwindBuffet.Data.Entree
             }
             set
             {
+                NotifyOfPropertyChanged("Ketchup");
+                NotifyOfPropertyChanged("SpecialInstructions");
                 ketchup = value;
             }
         }
@@ -51,7 +54,13 @@ namespace BleakwindBuffet.Data.Entree
         {
             get => mustard;
 
-            set => mustard = value;
+            set
+            {
+                NotifyOfPropertyChanged("Mustard");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                mustard = value;
+
+            }
         }
         private bool pickle = true;
         /// <summary>
@@ -62,7 +71,12 @@ namespace BleakwindBuffet.Data.Entree
         {
             get => pickle;
 
-            set => pickle = value;
+            set
+            {
+                NotifyOfPropertyChanged("Pickle");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                pickle = value;
+            }
         }
         /// <summary>
         /// get/set for cheese
@@ -73,7 +87,12 @@ namespace BleakwindBuffet.Data.Entree
         {
             get => cheese;
 
-            set => cheese = value;
+            set
+            {
+                NotifyOfPropertyChanged("Cheese");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                cheese = value;
+            }
         }
         /// <summary>
         /// get/set for lettuce
@@ -84,7 +103,12 @@ namespace BleakwindBuffet.Data.Entree
         {
             get => lettuce;
 
-            set => lettuce = value;
+            set
+            {
+                NotifyOfPropertyChanged("Lettuce");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                lettuce = value;
+            }
         }
         /// <summary>
         /// get/set for tomato
@@ -94,20 +118,31 @@ namespace BleakwindBuffet.Data.Entree
         public bool Tomato
         {
             get => tomato;
-
-            set => tomato = value;
+            set
+            {
+                NotifyOfPropertyChanged("Tomato");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                tomato = value;
+            }
         }
         /// <summary>
         /// get/set for mayo
         /// </summary>
         ///<param name="mayo">bool for mayo</param>
         private bool mayo = true;
+
         public bool Mayo
         {
             get => mayo;
 
-            set => mayo = value;
+            set
+            {
+                NotifyOfPropertyChanged("Mayo");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                mayo = value;
+            }
         }
+
         /// <summary>
         /// get/set for bacon
         /// </summary>
@@ -116,7 +151,12 @@ namespace BleakwindBuffet.Data.Entree
         public bool Bacon
         {
             get => bacon;
-            set => bacon = value;
+            set
+            {
+                NotifyOfPropertyChanged("Bacon");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                bacon = value;
+            }
         }
 
         private bool egg = true;
@@ -127,7 +167,12 @@ namespace BleakwindBuffet.Data.Entree
         public bool Egg
         {
             get => egg;
-            set => egg = value;
+            set
+            {
+                NotifyOfPropertyChanged("Egg");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                egg = value;
+            }
         }
 
 
@@ -150,6 +195,7 @@ namespace BleakwindBuffet.Data.Entree
                 if (!Mayo) instructions.Add("Hold mayo");
                 if (!Bacon) instructions.Add("Hold bacon");
                 if (!Egg) instructions.Add("Hold egg");
+                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

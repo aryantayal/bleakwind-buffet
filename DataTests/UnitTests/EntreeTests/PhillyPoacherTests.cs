@@ -108,5 +108,48 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             string name = "Philly Poacher";
             Assert.Equal(name, pp.ToString());
         }
+
+        [Fact]
+        public void ChangingSirloinNotifiesSirloinProperty()
+        {
+            var PP = new PhillyPoacher();
+            Assert.PropertyChanged(PP, "Sirloin", () => { PP.Sirloin = true; });
+            Assert.PropertyChanged(PP, "Sirloin", () => { PP.Sirloin = false; });
+        }
+        [Fact]
+        public void ChangingOnionNotifiesOnionProperty()
+        {
+            var PP = new PhillyPoacher();
+            Assert.PropertyChanged(PP, "Onion", () => { PP.Onion = true; });
+            Assert.PropertyChanged(PP, "Onion", () => { PP.Onion = false; });
+        }
+        [Fact]
+        public void ChangingRollNotifiesRollProperty()
+        {
+            var PP = new PhillyPoacher();
+            Assert.PropertyChanged(PP, "Roll", () => { PP.Roll = true; });
+            Assert.PropertyChanged(PP, "Roll", () => { PP.Roll = false; });
+        }
+        [Fact]
+        public void ChangingSirloinNotifiesSpecialInstructionsProperty()
+        {
+            var PP = new PhillyPoacher();
+            Assert.PropertyChanged(PP, "SpecialInstructions", () => { PP.Sirloin = true; });
+            Assert.PropertyChanged(PP, "SpecialInstructions", () => { PP.Sirloin = false; });
+        }
+        [Fact]
+        public void ChangingOnionNotifiesSpecialInstructionsProperty()
+        {
+            var PP = new PhillyPoacher();
+            Assert.PropertyChanged(PP, "SpecialInstructions", () => { PP.Onion = true; });
+            Assert.PropertyChanged(PP, "SpecialInstructions", () => { PP.Onion = false; });
+        }
+        [Fact]
+        public void ChangingRollNotifiesSpecialInstructionsProperty()
+        {
+            var PP = new PhillyPoacher();
+            Assert.PropertyChanged(PP, "SpecialInstructions", () => { PP.Roll = true; });
+            Assert.PropertyChanged(PP, "SpecialInstructions", () => { PP.Roll = false; });
+        }
     }
 }

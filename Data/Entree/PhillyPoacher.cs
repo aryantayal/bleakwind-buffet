@@ -5,6 +5,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Entree;
 using BleakwindBuffet.Data.Enums;
@@ -12,8 +13,9 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class PhillyPoacher : Entree
+    public class PhillyPoacher : Entree 
     {
+        
         /// <summary>
         /// Gets the price of the entree.
         /// </summary>
@@ -32,7 +34,12 @@ namespace BleakwindBuffet.Data.Entree
         public bool Sirloin
         {
             get => sirloin;
-            set => sirloin = value;
+            set
+            {
+                NotifyOfPropertyChanged("Sirloin");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                sirloin = value;
+            } 
         }
 
         /// <summary>
@@ -43,7 +50,11 @@ namespace BleakwindBuffet.Data.Entree
         public bool Onion
         {
             get => onion;
-            set => onion = value;
+            set  {
+                NotifyOfPropertyChanged("Onion");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                onion = value;
+        }
         }
 
         /// <summary>
@@ -54,7 +65,10 @@ namespace BleakwindBuffet.Data.Entree
         public bool Roll
         {
             get => roll;
-            set => roll = value;
+            set {
+                NotifyOfPropertyChanged("Roll");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                roll = value; }
         }
 
 
@@ -70,7 +84,7 @@ namespace BleakwindBuffet.Data.Entree
                 if (!Sirloin) instructions.Add("Hold sirloin");
                 if (!Onion) instructions.Add("Hold onion");
                 if (!Roll) instructions.Add("Hold roll");
-                
+                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

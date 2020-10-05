@@ -123,5 +123,66 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             ww.Size = size;
             Assert.Equal(name, ww.ToString());
         }
+
+        // 
+
+
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var WW = new WarriorWater();
+            Assert.PropertyChanged(WW, "Ice", () => { WW.Ice = true; });
+            Assert.PropertyChanged(WW, "Ice", () => { WW.Ice = false; });
+        }
+
+        [Fact]
+        public void ChangingLemonNotifiesLemonProperty()
+        {
+            var WW = new WarriorWater();
+            Assert.PropertyChanged(WW, "Lemon", () => { WW.Lemon = true; });
+            Assert.PropertyChanged(WW, "Lemon", () => { WW.Lemon = false; });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            var WW = new AretinoAppleJuice();
+            Assert.PropertyChanged(WW, "Calories", () => { WW.Size = Size.Small; });
+            Assert.PropertyChanged(WW, "Calories", () => { WW.Size = Size.Medium; });
+            Assert.PropertyChanged(WW, "Calories", () => { WW.Size = Size.Large; });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            var WW = new WarriorWater();
+            Assert.PropertyChanged(WW, "Price", () => { WW.Size = Size.Small; });
+            Assert.PropertyChanged(WW, "Price", () => { WW.Size = Size.Medium; });
+            Assert.PropertyChanged(WW, "Price", () => { WW.Size = Size.Medium; });
+        }
+
+        [Fact]
+        public void ChangingIceNotifiesSpecialInstructionsProperty()
+        {
+            var WW = new WarriorWater();
+            Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Ice = true; });
+            Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Ice = false; });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesSpecialInstructionsProperty()
+        {
+            var WW = new WarriorWater();
+            Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Size = Size.Small; });
+            Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Size = Size.Medium; });
+            Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Size = Size.Large; });
+        }
+        [Fact]
+        public void ChangingLemonNotifiesSpecialInstructionsProperty()
+        {
+            var WW = new WarriorWater();
+            Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Lemon = true; });
+            Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Lemon = false; });
+        }
     }
 }

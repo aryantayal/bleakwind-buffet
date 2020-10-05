@@ -5,6 +5,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Entree;
 using BleakwindBuffet.Data.Enums;
@@ -12,7 +13,7 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class SmokehouseSkeleton : Entree
+    public class SmokehouseSkeleton : Entree 
     {
         /// <summary>
         /// Gets the price of the entree.
@@ -32,7 +33,12 @@ namespace BleakwindBuffet.Data.Entree
         public bool SausageLink
         {
             get => sausageLink;
-            set => sausageLink = value;
+            set
+            {
+                NotifyOfPropertyChanged("SausageLink");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                sausageLink = value;
+            }
         }
 
         /// <summary>
@@ -43,7 +49,11 @@ namespace BleakwindBuffet.Data.Entree
         public bool Egg
         {
             get => egg;
-            set => egg = value;
+            set {
+                NotifyOfPropertyChanged("Egg");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                egg = value;
+            }
         }
 
         /// <summary>
@@ -54,7 +64,12 @@ namespace BleakwindBuffet.Data.Entree
         public bool HashBrowns
         {
             get => hashBrowns;
-            set => hashBrowns = value;
+            set
+            {
+                NotifyOfPropertyChanged("Hashbrowns");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                hashBrowns = value;
+            }
         }
 
         /// <summary>
@@ -65,7 +80,12 @@ namespace BleakwindBuffet.Data.Entree
         public bool Pancake
         {
             get => pancake;
-            set => pancake = value;
+            set
+            {
+                NotifyOfPropertyChanged("Pancake");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                pancake = value;
+            }
         }
 
         /// <summary>
@@ -79,8 +99,9 @@ namespace BleakwindBuffet.Data.Entree
                 List<string> instructions = new List<string>();
                 if (!SausageLink) instructions.Add("Hold sausage");
                 if (!Egg) instructions.Add("Hold eggs");
-                if (!HashBrowns) instructions.Add("Hold hash browns");
+                if (!HashBrowns) instructions.Add("Hold hashbrowns");
                 if (!Pancake) instructions.Add("Hold pancakes");
+                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

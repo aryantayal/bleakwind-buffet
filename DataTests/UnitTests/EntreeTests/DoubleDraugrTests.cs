@@ -198,13 +198,82 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             else if (!includeMayo) Assert.Contains("Hold mayo", dd.SpecialInstructions);
             else Assert.Empty(dd.SpecialInstructions);
         }
-
         [Fact]
-        public void ShouldReturnCorrectToString()
+        public void ChangingKetchupNotifiesKetchupProperty()
         {
-            DoubleDraugr dd = new DoubleDraugr();
-            string name = "Double Draugr";
-            Assert.Equal(name, dd.ToString());
+            var DD = new DoubleDraugr();
+            Assert.PropertyChanged(DD, "Ketchup", () => { DD.Ketchup = true; });
+            Assert.PropertyChanged(DD, "Ketchup", () => { DD.Ketchup = false; });
+        }
+        [Fact]
+        public void ChangingMustardNotifiesMustardProperty()
+        {
+            var DD = new DoubleDraugr();
+            Assert.PropertyChanged(DD, "Mustard", () => { DD.Mustard = true; });
+            Assert.PropertyChanged(DD, "Mustard", () => { DD.Mustard = false; });
+        }
+        [Fact]
+        public void ChangingTomatoNotifiesTomatoProperty()
+        {
+            var DD = new DoubleDraugr();
+            Assert.PropertyChanged(DD, "Tomato", () => { DD.Tomato = true; });
+            Assert.PropertyChanged(DD, "Tomato", () => { DD.Tomato = false; });
+        }
+        [Fact]
+        public void ChangingMayoNotifiesMayoProperty()
+        {
+            var DD = new DoubleDraugr();
+            Assert.PropertyChanged(DD, "Mayo", () => { DD.Mayo = true; });
+            Assert.PropertyChanged(DD, "Mayo", () => { DD.Mayo = false; });
+        }
+        [Fact]
+        public void ChangingKetchupNotifiesSpecialInstructionsProperty()
+        {
+            var DD = new DoubleDraugr();
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Ketchup = true; });
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Ketchup = false; });
+        }
+        [Fact]
+        public void ChangingBunNotifiesSpecialInstructionsProperty()
+        {
+            var DD = new DoubleDraugr();
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Bun = true; });
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Bun = false; });
+        }
+        [Fact]
+        public void ChangingMustardNotifiesSpecialInstructionsProperty()
+        {
+            var DD = new DoubleDraugr();
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Mustard = true; });
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Mustard = false; });
+        }
+        [Fact]
+        public void ChangingPickleNotifiesSpecialInstructionsProperty()
+        {
+            var DD = new DoubleDraugr();
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Pickle = true; });
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Pickle = false; });
+        }
+        [Fact]
+        public void ChangingTomatoNotifiesSpecialInstructionsProperty()
+        {
+            var DD = new DoubleDraugr();
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Tomato = true; });
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Tomato = false; });
+        }
+        [Fact]
+        public void ChangingLettuceNotifiesSpecialInstructionsProperty()
+        {
+            var DD = new DoubleDraugr();
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Lettuce = true; });
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Lettuce = false; });
+        }
+        [Fact]
+        public void ChangingMayoNotifiesSpecialInstructionsProperty()
+        {
+            var DD = new DoubleDraugr();
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Mayo = true; });
+            Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Mayo = false; });
         }
     }
 }

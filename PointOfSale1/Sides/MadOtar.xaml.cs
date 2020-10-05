@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Printing;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,8 +11,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Sides;
 using PointOfSale.ExtensionMethod;
 using PointOfSale1;
+using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace PointOfSale.Sides
 {
@@ -20,9 +23,11 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class MadOtar : UserControl
     {
+        private  MadOtarGrits mo = new MadOtarGrits();
         public MadOtar()
         {
             InitializeComponent();
+            DataContext = mo;
         }
         /// <summary>
         /// After user selects the specification the done button it takes it back to the main menu selector
@@ -34,6 +39,19 @@ namespace PointOfSale.Sides
             var orderControl = this.FindAncestor<MainWindow>();
             MenuSelector ms = new MenuSelector();
             orderControl.swapScreen(ms);
+        }
+
+        private void ComboBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is MadOtarGrits)
+            {
+                foreach (ComboBox s in e.AddedItems)
+                {
+                    if (s.Name == "Small") mo.Size = BleakwindBuffet.Data.Enums.Size.Small;
+                    if (s.Name == "Medium") mo.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+                    if (s.Name == "Large") mo.Size = Size.Large;
+                }
+            }
         }
     }
 }

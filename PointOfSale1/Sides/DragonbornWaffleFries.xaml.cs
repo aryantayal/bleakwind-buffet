@@ -12,6 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using PointOfSale1;
+using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace PointOfSale
 {
@@ -20,6 +21,7 @@ namespace PointOfSale
     /// </summary>
     public partial class DragonbornWaffleFries : UserControl
     {
+        private BleakwindBuffet.Data.Sides.DragonbornWaffleFries dbwf = new BleakwindBuffet.Data.Sides.DragonbornWaffleFries();
         public DragonbornWaffleFries()
         {
             InitializeComponent();
@@ -34,6 +36,19 @@ namespace PointOfSale
             var orderControl = this.FindAncestor<MainWindow>();
             MenuSelector ms = new MenuSelector();
             orderControl.swapScreen(ms);
+        }
+
+        private void ComboBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is DragonbornWaffleFries)
+            {
+                foreach (ComboBox s in e.AddedItems)
+                {
+                    if (s.Name == "Small") dbwf.Size = BleakwindBuffet.Data.Enums.Size.Small;
+                    if (s.Name == "Medium") dbwf.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+                    if (s.Name == "Large") dbwf.Size = Size.Large;
+                }
+            }
         }
     }
 }

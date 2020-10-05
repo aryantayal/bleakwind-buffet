@@ -74,7 +74,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             ss.Flavor = SodaFlavor.Cherry;
             Assert.Equal(SodaFlavor.Cherry, ss.Flavor);
             ss.Flavor = SodaFlavor.Grapefruit;
-            Assert.Equal(SodaFlavor.Grapefruit, ss.Flavor); 
+            Assert.Equal(SodaFlavor.Grapefruit, ss.Flavor);
             ss.Flavor = SodaFlavor.Lemon;
             Assert.Equal(SodaFlavor.Lemon, ss.Flavor);
             ss.Flavor = SodaFlavor.Peach;
@@ -115,7 +115,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             if (!includeIce) Assert.Contains("Hold ice", ss.SpecialInstructions);
             else Assert.Empty(ss.SpecialInstructions);
         }
-        
+
         [Theory]
         [InlineData(SodaFlavor.Cherry, Size.Small, "Small Cherry Sailor Soda")]
         [InlineData(SodaFlavor.Cherry, Size.Medium, "Medium Cherry Sailor Soda")]
@@ -146,6 +146,85 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             ss.Size = size;
             ss.Flavor = flavor;
             Assert.Equal(name, ss.ToString());
+        }
+
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            var SS = new SailorSoda();
+            Assert.PropertyChanged(SS, "Ice", () => { SS.Ice = true; });
+            Assert.PropertyChanged(SS, "Ice", () => { SS.Ice = false; });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            var SS = new SailorSoda();
+            Assert.PropertyChanged(SS, "Calories", () => { SS.Size = Size.Small; });
+            Assert.PropertyChanged(SS, "Calories", () => { SS.Size = Size.Medium; });
+            Assert.PropertyChanged(SS, "Calories", () => { SS.Size = Size.Large; });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            var SS = new SailorSoda();
+            Assert.PropertyChanged(SS, "Price", () => { SS.Size = Size.Small; });
+            Assert.PropertyChanged(SS, "Price", () => { SS.Size = Size.Medium; });
+            Assert.PropertyChanged(SS, "Price", () => { SS.Size = Size.Medium; });
+        }
+
+        [Fact]
+        public void ChangingIceNotifiesSpecialProperty()
+        {
+            var SS = new SailorSoda();
+            Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Ice = true; });
+            Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Ice = false; });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesSpecialInstructionsProperty()
+        {
+            var SS = new SailorSoda();
+            Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Size = Size.Small; });
+            Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Size = Size.Medium; });
+            Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Size = Size.Large; });
+        }
+        [Fact]
+        public void ChangingFlavorToBlackBerryNotifiesSpecialInstructionsProperty()
+        {
+            var SS = new SailorSoda();
+            Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Flavor = SodaFlavor.Blackberry; });
+        }
+        [Fact]
+        public void ChangingFlavorToCherryNotifiesSpecialInstructionsProperty()
+        {
+            var SS = new SailorSoda();
+            Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Flavor = SodaFlavor.Cherry; });
+        }
+        [Fact]
+        public void ChangingFlavorToGrapefruitNotifiesSpecialInstructionsProperty()
+        {
+            var SS = new SailorSoda();
+            Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Flavor = SodaFlavor.Grapefruit; });
+        }
+        [Fact]
+        public void ChangingFlavorToLemonNotifiesSpecialInstructionsProperty()
+        {
+            var SS = new SailorSoda();
+            Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Flavor = SodaFlavor.Lemon; });
+        }
+        [Fact]
+        public void ChangingFlavorToPeachNotifiesSpecialInstructionsProperty()
+        {
+            var SS = new SailorSoda();
+            Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Flavor = SodaFlavor.Peach; });
+        }
+        [Fact]
+        public void ChangingFlavorToWattermelonNotifiesSpecialInstructionsProperty()
+        {
+            var SS = new SailorSoda();
+            Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Flavor = SodaFlavor.Watermelon; });
         }
     }
 }

@@ -5,6 +5,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Entree;
 using BleakwindBuffet.Data.Enums;
@@ -12,8 +13,9 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class BriarheartBurger : Entree
+    public class BriarheartBurger : Entree , INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// Gets the price for the burger
         /// </summary>
@@ -37,9 +39,22 @@ namespace BleakwindBuffet.Data.Entree
             set
             {
                 ketchup = value;
+                NotifyOfPropertyChanged("Ketchup");
+                NotifyOfPropertyChanged("SpecialInstructions");
+
             }
         }
-        public bool Bun { get; set; } = true;
+        private bool bun = true;
+        public bool Bun
+        {
+            get { return bun; }
+            set
+            {
+                bun = value;
+
+            }
+        } 
+
         /// <summary>
         /// get/set for mustard
         /// </summary>
@@ -49,7 +64,13 @@ namespace BleakwindBuffet.Data.Entree
         {
             get => mustard;
 
-            set => mustard = value;
+            set
+            {
+                NotifyOfPropertyChanged("Mustard");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                mustard = value; 
+
+            }
         }
         private bool pickle = true;
         /// <summary>
@@ -60,7 +81,10 @@ namespace BleakwindBuffet.Data.Entree
         {
             get => pickle;
 
-            set => pickle = value;
+            set {
+                NotifyOfPropertyChanged("Pickle");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                pickle = value; }
         }
         /// <summary>
         /// get/set for cheese
@@ -71,7 +95,10 @@ namespace BleakwindBuffet.Data.Entree
         {
             get => cheese;
 
-            set => cheese = value;
+            set {
+                NotifyOfPropertyChanged("Cheese");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                cheese = value; }
         }
 
         private List<string> specialInstructions = new List<string>();
@@ -89,6 +116,7 @@ namespace BleakwindBuffet.Data.Entree
                 if (!Mustard) instructions.Add("Hold mustard");
                 if (!Pickle) instructions.Add("Hold pickle");
                 if (!Cheese) instructions.Add("Hold cheese");
+                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

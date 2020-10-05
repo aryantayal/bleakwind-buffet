@@ -5,6 +5,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Entree;
 using BleakwindBuffet.Data.Enums;
@@ -12,8 +13,9 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class GardenOrcOmelette : Entree
+    public class GardenOrcOmelette : Entree 
     {
+        
         /// <summary>
         /// Gets the price of the entree.
         /// </summary>
@@ -32,7 +34,12 @@ namespace BleakwindBuffet.Data.Entree
         public bool Broccoli
         {
             get => broccoli;
-            set => broccoli = value;
+            set
+            {
+               NotifyOfPropertyChanged("Broccoli");
+               NotifyOfPropertyChanged("SpecialInstructions");
+                broccoli = value;
+            }
         }
 
         /// <summary>
@@ -43,7 +50,12 @@ namespace BleakwindBuffet.Data.Entree
         public bool Mushrooms
         {
             get => mushrooms;
-            set => mushrooms = value;
+            set
+            {
+                NotifyOfPropertyChanged("Mushrooms");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                mushrooms = value;
+            }
         }
 
         /// <summary>
@@ -54,7 +66,11 @@ namespace BleakwindBuffet.Data.Entree
         public bool Tomato
         {
             get => tomato;
-            set => tomato = value;
+            set {
+                NotifyOfPropertyChanged("Tomato");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                tomato = value;
+            }
         }
 
         /// <summary>
@@ -65,7 +81,10 @@ namespace BleakwindBuffet.Data.Entree
         public bool Cheddar
         {
             get => cheddar;
-            set => cheddar = value;
+            set {
+                NotifyOfPropertyChanged("Cheddar");
+                NotifyOfPropertyChanged("SpecialInstructions");
+                cheddar = value; }
         }
 
         /// <summary>
@@ -81,6 +100,7 @@ namespace BleakwindBuffet.Data.Entree
                 if (!Mushrooms) instructions.Add("Hold mushrooms");
                 if (!Tomato) instructions.Add("Hold tomato");
                 if (!Cheddar) instructions.Add("Hold cheddar");
+                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

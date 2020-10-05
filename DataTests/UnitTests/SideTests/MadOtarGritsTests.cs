@@ -77,5 +77,37 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             mo.Size = size;
             Assert.Equal(name, mo.ToString());
         }
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            var MOG = new MadOtarGrits();
+            Assert.PropertyChanged(MOG, "Size", () => { MOG.Size = Size.Small; });
+            Assert.PropertyChanged(MOG, "Size", () => { MOG.Size = Size.Medium; });
+            Assert.PropertyChanged(MOG, "Size", () => { MOG.Size = Size.Large; });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesPriceProperty()
+        {
+            var MOG = new MadOtarGrits();
+            Assert.PropertyChanged(MOG, "Price", () => { MOG.Size = Size.Small; });
+            Assert.PropertyChanged(MOG, "Price", () => { MOG.Size = Size.Medium; });
+            Assert.PropertyChanged(MOG, "Price", () => { MOG.Size = Size.Medium; });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesCaloriesProperty()
+        {
+            var MOG = new MadOtarGrits();
+            Assert.PropertyChanged(MOG, "Calories", () => { MOG.Size = Size.Small; });
+            Assert.PropertyChanged(MOG, "Calories", () => { MOG.Size = Size.Medium; });
+            Assert.PropertyChanged(MOG, "Calories", () => { MOG.Size = Size.Large; });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesSpecialInstructionsProperty()
+        {
+            var MOG = new MadOtarGrits();
+            Assert.PropertyChanged(MOG, "SpecialInstructions", () => { MOG.Size = Size.Small; });
+            Assert.PropertyChanged(MOG, "SpecialInstructions", () => { MOG.Size = Size.Medium; });
+            Assert.PropertyChanged(MOG, "SpecialInstructions", () => { MOG.Size = Size.Large; });
+        }
     }
 }

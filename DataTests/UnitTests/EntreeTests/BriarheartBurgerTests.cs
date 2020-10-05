@@ -151,5 +151,68 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             string name = "Briarheart Burger";
             Assert.Equal(name, bh.ToString());
         }
+        [Fact]
+        public void ChangingKetchupNotifiesKetchupProperty()
+        {
+            var BB = new BriarheartBurger();
+            Assert.PropertyChanged(BB, "Ketchup", () => { BB.Ketchup = true; });
+            Assert.PropertyChanged(BB, "Ketchup", () => { BB.Ketchup = false; });
+        }
+        [Fact]
+        public void ChangingMustardNotifiesMustardProperty()
+        {
+            var BB = new BriarheartBurger();
+            Assert.PropertyChanged(BB, "Mustard", () => { BB.Mustard = true; });
+            Assert.PropertyChanged(BB, "Mustard", () => { BB.Mustard = false; });
+        }
+        [Fact]
+        public void ChangingPickleNotifiesPickleProperty()
+        {
+            var BB = new BriarheartBurger();
+            Assert.PropertyChanged(BB, "Pickle", () => { BB.Pickle = true; });
+            Assert.PropertyChanged(BB, "Pickle", () => { BB.Pickle = false; });
+        }
+        [Fact]
+        public void ChangingCheeseNotifiesCheeseProperty()
+        {
+            var BB = new BriarheartBurger();
+            Assert.PropertyChanged(BB, "Cheese", () => { BB.Cheese = true; });
+            Assert.PropertyChanged(BB, "Cheese", () => { BB.Cheese = false; });
+        }
+        [Fact]
+        public void ChangingKetchupNotifiesSpecialInstructionsProperty()
+        {
+            var BB = new BriarheartBurger();
+            Assert.PropertyChanged(BB, "SpecialInstructions", () => { BB.Ketchup = true; });
+            Assert.PropertyChanged(BB, "SpecialInstructions", () => { BB.Ketchup = false; });
+        }
+        [Fact]
+        public void ChangingMustardNotifiesSpecialInstructionsProperty()
+        {
+            var BB = new BriarheartBurger();
+            Assert.PropertyChanged(BB, "SpecialInstructions", () => { BB.Mustard = true; });
+            Assert.PropertyChanged(BB, "SpecialInstructions", () => { BB.Mustard = false; });
+        }
+        [Fact]
+        public void ChangingPickleNotifiesSpecialInstructionsProperty()
+        {
+            var BB = new BriarheartBurger();
+            Assert.PropertyChanged(BB, "SpecialInstructions", () => { BB.Pickle = true; });
+            Assert.PropertyChanged(BB, "SpecialInstructions", () => { BB.Pickle = false; });
+        }
+        [Fact]
+        public void ChangingCheeseNotifiesSpecialInstructionsProperty()
+        {
+            var BB = new BriarheartBurger();
+            Assert.PropertyChanged(BB, "SpecialInstructions", () => { BB.Cheese = true; });
+            Assert.PropertyChanged(BB, "SpecialInstructions", () => { BB.Cheese = false; });
+        }
+        [Fact]
+        public void ChangingBunNotifiesSpecialInstructionsProperty()
+        {
+            var BB = new BriarheartBurger();
+            Assert.PropertyChanged(BB, "SpecialInstructions", () => { BB.Bun = true; });
+            Assert.PropertyChanged(BB, "SpecialInstructions", () => { BB.Bun = false; });
+        }
     }
 }

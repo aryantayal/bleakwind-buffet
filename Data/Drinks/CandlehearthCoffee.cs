@@ -5,17 +5,44 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data;
 
-
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class CandlehearthCoffee : Drink
+    public class CandlehearthCoffee : Drink , INotifyPropertyChanged
     {
-       
-        /// <summary>
+        
+
+        public override Size Size
+        {
+            get => size;
+            set
+            {
+                size = value;
+                switch (value)
+                {
+                    case Size.Small:
+                        this.Price = .75;
+                        this.Calories = 7;
+                        break;
+                    case Size.Medium:
+                        this.Price = 1.25;
+                        this.Calories = 10;
+                        break;
+                    case Size.Large:
+                        this.Price = 1.75;
+                        this.Calories = 20;
+                        break;
+                }
+                NotifyOfPropertyChanged("Size");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Price");
+            }
+        }
+        /*/// <summary>
         /// Gets the price of the drink
         /// </summary>
         /// /// <param name="size">size of the drink</param>
@@ -44,7 +71,7 @@ namespace BleakwindBuffet.Data.Drinks
                 return 7;
             }
         }
-
+        */
 
         /// <summary>
         /// Gets/sets ice for the drink.
@@ -55,7 +82,11 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set
+            {
+                ice = value;
+                NotifyOfPropertyChanged("Ice");
+            }
         }
         private bool roomForCream = false;
         /// <summary>
@@ -65,7 +96,11 @@ namespace BleakwindBuffet.Data.Drinks
         public bool RoomForCream
         {
             get { return roomForCream; }
-            set { roomForCream = value; }
+            set
+            {
+                roomForCream = value;
+                NotifyOfPropertyChanged("Cream");
+            }
         }
         private bool decaf = false;
         /// <summary>
@@ -75,7 +110,11 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Decaf
         {
             get { return decaf; }
-            set { decaf = value; }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChanged("Decaf");
+            }
         }
 
         /// <summary>
@@ -90,7 +129,9 @@ namespace BleakwindBuffet.Data.Drinks
                 List<string> instructions = new List<string>();
                 if (Ice) instructions.Add("Add ice");
                 if (RoomForCream) instructions.Add("Add cream");
+                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
+
             }
         }
 
