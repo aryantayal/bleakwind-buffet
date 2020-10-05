@@ -13,9 +13,9 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class BriarheartBurger : Entree , INotifyPropertyChanged
+    public class BriarheartBurger : Entree
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        
         /// <summary>
         /// Gets the price for the burger
         /// </summary>
@@ -51,7 +51,8 @@ namespace BleakwindBuffet.Data.Entree
             set
             {
                 bun = value;
-
+                NotifyOfPropertyChanged("Bun");
+                NotifyOfPropertyChanged("SpecialInstructions");
             }
         } 
 

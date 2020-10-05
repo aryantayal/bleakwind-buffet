@@ -42,7 +42,17 @@ namespace BleakwindBuffet.Data.Entree
                 ketchup = value;
             }
         }
-        public bool Bun { get; set; } = true;
+        private bool bun = true;
+        public bool Bun
+        {
+            get { return bun; }
+            set
+            {
+                bun = value;
+                NotifyOfPropertyChanged("Bun");
+                NotifyOfPropertyChanged("SpecialInstructions");
+            }
+        }
         /// <summary>
         /// get/set for mustard
         /// </summary>

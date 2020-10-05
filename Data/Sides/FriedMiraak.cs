@@ -23,21 +23,22 @@ namespace BleakwindBuffet.Data.Sides
                 switch (value)
                 {
                     case Size.Small:
-                        this.Price = .75;
-                        this.Calories = 7;
+                        this.Price = 1.78;
+                        this.Calories = 151;
                         break;
                     case Size.Medium:
-                        this.Price = 1.25;
-                        this.Calories = 10;
+                        this.Price = 2.01;
+                        this.Calories = 236;
                         break;
                     case Size.Large:
-                        this.Price = 1.75;
-                        this.Calories = 20;
+                        this.Price = 2.88;
+                        this.Calories = 306;
                         break;
                 }
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
                 NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
         /// <summary>
