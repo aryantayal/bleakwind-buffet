@@ -31,9 +31,9 @@ namespace BleakwindBuffet.DataTests.UnitTests
 
             o.Add((IOrderItem)b);
 
-            Assert.Equal(6.48, o.Subtotal, 2);
-            Assert.Equal(0.324, o.Tax, 2);
-            Assert.Equal(6.804, o.TotalCost, 2);
+            Assert.Equal(6.32, o.Subtotal, 2);
+            Assert.Equal(0.76, o.Tax, 2);
+            Assert.Equal(7.08, o.TotalCost, 2);
         }
 
         [Fact]
@@ -47,8 +47,8 @@ namespace BleakwindBuffet.DataTests.UnitTests
             o.Add((IOrderItem)vs);
 
             Assert.Equal(.93, o.Subtotal, 2);
-            Assert.Equal(.01116, o.Tax, 2);
-            Assert.Equal(.941, o.TotalCost, 2);
+            Assert.Equal(.11, o.Tax, 2);
+            Assert.Equal(1.04, o.TotalCost, 2);
         }
         [Fact]
         public void ShouldCalculateCorrectSubTotalTaxCostAndTotalForDrink()
@@ -61,7 +61,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
             o.Add((IOrderItem)aj);
             Assert.Equal(.62, o.Subtotal, 2);
             Assert.Equal(.07, o.Tax, 2);
-            Assert.Equal(.68, o.TotalCost, 2);
+            Assert.Equal(.69, o.TotalCost, 2);
         }
 
     }
