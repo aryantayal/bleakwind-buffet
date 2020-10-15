@@ -3,6 +3,8 @@
  * Class: ThalmorTripleTests.cs
  * Purpose: Test the ThalmorTriple.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -339,6 +341,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var TT = new ThalmorTriple();
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Lettuce = true; });
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Lettuce = false; });
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+            ThalmorTriple tt = new ThalmorTriple();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(tt);
         }
     }
 }

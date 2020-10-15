@@ -4,27 +4,32 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale.Drink"
+             xmlns:data="clr-namespace:BleakwindBuffet.Data.Enums;assembly=Data"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="size" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="data:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider x:Key="flavor" MethodName="GetValues" ObjectType="{x:Type system:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="data:SodaFlavor"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+   
+
+
     <Grid>
         <ListBox>
-            <CheckBox IsChecked="{Binding Path=Size}">Ice</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
             <TextBlock>Size: </TextBlock>
-            <ComboBox Height="40" Name="ComboBox1" SelectionChanged="ComboBox1_OnSelectionChanged" Width="120" SelectedItem="{Binding Path=Size}">
-                <ComboBoxItem Content="Small"/>
-                <ComboBoxItem Content="Medium"/>
-                <ComboBoxItem Content="Large"/>
-            </ComboBox>
+            <ComboBox Height="40" Name="ComboBox1"  Width="120" SelectedItem="{Binding Path=Size}" ItemsSource="{Binding Source={StaticResource size}}"/>
             <TextBlock>Flavor: </TextBlock>
-            <ComboBox Height="40" Name="ComboBoxFlavor" SelectionChanged="ComboBoxFlavor_OnSelectionChanged" Width="120" SelectedItem="{Binding Path=Flavor}">
-            <ComboBoxItem Content="Blackberry"/>
-            <ComboBoxItem Content="Cherry"/>
-            <ComboBoxItem Content="Grapefruit"/>
-            <ComboBoxItem Content="Lemon"/>
-            <ComboBoxItem Content="Peach"/>
-            <ComboBoxItem Content="Watermelon"/>
-
-            </ComboBox>
+            <ComboBox Height="40" Name="ComboBoxFlavor"  Width="120" SelectedItem="{Binding Path=Flavor}" ItemsSource="{Binding Source={StaticResource flavor}}"/>
            
         </ListBox>
         <Button Click="doneButton_Click" Name="DoneButton" Margin="200,200,200,200">Done</Button>

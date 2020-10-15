@@ -3,6 +3,7 @@
  * Class name: WarriorWater.cs
  * Purpose: Class used to represent the Warrior Water drink 
  */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,8 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class WarriorWater : Drink , INotifyPropertyChanged
+    public class WarriorWater : Drink, INotifyPropertyChanged
     {
-       
-
         public override Size Size
         {
             get => size;
@@ -38,6 +37,7 @@ namespace BleakwindBuffet.Data.Drinks
                         this.Calories = 0;
                         break;
                 }
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
                 NotifyOfPropertyChanged("Price");
@@ -50,6 +50,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         /// <param name="ice">ice</param>
         private bool ice = true;
+
         public bool Ice
         {
             get { return ice; }
@@ -60,7 +61,9 @@ namespace BleakwindBuffet.Data.Drinks
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
+
         private bool lemon = false;
+
         /// <summary>
         /// get/set the lemon
         /// </summary>
@@ -87,7 +90,6 @@ namespace BleakwindBuffet.Data.Drinks
                 List<string> instructions = new List<string>();
                 if (!Ice) instructions.Add("Hold ice");
                 if (Lemon) instructions.Add("Add lemon");
-                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

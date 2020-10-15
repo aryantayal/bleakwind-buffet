@@ -3,6 +3,7 @@
  * Class name: SmokehouseSkeleton.cs
  * Purpose: Class used to represent the Smokehouse Skeleton
  */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class SmokehouseSkeleton : Entree 
+    public class SmokehouseSkeleton : Entree
     {
         /// <summary>
         /// Gets the price of the entree.
@@ -30,14 +31,17 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         /// <param name="sausageLink">bool for the sausage</param>
         private bool sausageLink = true;
+
         public bool SausageLink
         {
             get => sausageLink;
             set
             {
+                sausageLink = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("SausageLink");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                sausageLink = value;
+               
             }
         }
 
@@ -46,13 +50,17 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         /// <param name="egg">bool for egg</param>
         private bool egg = true;
+
         public bool Egg
         {
             get => egg;
-            set {
+            set
+            {
+                egg = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Egg");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                egg = value;
+              
             }
         }
 
@@ -61,14 +69,17 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         /// <param name="hashbrown">bool for hashbrown</param>
         private bool hashBrowns = true;
+
         public bool HashBrowns
         {
             get => hashBrowns;
             set
             {
+                hashBrowns = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Hashbrowns");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                hashBrowns = value;
+                
             }
         }
 
@@ -77,14 +88,17 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         /// <param name="pancake">bool for pancake</param>
         private bool pancake = true;
+
         public bool Pancake
         {
             get => pancake;
             set
             {
+                pancake = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Pancake");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                pancake = value;
+                
             }
         }
 
@@ -101,7 +115,6 @@ namespace BleakwindBuffet.Data.Entree
                 if (!Egg) instructions.Add("Hold eggs");
                 if (!HashBrowns) instructions.Add("Hold hashbrowns");
                 if (!Pancake) instructions.Add("Hold pancakes");
-                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

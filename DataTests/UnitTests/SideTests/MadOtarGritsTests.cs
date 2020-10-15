@@ -3,6 +3,8 @@
  * Class: MadOtarGritsTests.cs
  * Purpose: Test the MadOtarGrits.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -108,6 +110,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.PropertyChanged(MOG, "SpecialInstructions", () => { MOG.Size = Size.Small; });
             Assert.PropertyChanged(MOG, "SpecialInstructions", () => { MOG.Size = Size.Medium; });
             Assert.PropertyChanged(MOG, "SpecialInstructions", () => { MOG.Size = Size.Large; });
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+           MadOtarGrits mog = new MadOtarGrits();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(mog);
         }
     }
 }

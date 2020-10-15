@@ -51,5 +51,11 @@ namespace PointOfSale.Drink
                 }
             }
         }
+        private void Cancel_OnClick(object includeSender, RoutedEventArgs includeE)
+        {
+            var orderControl = this.FindAncestor<MainWindow>();
+            MenuSelector ms = new MenuSelector();
+            orderControl.swapScreen(ms);
+        }
     }
 }

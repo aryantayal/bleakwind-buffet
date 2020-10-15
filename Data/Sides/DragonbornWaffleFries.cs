@@ -3,6 +3,7 @@
 * Class name: DragonbornWaffleFries.cs
 * Purpose: Class used to represent the Mad Otar Grits side
 */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,8 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class DragonbornWaffleFries : Side 
+    public class DragonbornWaffleFries : Side
     {
-        
-
         public override Size Size
         {
             get => size;
@@ -38,47 +37,15 @@ namespace BleakwindBuffet.Data.Sides
                         this.Calories = 100;
                         break;
                 }
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
-        /*
-        /// <summary>
-        /// get/set for the price of the side
-        /// </summary>
-        /// <param name="size">size of the side</param>
-        public override double Price
-        {
-            get
-            {
-                double price = 0;
-                if (Size == Size.Medium)
-                {
-                    price = .76;
-                    
-                }
-                if (Size == Size.Large) return .96;
-                return .42;
-            }
-        }
 
-        /// <summary>
-        /// Gets the calories of the side
-        /// </summary>
-        /// /// <param name="size">size of the side</param>
-        public override uint Calories
-        {
-            get
-            {
-                if (Size == Size.Medium) return 89;
-                if (Size == Size.Large) return 100;
-                return 77;
 
-            }
-        }
-        */
         /// <summary>
         /// sends an empty list
         /// </summary>
@@ -88,10 +55,10 @@ namespace BleakwindBuffet.Data.Sides
             get
             {
                 List<string> instructions = new List<string>();
-                NotifyOfPropertyChanged("SpecialInstruction");
                 return instructions;
             }
         }
+
         /// <summary>
         /// ToString override for the side
         /// </summary>

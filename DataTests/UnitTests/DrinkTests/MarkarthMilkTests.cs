@@ -3,6 +3,8 @@
  * Class: MarkarthMilkTests.cs
  * Purpose: Test the MarkarthMilk.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -142,6 +144,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(MM, "SpecialInstructions", () => { MM.Size = Size.Small; });
             Assert.PropertyChanged(MM, "SpecialInstructions", () => { MM.Size = Size.Medium; });
             Assert.PropertyChanged(MM, "SpecialInstructions", () => { MM.Size = Size.Large; });
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+            MarkarthMilk mm = new MarkarthMilk();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(mm);
         }
     }
 }

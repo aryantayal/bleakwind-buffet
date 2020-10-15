@@ -3,6 +3,7 @@
  * Class name: PhillyPoacher.cs
  * Purpose: Class used to represent the Philly Poacher
  */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,8 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class PhillyPoacher : Entree 
+    public class PhillyPoacher : Entree
     {
-        
         /// <summary>
         /// Gets the price of the entree.
         /// </summary>
@@ -31,15 +31,18 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         /// <param name="sirloin">bool for sirloin</param>
         private bool sirloin = true;
+
         public bool Sirloin
         {
             get => sirloin;
             set
             {
+                sirloin = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Sirloin");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                sirloin = value;
-            } 
+                
+            }
         }
 
         /// <summary>
@@ -47,14 +50,18 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         /// <param name="onion">bool for onion</param>
         private bool onion = true;
+
         public bool Onion
         {
             get => onion;
-            set  {
+            set
+            {
+                onion = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Onion");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                onion = value;
-        }
+                
+            }
         }
 
         /// <summary>
@@ -62,13 +69,18 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         /// <param name="roll">bool for roll</param>
         private bool roll = true;
+
         public bool Roll
         {
             get => roll;
-            set {
+            set
+            {
+                roll = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Roll");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                roll = value; }
+                
+            }
         }
 
 
@@ -84,7 +96,6 @@ namespace BleakwindBuffet.Data.Entree
                 if (!Sirloin) instructions.Add("Hold sirloin");
                 if (!Onion) instructions.Add("Hold onion");
                 if (!Roll) instructions.Add("Hold roll");
-                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

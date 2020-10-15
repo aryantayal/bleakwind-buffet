@@ -3,6 +3,7 @@
  * Class name: VolkunSalad.cs
  * Purpose: Class used to represent the Vulcan Salad side
  */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class VokunSalad : Side 
+    public class VokunSalad : Side
     {
         public override Size Size
         {
@@ -34,12 +35,14 @@ namespace BleakwindBuffet.Data.Sides
                         this.Calories = 73;
                         break;
                 }
+
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
+
         /// <summary>
         /// Gets the instructions for the drink. 
         /// </summary>
@@ -49,10 +52,10 @@ namespace BleakwindBuffet.Data.Sides
             get
             {
                 List<string> instructions = new List<string>();
-                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }
+
         /// <summary>
         /// ToString override for the side
         /// </summary>

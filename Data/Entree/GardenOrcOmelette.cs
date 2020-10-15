@@ -3,6 +3,7 @@
  * Class name: GardenOrcOmelette.cs
  * Purpose: Class used to represent the Garden Orc Omelette
  */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,8 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class GardenOrcOmelette : Entree 
+    public class GardenOrcOmelette : Entree
     {
-        
         /// <summary>
         /// Gets the price of the entree.
         /// </summary>
@@ -31,14 +31,17 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         /// <param name="broccoli">bool for broccoli</param>
         private bool broccoli = true;
+
         public bool Broccoli
         {
             get => broccoli;
             set
             {
-               NotifyOfPropertyChanged("Broccoli");
-               NotifyOfPropertyChanged("SpecialInstructions");
                 broccoli = value;
+                NotifyOfPropertyChanged("Name");
+                NotifyOfPropertyChanged("Broccoli");
+                NotifyOfPropertyChanged("SpecialInstructions");
+             
             }
         }
 
@@ -47,14 +50,17 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         /// <param name="mushrooms">mushroom bool</param>
         private bool mushrooms = true;
+
         public bool Mushrooms
         {
             get => mushrooms;
             set
             {
+                mushrooms = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Mushrooms");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                mushrooms = value;
+               
             }
         }
 
@@ -63,13 +69,17 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         /// <param name="tomato">bool for tomao</param>
         private bool tomato = true;
+
         public bool Tomato
         {
             get => tomato;
-            set {
+            set
+            {
+                tomato = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Tomato");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                tomato = value;
+                
             }
         }
 
@@ -78,13 +88,17 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         /// <param name="cheddar">bool for cheddar</param>
         private bool cheddar = true;
+
         public bool Cheddar
         {
             get => cheddar;
-            set {
+            set
+            {
+                cheddar = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Cheddar");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                cheddar = value; }
+            }
         }
 
         /// <summary>
@@ -100,7 +114,6 @@ namespace BleakwindBuffet.Data.Entree
                 if (!Mushrooms) instructions.Add("Hold mushrooms");
                 if (!Tomato) instructions.Add("Hold tomato");
                 if (!Cheddar) instructions.Add("Hold cheddar");
-                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

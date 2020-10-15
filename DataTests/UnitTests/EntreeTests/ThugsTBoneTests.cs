@@ -3,6 +3,8 @@
  * Class: ThugsTBoneTests.cs
  * Purpose: Test the ThugsTBone.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -46,6 +48,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             ThugsTBone tt = new ThugsTBone();
             string name = "Thugs T-Bone";
             Assert.Equal(name, tt.ToString());
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+            ThugsTBone tt = new ThugsTBone();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(tt);
         }
     }
 }

@@ -13,17 +13,18 @@ using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using PointOfSale1;
 
-namespace PointOfSale
+namespace PointOfSale.Entree
 {
     /// <summary>
-    /// Interaction logic for SmokehouseSkeleton.xaml
+    /// Interaction logic for cThugs.xaml
     /// </summary>
-    public partial class SmokehouseSkeleton : UserControl
+    public partial class cThugs : UserControl
     {
-        public SmokehouseSkeleton()
+        public cThugs()
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// After user selects the specification the done button it takes it back to the main menu selector
         /// </summary>
@@ -35,6 +36,5 @@ namespace PointOfSale
             MenuSelector ms = new MenuSelector();
             orderControl.swapScreen(ms);
         }
-
     }
 }

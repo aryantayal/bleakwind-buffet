@@ -3,6 +3,8 @@
  * Class: DragonbornWaffleFriesTests.cs
  * Purpose: Test the DragonbornWaffleFries.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -101,6 +103,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.PropertyChanged(DBF, "Calories", () => { DBF.Size = Size.Medium; });
             Assert.PropertyChanged(DBF, "Calories", () => { DBF.Size = Size.Large; });
         }
-
+        [Fact]
+        public void InheritsInterface()
+        {
+            DragonbornWaffleFries dbf = new DragonbornWaffleFries();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(dbf);
+        }
     }
 }

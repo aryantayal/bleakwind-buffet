@@ -3,6 +3,8 @@
  * Class: BriarheartBurgerTests.cs
  * Purpose: Test the BriarheartBurger.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -213,6 +215,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var BB = new BriarheartBurger();
             Assert.PropertyChanged(BB, "SpecialInstructions", () => { BB.Bun = true; });
             Assert.PropertyChanged(BB, "SpecialInstructions", () => { BB.Bun = false; });
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+            BriarheartBurger bb = new BriarheartBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(bb);
         }
     }
 }

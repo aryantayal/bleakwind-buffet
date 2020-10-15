@@ -3,6 +3,8 @@
  * Class: PhillyPoacherTests.cs
  * Purpose: Test the PhillyPoacher.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -150,6 +152,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var PP = new PhillyPoacher();
             Assert.PropertyChanged(PP, "SpecialInstructions", () => { PP.Roll = true; });
             Assert.PropertyChanged(PP, "SpecialInstructions", () => { PP.Roll = false; });
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+           PhillyPoacher pp = new PhillyPoacher();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(pp);
         }
     }
 }

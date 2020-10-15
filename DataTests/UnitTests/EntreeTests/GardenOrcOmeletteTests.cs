@@ -3,6 +3,8 @@
  * Class: GardenOrcOmeletteTests.cs
  * Purpose: Test the GardenOrcOmelette.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -178,6 +180,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(GOO, "SpecialInstructions", () => { GOO.Tomato = true; });
             Assert.PropertyChanged(GOO, "SpecialInstructions", () => { GOO.Tomato = false; });
         }
-
+        [Fact]
+        public void InheritsInterface()
+        {
+            GardenOrcOmelette goo = new GardenOrcOmelette();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(goo);
+        }
     }
 }

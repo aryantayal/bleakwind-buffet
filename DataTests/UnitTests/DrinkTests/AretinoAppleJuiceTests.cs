@@ -3,6 +3,8 @@
  * Class: AretinoAppleJuiceTests.cs
  * Purpose: Test the AretinoAppleJuice.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -109,6 +111,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(AJ, "Ice", () => { AJ.Ice = false; });
         }
         [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            var AJ = new AretinoAppleJuice();
+            Assert.PropertyChanged(AJ, "Size", () => { AJ.Size = Size.Small; });
+            Assert.PropertyChanged(AJ, "Size", () => { AJ.Size = Size.Medium; });
+            Assert.PropertyChanged(AJ, "Size", () => { AJ.Size = Size.Large; });
+        }
+        [Fact]
         public void ChangingSizeNotifiesCaloriesProperty()
         {
             var AJ = new AretinoAppleJuice();
@@ -139,6 +149,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(AJ, "SpecialInstructions", () => { AJ.Size = Size.Medium; });
             Assert.PropertyChanged(AJ, "SpecialInstructions", () => { AJ.Size = Size.Large; });
         }
-
+        [Fact]
+        public void InheritsInterface()
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(aj);
+        }
     }
 }

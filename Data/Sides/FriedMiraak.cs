@@ -3,6 +3,7 @@
  * Class name: FriedMiraak.cs
  * Purpose: Class used to represent the Fried Miraak side
  */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +12,8 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    public class FriedMiraak: Side 
+    public class FriedMiraak : Side
     {
-
         public override Size Size
         {
             get => size;
@@ -35,12 +35,14 @@ namespace BleakwindBuffet.Data.Sides
                         this.Calories = 306;
                         break;
                 }
+
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
+
         /// <summary>
         /// sends an empty list
         /// </summary>
@@ -50,10 +52,10 @@ namespace BleakwindBuffet.Data.Sides
             get
             {
                 List<string> instructions = new List<string>();
-                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }
+
         /// <summary>
         /// ToString override for the side
         /// </summary>

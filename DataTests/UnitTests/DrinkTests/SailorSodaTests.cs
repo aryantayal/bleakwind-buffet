@@ -4,7 +4,7 @@
  * Purpose: Test the SailorSoda.cs class in the Data library
  */
 using System;
-
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -225,6 +225,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         {
             var SS = new SailorSoda();
             Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Flavor = SodaFlavor.Watermelon; });
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+            SailorSoda ss = new SailorSoda();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ss);
         }
     }
 }

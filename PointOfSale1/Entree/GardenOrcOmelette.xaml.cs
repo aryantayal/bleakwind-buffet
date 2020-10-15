@@ -35,5 +35,6 @@ namespace PointOfSale.Entree
             MenuSelector ms = new MenuSelector();
             orderControl.swapScreen(ms);
         }
+
     }
 }

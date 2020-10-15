@@ -3,6 +3,8 @@
  * Class: SmokehouseSkeletonTests.cs
  * Purpose: Test the SmokehouseSkeleton.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -182,6 +184,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var SS = new SmokehouseSkeleton();
             Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Pancake = true; });
             Assert.PropertyChanged(SS, "SpecialInstructions", () => { SS.Pancake = false; });
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ss);
         }
     }
 }

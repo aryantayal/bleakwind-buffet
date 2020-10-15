@@ -19,7 +19,7 @@ namespace BleakwindBuffet.Data
         /// <returns>A list of the all the available entrees</returns>
         public static IEnumerable<IOrderItem> Entrees()
         {
-            List<IOrderItem> entree = new List<IOrderItem>();
+            var entree = new List<IOrderItem>();
             entree.Add(new BriarheartBurger());
             entree.Add(new DoubleDraugr());
             entree.Add(new GardenOrcOmelette());
@@ -36,7 +36,7 @@ namespace BleakwindBuffet.Data
         /// <returns>A list of the all the available sides</returns>
         public static IEnumerable<IOrderItem> Sides()
         {
-            List<IOrderItem> side = new List<IOrderItem>();
+            var side = new List<IOrderItem>();
 
             foreach (Size s in Enum.GetValues(typeof(Size)))
             {
@@ -70,7 +70,7 @@ namespace BleakwindBuffet.Data
         /// <returns>A list of the available drinks</returns>
         public static IEnumerable<IOrderItem> Drinks()
         {
-            List<IOrderItem> drink = new List<IOrderItem>();
+            var drink = new List<IOrderItem>();
 
             foreach (Size s in Enum.GetValues(typeof(Size)))
             {
@@ -95,15 +95,13 @@ namespace BleakwindBuffet.Data
                 });
 
                 foreach (SodaFlavor sf in Enum.GetValues(typeof(SodaFlavor)))
-                {
                     drink.Add(new SailorSoda()
                     {
                         Size = s,
                         Flavor = sf
                     });
-                }
-
             }
+
             return drink;
         }
 
@@ -113,18 +111,17 @@ namespace BleakwindBuffet.Data
         /// <returns>A list containing all of the items on the menu</returns>
         public static IEnumerable<IOrderItem> FullMenu()
         {
-            List<IOrderItem> menu = new List<IOrderItem>();
-            IEnumerable<IOrderItem> entree = Entrees();
+            var menu = new List<IOrderItem>();
+            var entree = Entrees();
             menu.AddRange(entree);
 
-            IEnumerable<IOrderItem> side = Sides();
+            var side = Sides();
             menu.AddRange(side);
 
-            IEnumerable<IOrderItem> drink = Drinks();
+            var drink = Drinks();
             menu.AddRange(drink);
 
             return menu;
         }
     }
 }
-

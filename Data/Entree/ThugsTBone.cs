@@ -3,6 +3,7 @@
  * Class name: ThugsTBone.cs
  * Purpose: Class used to represent the Thugs T-Bone
  */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,8 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class ThugsTBone : Entree 
+    public class ThugsTBone : Entree
     {
-        
         /// <summary>
         /// Gets the price of the entree.
         /// </summary>
@@ -27,7 +27,6 @@ namespace BleakwindBuffet.Data.Entree
         public override uint Calories => 982;
 
 
-
         /// <summary>
         /// Gets/sets the instructions for the entree 
         /// </summary>
@@ -36,8 +35,8 @@ namespace BleakwindBuffet.Data.Entree
         {
             get
             {
+                NotifyOfPropertyChanged("Name");
                 List<string> instructions = new List<string>();
-                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }
@@ -51,4 +50,3 @@ namespace BleakwindBuffet.Data.Entree
         }
     }
 }
-

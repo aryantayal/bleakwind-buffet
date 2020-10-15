@@ -3,6 +3,7 @@
  * Class name: ThalmorTriple.cs
  * Purpose: Class used to represent the Thalmor Triple
  */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,56 +14,64 @@ using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public class ThalmorTriple : Entree 
+    public class ThalmorTriple : Entree
     {
         /// <summary>
         /// Gets the price for the burger
         /// </summary>
         public override double Price => 8.32;
+
         /// <summary>
         /// gets the calories for the burger
         /// </summary>
         public override uint Calories => 943;
+
         private bool ketchup = true;
+
         /// <summary>
         /// get/set for ketchup
         /// </summary>
         /// <param name="ketchup">ketchup</param>
         public bool Ketchup
         {
-            get
-            {
-                return ketchup;
-            }
+            get { return ketchup; }
             set
             {
+                ketchup = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Ketchup");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                ketchup = value;
+                
             }
         }
+
         /// <summary>
         /// get/set for bun
         /// </summary>
         public bool Bun { get; set; } = true;
+
         /// <summary>
         /// get/set for mustard
         /// </summary>
         /// <param name="mustard">mustard for the burger</param>
         private bool mustard = true;
+
         public bool Mustard
         {
             get => mustard;
 
             set
             {
+                mustard = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Mustard");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                mustard = value;
-
+                
             }
         }
+
         private bool pickle = true;
+
         /// <summary>
         /// get/set for pickle
         /// </summary>
@@ -72,59 +81,70 @@ namespace BleakwindBuffet.Data.Entree
             get => pickle;
 
             set
-            {
+            {pickle = value;
                 NotifyOfPropertyChanged("Pickle");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                pickle = value;
+                
+                NotifyOfPropertyChanged("Name");
             }
         }
+
         /// <summary>
         /// get/set for cheese
         /// </summary>
         /// <param name="cheese">bool for the cheese on the burger</param>
         private bool cheese = true;
+
         public bool Cheese
         {
             get => cheese;
 
             set
-            {
+            {cheese = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Cheese");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                cheese = value;
+                
             }
         }
+
         /// <summary>
         /// get/set for lettuce
         /// </summary>
         /// <param name="lettuce">bool for the lettuce on the burger</param>
         private bool lettuce = true;
+
         public bool Lettuce
         {
             get => lettuce;
 
             set
-            {
+            {lettuce = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Lettuce");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                lettuce = value;
+                
             }
         }
+
         /// <summary>
         /// get/set for tomato
         /// </summary>
         /// <param name="tomato">bool for tomato</param>
         private bool tomato = true;
+
         public bool Tomato
         {
             get => tomato;
             set
-            {
+            { tomato = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Tomato");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                tomato = value;
+               
             }
         }
+
         /// <summary>
         /// get/set for mayo
         /// </summary>
@@ -136,10 +156,11 @@ namespace BleakwindBuffet.Data.Entree
             get => mayo;
 
             set
-            {
+            {mayo = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Mayo");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                mayo = value;
+                
             }
         }
 
@@ -148,18 +169,21 @@ namespace BleakwindBuffet.Data.Entree
         /// </summary>
         /// <param name="bacon">bool for the bacon</param>
         private bool bacon = true;
+
         public bool Bacon
         {
             get => bacon;
             set
-            {
+            {bacon = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Bacon");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                bacon = value;
+                
             }
         }
 
         private bool egg = true;
+
         /// <summary>
         /// get/set for egg
         /// </summary>
@@ -168,15 +192,17 @@ namespace BleakwindBuffet.Data.Entree
         {
             get => egg;
             set
-            {
+            {egg = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Egg");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                egg = value;
+                
             }
         }
 
 
         private List<string> specialInstructions = new List<string>();
+
         /// <summary>
         /// Gets/sets the instructions for the entree 
         /// </summary>
@@ -185,7 +211,6 @@ namespace BleakwindBuffet.Data.Entree
         {
             get
             {
-
                 List<string> instructions = new List<string>();
                 if (!Bun) instructions.Add("Hold bun");
                 if (!Ketchup) instructions.Add("Hold ketchup");
@@ -199,6 +224,7 @@ namespace BleakwindBuffet.Data.Entree
                 return instructions;
             }
         }
+
         /// <summary>
         /// ToString override for the entree 
         /// </summary>
@@ -206,6 +232,5 @@ namespace BleakwindBuffet.Data.Entree
         {
             return "Thalmor Triple";
         }
-
     }
 }

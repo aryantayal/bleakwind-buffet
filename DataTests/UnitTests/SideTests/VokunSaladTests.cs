@@ -3,6 +3,8 @@
  * Class: VokunSaladTests.cs
  * Purpose: Test the VokunSalad.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -100,6 +102,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.PropertyChanged(VS, "Calories", () => { VS.Size = Size.Small; });
             Assert.PropertyChanged(VS, "Calories", () => { VS.Size = Size.Medium; });
             Assert.PropertyChanged(VS, "Calories", () => { VS.Size = Size.Large; });
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+            VokunSalad vs = new VokunSalad();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(vs);
         }
     }
 }

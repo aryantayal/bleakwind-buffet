@@ -14,5 +14,6 @@
             <CheckBox IsChecked="{Binding Path=Cheddar}">Cheddar</CheckBox>
         </ListBox>
         <Button Click="doneButton_Click" Name="DoneButton" Margin="200,200,200,200">Done</Button>
+       
 </Grid>
 </UserControl>

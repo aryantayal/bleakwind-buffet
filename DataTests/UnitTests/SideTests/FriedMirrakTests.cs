@@ -3,6 +3,8 @@
  * Class: FriedMiraakTests.cs
  * Purpose: Test the FriedMiraak.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -108,6 +110,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.PropertyChanged(FM, "SpecialInstructions", () => { FM.Size = Size.Small; });
             Assert.PropertyChanged(FM, "SpecialInstructions", () => { FM.Size = Size.Medium; });
             Assert.PropertyChanged(FM, "SpecialInstructions", () => { FM.Size = Size.Large; });
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+            FriedMiraak fm = new FriedMiraak();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(fm);
         }
     }
 }

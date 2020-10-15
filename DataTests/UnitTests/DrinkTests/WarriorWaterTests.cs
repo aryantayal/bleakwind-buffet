@@ -3,6 +3,8 @@
  * Class: WarriorWater.cs
  * Purpose: Test the WarriorWater.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -183,6 +185,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             var WW = new WarriorWater();
             Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Lemon = true; });
             Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Lemon = false; });
+        }
+        [Fact]
+        public void InheritsInterface()
+        {
+            WarriorWater ww = new WarriorWater();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ww);
         }
     }
 }

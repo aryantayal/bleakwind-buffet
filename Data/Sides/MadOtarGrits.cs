@@ -3,6 +3,7 @@
  * Class name: MadOtarGrits.cs
  * Purpose: Class used to represent the Mad Otar Grits side
  */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,12 +39,14 @@ namespace BleakwindBuffet.Data.Sides
                         this.Calories = 179;
                         break;
                 }
+
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
+
         /// <summary>
         /// sends an empty list
         /// </summary>
@@ -53,10 +56,10 @@ namespace BleakwindBuffet.Data.Sides
             get
             {
                 List<string> instructions = new List<string>();
-                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }
+
         /// <summary>
         /// ToString override for the side
         /// </summary>

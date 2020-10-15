@@ -6,17 +6,24 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Entree
 {
-    public abstract class Entree : IOrderItem , INotifyPropertyChanged
+    public abstract class Entree : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// the price of the entree
         /// </summary>
         /// <value>in us dollars</value>
         public abstract double Price { get; }
+
         /// <summary>
         /// calories for the entree
         /// </summary>
-        public abstract uint Calories { get;}
+        public abstract uint Calories { get; }
+
+        public string Name
+        {
+            get => ToString();
+        }
+
         /// <summary>
         /// the special instructions to prepare the entree
         /// </summary>

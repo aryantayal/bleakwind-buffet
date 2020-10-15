@@ -3,6 +3,9 @@
  * Class: DoubleDraugrTests.cs
  * Purpose: Test the DoubleDraugr.cs class in the Data library
  */
+
+using System;
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -274,6 +277,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             var DD = new DoubleDraugr();
             Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Mayo = true; });
             Assert.PropertyChanged(DD, "SpecialInstructions", () => { DD.Mayo = false; });
+        }
+
+        [Fact]
+        public void InheritsInterface()
+        {
+            DoubleDraugr dd = new DoubleDraugr();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(dd);
         }
     }
 }

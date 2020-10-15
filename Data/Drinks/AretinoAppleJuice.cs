@@ -3,6 +3,7 @@
  * Class name: AretinoAppleJuice.cs
  * Purpose: Class used to represent the Aretino Apple Juice drink 
  */
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,9 +14,8 @@ using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class AretinoAppleJuice : Drink  
+    public class AretinoAppleJuice : Drink
     {
-        
         public override Size Size
         {
             get => size;
@@ -37,44 +37,14 @@ namespace BleakwindBuffet.Data.Drinks
                         this.Calories = 132;
                         break;
                 }
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
-        /*
-        /// <summary>
-        /// Gets the price of the drink
-        /// </summary>
-        /// <param name="size"> the size</param>
-        /// <param name="price">the price based on the size</param>
-        public override double Price
-        {
-            get
-            {
-                if (Size == Size.Medium) return .87;
-                if (Size == Size.Large) return 1.01;
-                return .62;
-            }
-        }
-
-        /// <summary>
-        /// Gets the calories of the drink
-        /// </summary>
-        /// <param name="size"> the size</param>
-        /// <param name="price">the price based on the size</param>
-        public override uint Calories
-        {
-            get
-            {
-
-                if (Size == Size.Medium) return 88;
-                if (Size == Size.Large) return 132;
-                return 44;
-            }
-        }
-        */
+        
 
         /// <summary>
         /// Gets/sets room for the ice
@@ -91,9 +61,8 @@ namespace BleakwindBuffet.Data.Drinks
                 NotifyOfPropertyChanged("Ice");
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
-            
         }
-        
+
 
         /// <summary>
         /// Gets the instructions for the drink. 
@@ -105,7 +74,6 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 List<string> instructions = new List<string>();
                 if (Ice) instructions.Add("Add ice");
-                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

@@ -38,7 +38,6 @@ namespace PointOfSale.Sides
             MenuSelector ms = new MenuSelector();
             orderControl.swapScreen(ms);
         }
-
         private void ComboBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DataContext is VokunSalad)

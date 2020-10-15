@@ -47,11 +47,6 @@ namespace PointOfSale.Drink
             cc.Ice = true;
         }
 
-        private void SizeSmallBox_OnClick(object sender, RoutedEventArgs e)
-        {
-            BleakwindBuffet.Data.Drinks.CandlehearthCoffee cc = new CandlehearthCoffee();
-            cc.Size = Size.Small;
-        }
 
         private void CreamBox_OnClick(object sender, RoutedEventArgs e)
         {
@@ -63,18 +58,6 @@ namespace PointOfSale.Drink
         {
             BleakwindBuffet.Data.Drinks.CandlehearthCoffee cc = new CandlehearthCoffee();
             cc.Decaf = true;
-        }
-
-        private void SizeMediumBox_OnClick(object sender, RoutedEventArgs e)
-        {
-            BleakwindBuffet.Data.Drinks.CandlehearthCoffee cc = new CandlehearthCoffee();
-            cc.Size = Size.Medium;
-        }
-
-        private void SizeLargeBox_OnClick(object sender, RoutedEventArgs e)
-        {
-            BleakwindBuffet.Data.Drinks.CandlehearthCoffee cc = new CandlehearthCoffee();
-            cc.Size = Size.Large;
         }
 
         private void ComboBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)

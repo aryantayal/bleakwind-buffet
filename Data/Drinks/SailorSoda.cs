@@ -3,6 +3,7 @@
  * Class name: SailorSoda.cs
  * Purpose: Class used to represent the Sailor Soda drink 
  */
+
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data;
@@ -13,10 +14,8 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class SailorSoda : Drink , INotifyPropertyChanged
+    public class SailorSoda : Drink, INotifyPropertyChanged
     {
-        
-
         public override Size Size
         {
             get => size;
@@ -38,48 +37,22 @@ namespace BleakwindBuffet.Data.Drinks
                         this.Calories = 205;
                         break;
                 }
+
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
                 NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("SpecialInstructions");
-
-            }
-        }
-        /*
-        /// <summary>
-        /// Gets the price of the drink
-        /// </summary>
-        /// <param name="size">size of the drink</param>
-        public override double Price
-        {
-            get
-            {
-                if (Size == Size.Medium) return 1.74;
-                if (Size == Size.Large) return 2.07;
-                return 1.42;
             }
         }
 
-        /// <summary>
-        /// Gets the calories of the drink
-        /// </summary>
-        /// <param name="size">size of the drink</param>
-        public override uint Calories
-        {
-            get
-            {
-                if (Size == Size.Medium) return 153;
-                if (Size == Size.Large) return 205;
-                return 117;
-            }
-        }
-        */
 
         /// <summary>
         /// Gets/sets ice for the drink.
         /// </summary>
         /// <param name="ice">ice</param> 
         private bool ice = true;
+
         public bool Ice
         {
             get { return ice; }
@@ -96,16 +69,15 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         /// <param name="flavor">flavor of the drink</param>
         private SodaFlavor flavor = SodaFlavor.Cherry;
+
         public SodaFlavor Flavor
         {
-            get
-            {
-                return flavor;
-            }
+            get { return flavor; }
             set
             {
                 flavor = value;
                 NotifyOfPropertyChanged("Flavor");
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
@@ -121,7 +93,6 @@ namespace BleakwindBuffet.Data.Drinks
             {
                 List<string> instructions = new List<string>();
                 if (!Ice) instructions.Add("Hold ice");
-                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

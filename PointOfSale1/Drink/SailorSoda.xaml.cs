@@ -39,12 +39,12 @@ namespace PointOfSale.Drink
             MenuSelector ms = new MenuSelector();
             orderControl.swapScreen(ms);
         }
-
+        /*
         private void ComboBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DataContext is SailorSoda)
             {
-                foreach (ComboBox s in e.AddedItems)
+                foreach (ComboBoxItem s in e.AddedItems)
                 {
                     if (s.Name == "Small") ss.Size = BleakwindBuffet.Data.Enums.Size.Small;
                     if (s.Name == "Medium") ss.Size = BleakwindBuffet.Data.Enums.Size.Medium;
@@ -55,7 +55,7 @@ namespace PointOfSale.Drink
 
         private void ComboBoxFlavor_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            foreach (ComboBox s in e.AddedItems)
+            foreach (ComboBoxItem s in e.AddedItems)
             {
                 if (s.Name == "Blackberry") ss.Flavor = SodaFlavor.Blackberry;
                 if (s.Name == "Cherry") ss.Flavor = SodaFlavor.Cherry;
@@ -64,6 +64,13 @@ namespace PointOfSale.Drink
                 if (s.Name == "Peach") ss.Flavor = SodaFlavor.Peach;
                 if (s.Name == "Watermelon") ss.Flavor = SodaFlavor.Watermelon;
             }
+        }
+        */
+        private void Cancel_OnClick(object includeSender, RoutedEventArgs includeE)
+        {
+            var orderControl = this.FindAncestor<MainWindow>();
+            MenuSelector ms = new MenuSelector();
+            orderControl.swapScreen(ms);
         }
     }
 }

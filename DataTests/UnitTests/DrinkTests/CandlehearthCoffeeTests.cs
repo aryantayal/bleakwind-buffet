@@ -3,6 +3,8 @@
  * Class: CandlehearthCoffeeTests.cs
  * Purpose: Test the CandlehearthCoffee.cs class in the Data library
  */
+
+using System.ComponentModel;
 using Xunit;
 
 using BleakwindBuffet.Data;
@@ -189,7 +191,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(CC, "Calories", () => { CC.Size = Size.Medium; });
             Assert.PropertyChanged(CC, "Calories", () => { CC.Size = Size.Large; });
         }
-       
+
+        [Fact]
+        public void InheritsInterface()
+        {
+            CandlehearthCoffee chc = new CandlehearthCoffee();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chc);
+        }
         
     }
 }

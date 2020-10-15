@@ -12,10 +12,12 @@ namespace BleakwindBuffet.Data.Drinks
     public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
         private Size s;
+
         /// <summary>
         /// the size of the drink
         /// </summary>
         protected Size size = Size.Small;
+
         public abstract Size Size { get; set; }
 
         /// <summary>
@@ -23,14 +25,21 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         /// <value>in us dollars</value>
         public double Price { get; set; }
+
         /// <summary>
         /// calories for the drink
         /// </summary>
-        public  uint Calories { get; set; }
+        public uint Calories { get; set; }
+
         /// <summary>
         /// the special instructions to prepare the drink
         /// </summary>
-        public  abstract  List<string> SpecialInstructions { get; }
+        public abstract List<string> SpecialInstructions { get; }
+
+        public string Name
+        {
+            get => ToString();
+        }
 
         /// <summary>
         /// Update event handler
@@ -45,6 +54,5 @@ namespace BleakwindBuffet.Data.Drinks
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
-
     }
 }

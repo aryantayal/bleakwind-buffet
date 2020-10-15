@@ -3,6 +3,7 @@
  * Class name: BrianheartBurger.cs
  * Purpose: Class used to represent the Brian heart Burger
  */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,65 +16,70 @@ namespace BleakwindBuffet.Data.Entree
 {
     public class BriarheartBurger : Entree
     {
-        
         /// <summary>
         /// Gets the price for the burger
         /// </summary>
         public override double Price => 6.32;
+
         /// <summary>
         /// gets the calories for the burger
         /// </summary>
         public override uint Calories => 732;
 
         private bool ketchup = true;
+
         /// <summary>
         /// get/set for ketchup
         /// </summary>
         /// <param name="ketchup">ketchup</param>
         public bool Ketchup
         {
-            get
-            {
-                return ketchup;
-            }
+            get { return ketchup; }
             set
             {
                 ketchup = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Ketchup");
                 NotifyOfPropertyChanged("SpecialInstructions");
-
             }
         }
+
         private bool bun = true;
+
         public bool Bun
         {
             get { return bun; }
             set
             {
                 bun = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Bun");
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
-        } 
+        }
 
         /// <summary>
         /// get/set for mustard
         /// </summary>
         /// <param name="mustard">mustard for the burger</param>
         private bool mustard = true;
+
         public bool Mustard
         {
             get => mustard;
 
             set
             {
+                NotifyOfPropertyChanged("Name");
+                mustard = value;
                 NotifyOfPropertyChanged("Mustard");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                mustard = value; 
-
+               
             }
         }
+
         private bool pickle = true;
+
         /// <summary>
         /// get/set for pickle
         /// </summary>
@@ -82,45 +88,54 @@ namespace BleakwindBuffet.Data.Entree
         {
             get => pickle;
 
-            set {
+            set
+            {
+                pickle = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Pickle");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                pickle = value; }
+                
+            }
         }
+
         /// <summary>
         /// get/set for cheese
         /// </summary>
         /// <param name="cheese">bool for the cheese on the burger</param>
         private bool cheese = true;
+
         public bool Cheese
         {
             get => cheese;
 
-            set {
+            set
+            {
+                cheese = value;
+                NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Cheese");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                cheese = value; }
+                
+            }
         }
 
-        private List<string> specialInstructions = new List<string>();
         /// <summary>
         /// the get set for the instructions
         /// </summary>
         /// <param name="instructions">the instructions for the burger</param>
         public override List<string> SpecialInstructions
         {
-            get {
-
-                List<string> instructions = new List<string>(specialInstructions);
+            get
+            {
+                List<string> instructions = new List<string>();
                 if (!Bun) instructions.Add("Hold bun");
                 if (!Ketchup) instructions.Add("Hold ketchup");
                 if (!Mustard) instructions.Add("Hold mustard");
                 if (!Pickle) instructions.Add("Hold pickle");
                 if (!Cheese) instructions.Add("Hold cheese");
-                NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }
+
         /// <summary>
         /// to string method
         /// </summary>
@@ -128,6 +143,5 @@ namespace BleakwindBuffet.Data.Entree
         {
             return "Briarheart Burger";
         }
-
     }
 }
