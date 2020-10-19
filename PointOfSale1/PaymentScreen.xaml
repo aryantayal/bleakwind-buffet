@@ -20,7 +20,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Name="Card" Grid.Column="1" Grid.Row="2">Debit/Credit</Button>
+        <Button Name="Card" Grid.Column="1" Grid.Row="2" Click="Card_OnClick">Debit/Credit</Button>
         <Button Name="Cash" Grid.Column="1" Grid.Row="4" Click="Cash_OnClick">Cash</Button>
 
     </Grid>

@@ -16,6 +16,11 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class DragonbornWaffleFries : Side
     {
+        public DragonbornWaffleFries()
+        {
+            Size = Size.Small;
+        }
+
         public override Size Size
         {
             get => size;

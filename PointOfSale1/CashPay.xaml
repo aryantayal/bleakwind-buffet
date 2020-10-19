@@ -36,7 +36,7 @@
 
         <TextBlock Grid.ColumnSpan="3" Grid.Column="1"  Grid.Row="0" TextAlignment="Center" FontSize="19" Padding="0,7,0,0" Foreground="GhostWhite">From Customer</TextBlock>
         <TextBlock Grid.Column="4"  Grid.Row="0" TextAlignment="Center" FontSize="12" Foreground="GhostWhite">Give As <LineBreak/> Change</TextBlock>
-        <Button Name="ReturnToOrder" Background="#2A363B " Foreground="White" Grid.ColumnSpan="2" Grid.Column="8"  Grid.Row="0" FontSize="15">Return to Order</Button>
+        <Button Name="ReturnToOrder" Background="#2A363B " Foreground="White" Grid.ColumnSpan="2" Grid.Column="8"  Grid.Row="0" FontSize="15" Click="ReturnToOrder_Click">Return to Order</Button>
 
         <TextBlock Grid.Column="10"  Grid.Row="1" TextAlignment="Center" FontSize="12" Foreground="GhostWhite">Give As <LineBreak/> Change</TextBlock>
         <TextBlock Grid.ColumnSpan="2" Grid.Column="7"  Grid.Row="1" TextAlignment="Center" FontSize="15" Foreground="GhostWhite">From <LineBreak/> Customer</TextBlock>

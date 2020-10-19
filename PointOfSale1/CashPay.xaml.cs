@@ -12,6 +12,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BleakwindBuffet.Data;
+using PointOfSale.ExtensionMethod;
+using PointOfSale1;
 
 namespace PointOfSale
 {
@@ -30,24 +32,30 @@ namespace PointOfSale
         private int coin100 = 0;
         private int coin50, coin25, coin10, coin5, coin1 = 0;
 
+        private void ReturnToOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var x = this.FindAncestor<MainWindow>();
+            x.swapScreen(new MenuSelector());
+        }
+
         //Set the total cost to a double that will be used to compare how much is due or change
         //public double Cost = Convert.ToDouble(TotalSale.Text);
 
         private double totalGiven = 0;
 
+
         public CashPay()
         {
             InitializeComponent();
             Value100.Text = bill100.ToString();
+            if (DataContext is Order o)
+            {
+                CashPayViewModel cpv = new CashPayViewModel(o.TotalCost);
+                DataContext = cpv;
+            }
             
         }
 
-        
-        
-
-        //
-        //private void 
-        //Make a getter and setter for each textblock? use the top variable to assign the get?
 
         private void ButtonBase_OnClick(object includeSender, RoutedEventArgs includeE)
         {
