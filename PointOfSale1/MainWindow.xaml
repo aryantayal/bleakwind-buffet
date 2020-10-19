@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
         Title="Bleakwind Buffet Point Of Sale" Height="550" Width="900">
-    <Grid>
+    <Grid Background="#2A363B">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="1.5*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock FontWeight="Bold" TextAlignment="Center" FontSize="17">
+        <TextBlock FontWeight="Bold" TextAlignment="Center" FontSize="17" Foreground="#FF847C">
             Bleakwind Buffet Order
         </TextBlock>
 

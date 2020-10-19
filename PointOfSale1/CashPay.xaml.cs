@@ -134,11 +134,12 @@ namespace PointOfSale
                     ValuePenny.Text = coin1.ToString();
                 }
             }
-
+            /*
             if (totalGiven < Cost)
             {
                 AmountDue.Text = (Cost - totalGiven).ToString();
             }
+            */
         }
 
         private void ButtonMinus_OnClick(object includeSender, RoutedEventArgs includeE)
