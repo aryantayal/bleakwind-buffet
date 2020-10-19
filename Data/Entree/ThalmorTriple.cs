@@ -220,7 +220,7 @@ namespace BleakwindBuffet.Data.Entree
                 if (!Mayo) instructions.Add("Hold mayo");
                 if (!Bacon) instructions.Add("Hold bacon");
                 if (!Egg) instructions.Add("Hold egg");
-                NotifyOfPropertyChanged("SpecialInstructions");
+                //NotifyOfPropertyChanged("SpecialInstructions");
                 return instructions;
             }
         }

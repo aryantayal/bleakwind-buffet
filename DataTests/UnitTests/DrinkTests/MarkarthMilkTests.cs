@@ -87,7 +87,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         {
             MarkarthMilk mm = new MarkarthMilk();
             mm.Ice = includeIce;
-            if (!includeIce) Assert.Contains("Add ice", mm.SpecialInstructions);
+            if (includeIce) Assert.Contains("Add ice", mm.SpecialInstructions);
             else Assert.Empty(mm.SpecialInstructions);
         }
 

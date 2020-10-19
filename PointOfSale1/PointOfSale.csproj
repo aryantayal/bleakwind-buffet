@@ -11,6 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="RoundRegister">
+      <HintPath>..\RoundRegister.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="DoubleDragur - Copy %282%29.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>DoubleDragur - Copy (2).xaml</DependentUpon>

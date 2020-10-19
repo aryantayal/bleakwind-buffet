@@ -82,7 +82,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Name ="CancelButton" Click="CancelButton_OnClick">Cancel</Button>
-            <Button Grid.Column="1">Pay</Button>
+            <Button Grid.Column="1" Name="PayButton" Click="PayButton_OnClick">Pay</Button>
         </Grid>
     </Grid>
 </UserControl>

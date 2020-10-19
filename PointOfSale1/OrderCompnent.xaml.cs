@@ -161,9 +161,19 @@ namespace PointOfSale
 
         private void CancelButton_OnClick(object includeSender, RoutedEventArgs includeE)
         {
+            if (DataContext is Order o)
+            {
+                o = new Order();
+                var i = this.FindAncestor<MainWindow>();
+                i.DataContext = o;
+            }
+        }
+
+        private void PayButton_OnClick(object includeSender, RoutedEventArgs includeE)
+        {
             var orderControl = this.FindAncestor<MainWindow>();
-                MenuSelector ms = new MenuSelector();
-                orderControl.swapScreen(ms);
+            PaymentScreen ps = new PaymentScreen();
+            orderControl.swapScreen(ps);
         }
     }
 }
