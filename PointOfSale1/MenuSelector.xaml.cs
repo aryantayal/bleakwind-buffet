@@ -277,5 +277,12 @@ namespace PointOfSale
             tt.DataContext = item;
             o.Add(item);
         }
+
+        private void bCombo_Click(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<MainWindow>();
+            ComboPage cp = new ComboPage();
+            orderControl.swapScreen(cp);
+        }
     }
 }

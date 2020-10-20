@@ -42,7 +42,7 @@ namespace PointOfSale
             if (options == CardTransactionResult.Approved)
             {
                 //Print reciept
-                //PrintReciept();
+                PrintReciept();
 
                 //Cancel order
                 var payment = this.FindAncestor<MainWindow>();
@@ -63,6 +63,15 @@ namespace PointOfSale
             if (options == CardTransactionResult.ReadError)
             {
                 MessageBox.Show("Read Error, please try again");
+            }
+        }
+        public void PrintReciept()
+        {
+            var order = (Order)DataContext;
+            foreach (IOrderItem item in order.Items)
+            {
+                StringBuilder sb = new StringBuilder(); // print out prices using item properties, then loop through the special instructions 
+
             }
         }
     }

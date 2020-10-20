@@ -124,7 +124,7 @@
 
 
         <TextBlock  Grid.RowSpan="2" Grid.Column="3" Grid.Row="8" Foreground="GhostWhite" Padding="8,4,4,4" HorizontalAlignment="Center" VerticalAlignment="Center">Amount Due:</TextBlock>
-        <TextBlock Grid.Column="4" Grid.Row="8" Grid.RowSpan="2" Background="#E84A5F" Margin="5,20,5,20" FontSize="19" Padding="3,10,0,0" Name="AmountDue">$0.00</TextBlock>
+        <TextBlock Grid.Column="4" Grid.Row="8" Grid.RowSpan="2" Background="#E84A5F" Margin="5,20,5,20" FontSize="19" Padding="3,10,0,0" Name="AmountDueField" Text="{Binding Path=AmountDue}"></TextBlock>
 
         <TextBlock  Grid.RowSpan="2" Grid.Column="6" Grid.Row="8" Foreground="GhostWhite" Padding="8,25,4,4" >Change <LineBreak/> Owed:</TextBlock>
         <TextBlock Grid.Column="7" Grid.Row="8" Grid.RowSpan="2" Background="#99B898" Margin="5,20,5,20" FontSize="19" Padding="3,10,0,0">$0.00</TextBlock>

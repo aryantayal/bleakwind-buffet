@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
     public class CashPayViewModel
     {
-        public CashPayViewModel(double totalCost)
+        public CashPayViewModel(double totalCost, double totalGiven)
         {
             TotalCost = totalCost;
+            AmountDue = (totalCost - totalGiven);
         }
         
         public double TotalCost
@@ -16,10 +18,13 @@ namespace PointOfSale
             get;
             private set;
         }
-
-        public double AmountDue
+        
+        public double AmountDue 
         {
-
+            get;
+            private set;
         }
+        
+
     }
 }

@@ -27,16 +27,19 @@
         <Button Name="bGarden" Grid.Column="0" Grid.Row="4" Click="bGarden_Click">Garden Orc Omlette</Button>
         <Button Name="bThugs" Grid.Column="0" Grid.Row="5" Click="bThugs_Click">Thugs T-Bone</Button>
         <Button Name="bPhillyP" Grid.Column="1" Grid.Row="5" Click="bPhillyP_Click">Philly Poacher</Button>
+        
         <Button Name="bSalor" Grid.Column="1" Grid.Row="0" Click="bSalor_Click">Salor Soda</Button>
         <Button Name="bMakath" Grid.Column="1" Grid.Row="1" Click="bMakath_Click">Markath Milk</Button>
         <Button Name="bAretino" Grid.Column="1" Grid.Row="2" Click="bAretino_Click">Aretino Apple Juice</Button>
         <Button Name="bCandlehearth" Grid.Column="1" Grid.Row="3" Click="bCandlehearth_Click">Candlehearth Coffee</Button>
         <Button Name="bWarriorW" Grid.Column="1" Grid.Row="4" Click="bWarriorW_Click">Warrior Water</Button>
+        
         <Button Name="bVokunSalad" Grid.Column="2" Grid.Row="0" Click="bVokunSalad_Click">Vokun Salad</Button>
         <Button Name="bFriedM" Grid.Column="2" Grid.Row="1" Click="bFriedM_Click">Fried Miraak</Button>
         <Button Name="bMadOtar" Grid.Column="2" Grid.Row="2" Click="bMadOtar_Click">Mad Otar Grits</Button>
         <Button Name="bDragonW" Grid.Column="2" Grid.Row="3" Click="bDragonW_Click">Dragonborn Waffle Fries</Button>
 
+        <Button Name="bCombo" Grid.Column="2" Grid.Row="5" Click="bCombo_Click">Combo</Button>
 
 
     </Grid>

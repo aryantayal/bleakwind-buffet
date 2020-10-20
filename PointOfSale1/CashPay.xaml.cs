@@ -38,8 +38,6 @@ namespace PointOfSale
             x.swapScreen(new MenuSelector());
         }
 
-        //Set the total cost to a double that will be used to compare how much is due or change
-        //public double Cost = Convert.ToDouble(TotalSale.Text);
 
         private double totalGiven = 0;
 
@@ -50,7 +48,7 @@ namespace PointOfSale
             Value100.Text = bill100.ToString();
             if (DataContext is Order o)
             {
-                CashPayViewModel cpv = new CashPayViewModel(o.TotalCost);
+                CashPayViewModel cpv = new CashPayViewModel(o.TotalCost, totalGiven);
                 DataContext = cpv;
             }
             
@@ -142,12 +140,6 @@ namespace PointOfSale
                     ValuePenny.Text = coin1.ToString();
                 }
             }
-            /*
-            if (totalGiven < Cost)
-            {
-                AmountDue.Text = (Cost - totalGiven).ToString();
-            }
-            */
         }
 
         private void ButtonMinus_OnClick(object includeSender, RoutedEventArgs includeE)
