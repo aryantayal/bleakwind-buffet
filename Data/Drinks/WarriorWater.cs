@@ -16,6 +16,11 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class WarriorWater : Drink, INotifyPropertyChanged
     {
+        public WarriorWater()
+        {
+            Size = Size.Small;
+        }
+
         public override Size Size
         {
             get => size;
@@ -25,18 +30,19 @@ namespace BleakwindBuffet.Data.Drinks
                 switch (value)
                 {
                     case Size.Large:
-                        this.Price = 0;
-                        this.Calories = 0;
+                        Price = 0;
+                        Calories = 0;
                         break;
                     case Size.Medium:
-                        this.Price = 0;
-                        this.Calories = 0;
+                        Price = 0;
+                        Calories = 0;
                         break;
                     case Size.Small:
-                        this.Price = 0;
-                        this.Calories = 0;
+                        Price = 0;
+                        Calories = 0;
                         break;
                 }
+
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
@@ -53,7 +59,7 @@ namespace BleakwindBuffet.Data.Drinks
 
         public bool Ice
         {
-            get { return ice; }
+            get => ice;
             set
             {
                 ice = value;
@@ -70,7 +76,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <param name="lemon">bool lemon for water</param>
         public bool Lemon
         {
-            get { return lemon; }
+            get => lemon;
             set
             {
                 lemon = value;
@@ -87,7 +93,7 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 if (!Ice) instructions.Add("Hold ice");
                 if (Lemon) instructions.Add("Add lemon");
                 return instructions;

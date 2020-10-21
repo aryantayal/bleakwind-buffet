@@ -39,22 +39,16 @@ namespace PointOfSale
 
         private void RemoveItem(object sender, RoutedEventArgs args)
         {
-
             if (DataContext is Order order && sender is Button button && button.DataContext is IOrderItem item)
-            {
                 order.Remove(item);
-            }
         }
 
         private void OrderItems_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
             FrameworkElement screen = null;
             var orderComp = this.FindAncestor<MainWindow>();
             if (DataContext is Order order)
-            {
                 if (sender is ListBox lb)
-                {
                     if (lb.SelectedItem is IOrderItem item)
                     {
                         if (item is BriarheartBurger)
@@ -154,9 +148,6 @@ namespace PointOfSale
                             orderComp?.swapScreen(screen);
                         }
                     }
-                }
-            }
-            
         }
 
         private void CancelButton_OnClick(object includeSender, RoutedEventArgs includeE)
@@ -172,7 +163,7 @@ namespace PointOfSale
         private void PayButton_OnClick(object includeSender, RoutedEventArgs includeE)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            PaymentScreen ps = new PaymentScreen();
+            var ps = new PaymentScreen();
             orderControl.swapScreen(ps);
         }
     }

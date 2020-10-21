@@ -36,10 +36,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
-        public string Name
-        {
-            get => ToString();
-        }
+        public string Name => ToString();
 
         /// <summary>
         /// Update event handler

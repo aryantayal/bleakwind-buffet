@@ -10,6 +10,11 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class MarkarthMilk : Drink, INotifyPropertyChanged
     {
+        public MarkarthMilk()
+        {
+            Size = Size.Small;
+        }
+
         //public event PropertyChangedEventHandler PropertyChanged;
         public override Size Size
         {
@@ -20,18 +25,19 @@ namespace BleakwindBuffet.Data.Drinks
                 switch (value)
                 {
                     case Size.Small:
-                        this.Price = 1.05;
-                        this.Calories = 56;
+                        Price = 1.05;
+                        Calories = 56;
                         break;
                     case Size.Medium:
-                        this.Price = 1.11;
-                        this.Calories = 72;
+                        Price = 1.11;
+                        Calories = 72;
                         break;
                     case Size.Large:
-                        this.Price = 1.22;
-                        this.Calories = 93;
+                        Price = 1.22;
+                        Calories = 93;
                         break;
                 }
+
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
@@ -44,7 +50,7 @@ namespace BleakwindBuffet.Data.Drinks
 
         public bool Ice
         {
-            get { return ice; }
+            get => ice;
             set
             {
                 ice = value;
@@ -62,7 +68,7 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 if (Ice) instructions.Add("Add ice");
                 return instructions;
             }

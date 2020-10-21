@@ -14,6 +14,11 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class VokunSalad : Side
     {
+        public VokunSalad()
+        {
+            Size = Size.Small;
+        }
+
         public override Size Size
         {
             get => size;
@@ -23,16 +28,16 @@ namespace BleakwindBuffet.Data.Sides
                 switch (value)
                 {
                     case Size.Small:
-                        this.Price = .93;
-                        this.Calories = 41;
+                        Price = .93;
+                        Calories = 41;
                         break;
                     case Size.Medium:
-                        this.Price = 1.28;
-                        this.Calories = 52;
+                        Price = 1.28;
+                        Calories = 52;
                         break;
                     case Size.Large:
-                        this.Price = 1.82;
-                        this.Calories = 73;
+                        Price = 1.82;
+                        Calories = 73;
                         break;
                 }
 
@@ -51,7 +56,7 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 return instructions;
             }
         }

@@ -15,6 +15,11 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class MadOtarGrits : Side
     {
+        public MadOtarGrits()
+        {
+            Size = Size.Small;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -27,16 +32,16 @@ namespace BleakwindBuffet.Data.Sides
                 switch (value)
                 {
                     case Size.Small:
-                        this.Price = 1.22;
-                        this.Calories = 105;
+                        Price = 1.22;
+                        Calories = 105;
                         break;
                     case Size.Medium:
-                        this.Price = 1.58;
-                        this.Calories = 142;
+                        Price = 1.58;
+                        Calories = 142;
                         break;
                     case Size.Large:
-                        this.Price = 1.93;
-                        this.Calories = 179;
+                        Price = 1.93;
+                        Calories = 179;
                         break;
                 }
 
@@ -55,7 +60,7 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 return instructions;
             }
         }

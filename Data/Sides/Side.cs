@@ -28,10 +28,8 @@ namespace BleakwindBuffet.Data.Sides
         public abstract Size Size { get; set; }
 
 
-        public string Name
-        {
-            get => ToString();
-        }
+        public string Name => ToString();
+
         /// <summary>
         /// the price of the side
         /// </summary>

@@ -6,7 +6,6 @@
 
 using System.ComponentModel;
 using Xunit;
-
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
@@ -18,20 +17,21 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [Fact]
         public void ShouldBeASide()
         {
-            MadOtarGrits mo = new MadOtarGrits();
+            var mo = new MadOtarGrits();
             Assert.IsAssignableFrom<Side>(mo);
         }
+
         [Fact]
         public void ShouldBeSmallByDefault()
         {
-            MadOtarGrits mo = new MadOtarGrits();
+            var mo = new MadOtarGrits();
             Assert.Equal(Size.Small, mo.Size);
         }
-                
+
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
-            MadOtarGrits mo = new MadOtarGrits();
+            var mo = new MadOtarGrits();
             mo.Size = Size.Large;
             Assert.Equal(Size.Large, mo.Size);
             mo.Size = Size.Medium;
@@ -43,7 +43,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [Fact]
         public void ShouldReturnCorrectStringOnSpecialInstructions()
         {
-            MadOtarGrits mo = new MadOtarGrits();
+            var mo = new MadOtarGrits();
             Assert.Empty(mo.SpecialInstructions);
         }
 
@@ -53,7 +53,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, 1.93)]
         public void ShouldReturnCorrectPriceBasedOnSize(Size size, double price)
         {
-            MadOtarGrits mo = new MadOtarGrits();
+            var mo = new MadOtarGrits();
             mo.Size = size;
             Assert.Equal(price, mo.Price);
         }
@@ -64,7 +64,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, 179)]
         public void ShouldReturnCorrectCaloriesBasedOnSize(Size size, uint calories)
         {
-            MadOtarGrits mo = new MadOtarGrits();
+            var mo = new MadOtarGrits();
             mo.Size = size;
             Assert.Equal(calories, mo.Calories);
         }
@@ -75,10 +75,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, "Large Mad Otar Grits")]
         public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name)
         {
-            MadOtarGrits mo = new MadOtarGrits();
+            var mo = new MadOtarGrits();
             mo.Size = size;
             Assert.Equal(name, mo.ToString());
         }
+
         [Fact]
         public void ChangingSizeNotifiesSizeProperty()
         {
@@ -87,6 +88,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.PropertyChanged(MOG, "Size", () => { MOG.Size = Size.Medium; });
             Assert.PropertyChanged(MOG, "Size", () => { MOG.Size = Size.Large; });
         }
+
         [Fact]
         public void ChangingSizeNotifiesPriceProperty()
         {
@@ -95,6 +97,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.PropertyChanged(MOG, "Price", () => { MOG.Size = Size.Medium; });
             Assert.PropertyChanged(MOG, "Price", () => { MOG.Size = Size.Medium; });
         }
+
         [Fact]
         public void ChangingSizeNotifiesCaloriesProperty()
         {
@@ -103,6 +106,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.PropertyChanged(MOG, "Calories", () => { MOG.Size = Size.Medium; });
             Assert.PropertyChanged(MOG, "Calories", () => { MOG.Size = Size.Large; });
         }
+
         [Fact]
         public void ChangingSizeNotifiesSpecialInstructionsProperty()
         {
@@ -111,10 +115,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.PropertyChanged(MOG, "SpecialInstructions", () => { MOG.Size = Size.Medium; });
             Assert.PropertyChanged(MOG, "SpecialInstructions", () => { MOG.Size = Size.Large; });
         }
+
         [Fact]
         public void InheritsInterface()
         {
-           MadOtarGrits mog = new MadOtarGrits();
+            var mog = new MadOtarGrits();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(mog);
         }
     }

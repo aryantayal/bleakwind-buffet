@@ -7,7 +7,6 @@
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using Xunit;
-
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
@@ -19,7 +18,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ShouldContainEntrees()
         {
-            List<IOrderItem> entrees = (List<IOrderItem>) Menu.Entrees();
+            var entrees = (List<IOrderItem>) Menu.Entrees();
 
             Assert.Collection(entrees,
                 item => Assert.Contains("Briarheart Burger", item.ToString()),
@@ -35,30 +34,28 @@ namespace BleakwindBuffet.DataTests.UnitTests
         [Fact]
         public void ShouldContainSides()
         {
-            List<IOrderItem> sides = (List<IOrderItem>)Menu.Sides();
+            var sides = (List<IOrderItem>) Menu.Sides();
 
             Assert.Collection(sides,
-            item => Assert.Contains("Small Dragonborn Waffle Fries", item.ToString()),
-            item => Assert.Contains("Small Fried Miraak", item.ToString()),
-            item => Assert.Contains("Small Mad Otar Grits", item.ToString()),
-            item => Assert.Contains("Small Vokun Salad", item.ToString()),
-
-            item => Assert.Contains("Medium Dragonborn Waffle Fries", item.ToString()),
-            item => Assert.Contains("Medium Fried Miraak", item.ToString()),
-            item => Assert.Contains("Medium Mad Otar Grits", item.ToString()),
-            item => Assert.Contains("Medium Vokun Salad", item.ToString()),
-
-            item => Assert.Contains("Large Dragonborn Waffle Fries", item.ToString()),
-            item => Assert.Contains("Large Fried Miraak", item.ToString()),
-            item => Assert.Contains("Large Mad Otar Grits", item.ToString()),
-            item => Assert.Contains("Large Vokun Salad", item.ToString())
+                item => Assert.Contains("Small Dragonborn Waffle Fries", item.ToString()),
+                item => Assert.Contains("Small Fried Miraak", item.ToString()),
+                item => Assert.Contains("Small Mad Otar Grits", item.ToString()),
+                item => Assert.Contains("Small Vokun Salad", item.ToString()),
+                item => Assert.Contains("Medium Dragonborn Waffle Fries", item.ToString()),
+                item => Assert.Contains("Medium Fried Miraak", item.ToString()),
+                item => Assert.Contains("Medium Mad Otar Grits", item.ToString()),
+                item => Assert.Contains("Medium Vokun Salad", item.ToString()),
+                item => Assert.Contains("Large Dragonborn Waffle Fries", item.ToString()),
+                item => Assert.Contains("Large Fried Miraak", item.ToString()),
+                item => Assert.Contains("Large Mad Otar Grits", item.ToString()),
+                item => Assert.Contains("Large Vokun Salad", item.ToString())
             );
         }
 
         [Fact]
         public void ShouldContainDrinks()
         {
-            List<IOrderItem> drinks = (List<IOrderItem>)Menu.Drinks();
+            var drinks = (List<IOrderItem>) Menu.Drinks();
 
             Assert.Collection(drinks,
                 item => Assert.Contains("Small Aretino Apple Juice", item.ToString()),
@@ -71,7 +68,6 @@ namespace BleakwindBuffet.DataTests.UnitTests
                 item => Assert.Contains("Small Lemon Sailor Soda", item.ToString()),
                 item => Assert.Contains("Small Peach Sailor Soda", item.ToString()),
                 item => Assert.Contains("Small Watermelon Sailor Soda", item.ToString()),
-
                 item => Assert.Contains("Medium Aretino Apple Juice", item.ToString()),
                 item => Assert.Contains("Medium Candlehearth Coffee", item.ToString()),
                 item => Assert.Contains("Medium Markarth Milk", item.ToString()),
@@ -82,7 +78,6 @@ namespace BleakwindBuffet.DataTests.UnitTests
                 item => Assert.Contains("Medium Lemon Sailor Soda", item.ToString()),
                 item => Assert.Contains("Medium Peach Sailor Soda", item.ToString()),
                 item => Assert.Contains("Medium Watermelon Sailor Soda", item.ToString()),
-
                 item => Assert.Contains("Large Aretino Apple Juice", item.ToString()),
                 item => Assert.Contains("Large Candlehearth Coffee", item.ToString()),
                 item => Assert.Contains("Large Markarth Milk", item.ToString()),
@@ -98,7 +93,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
 
         public void ShouldBeFullMenu()
         {
-            List<IOrderItem> menu = (List<IOrderItem>)Menu.FullMenu();
+            var menu = (List<IOrderItem>) Menu.FullMenu();
 
             Assert.Collection(menu,
                 item => Assert.Contains("Brairheart Burger", item.ToString()),
@@ -107,37 +102,28 @@ namespace BleakwindBuffet.DataTests.UnitTests
                 item => Assert.Contains("Philly Poacher", item.ToString()),
                 item => Assert.Contains("Smokehouse Skeleton", item.ToString()),
                 item => Assert.Contains("Thugs T-Bone", item.ToString()),
-
                 item => Assert.Contains("Medium Dragonborn Waffle Fries", item.ToString()),
                 item => Assert.Contains("Large Dragonborn Waffle Fries", item.ToString()),
-
                 item => Assert.Contains("Small Fried Miraak", item.ToString()),
                 item => Assert.Contains("Medium Fried Miraak", item.ToString()),
                 item => Assert.Contains("Large Fried Miraak", item.ToString()),
-
                 item => Assert.Contains("Small Mad Otar Grits", item.ToString()),
                 item => Assert.Contains("Medium Mad Otar Grits", item.ToString()),
                 item => Assert.Contains("Large Mad Otar Grits", item.ToString()),
-
                 item => Assert.Contains("Small Vokun Salad", item.ToString()),
                 item => Assert.Contains("Medium Vokun Salad", item.ToString()),
                 item => Assert.Contains("Large Vokun Salad", item.ToString()),
-
                 item => Assert.Contains("Medium Aretino Apple Juice", item.ToString()),
                 item => Assert.Contains("Large Aretino Apple Juice", item.ToString()),
-
                 item => Assert.Contains("Small Candlehearth Coffee", item.ToString()),
                 item => Assert.Contains("Medium Candlehearth Coffee", item.ToString()),
                 item => Assert.Contains("Large Candlehearth Coffee", item.ToString()),
-
                 item => Assert.Contains("Small Markarth Milk", item.ToString()),
                 item => Assert.Contains("Medium Markarth Milk", item.ToString()),
                 item => Assert.Contains("Large Markarth Milk", item.ToString()),
-
                 item => Assert.Contains("Small Warrior Water", item.ToString()),
                 item => Assert.Contains("Medium Warrior Water", item.ToString()),
                 item => Assert.Contains("Large Warrior Water", item.ToString()),
-
                 item => Assert.Contains("Small Blackberry Sailor Soda", item.ToString()),
                 item => Assert.Contains("Medium Blackberry Sailor Soda", item.ToString()),
                 item => Assert.Contains("Large Blackberry Sailor Soda", item.ToString()),
@@ -156,9 +142,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
                 item => Assert.Contains("Small Watermelon Sailor Soda", item.ToString()),
                 item => Assert.Contains("Medium Watermelon Sailor Soda", item.ToString()),
                 item => Assert.Contains("Large Watermelon Sailor Soda", item.ToString())
-
             );
-
         }
     }
 }

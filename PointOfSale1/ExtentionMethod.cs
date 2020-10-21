@@ -3,6 +3,7 @@
  * Class: ExtensionMethod.cs
  * Purpose: Switches screens
  */
+
 using System.Windows;
 using System.Windows.Media;
 

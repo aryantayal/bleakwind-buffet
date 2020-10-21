@@ -23,12 +23,14 @@ namespace PointOfSale.Sides
     /// </summary>
     public partial class MadOtar : UserControl
     {
-        private  MadOtarGrits mo = new MadOtarGrits();
+        private MadOtarGrits mo = new MadOtarGrits();
+
         public MadOtar()
         {
             InitializeComponent();
             DataContext = mo;
         }
+
         /// <summary>
         /// After user selects the specification the done button it takes it back to the main menu selector
         /// </summary>
@@ -37,21 +39,26 @@ namespace PointOfSale.Sides
         private void doneButton_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            MenuSelector ms = new MenuSelector();
+            var ms = new MenuSelector();
             orderControl.swapScreen(ms);
         }
 
         private void ComboBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DataContext is MadOtarGrits)
-            {
                 foreach (ComboBox s in e.AddedItems)
                 {
-                    if (s.Name == "Small") mo.Size = BleakwindBuffet.Data.Enums.Size.Small;
-                    if (s.Name == "Medium") mo.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+                    if (s.Name == "Small") mo.Size = Size.Small;
+                    if (s.Name == "Medium") mo.Size = Size.Medium;
                     if (s.Name == "Large") mo.Size = Size.Large;
                 }
-            }
+        }
+
+        private void DoneComboButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<MainWindow>();
+            var cp = new ComboPage();
+            orderControl.swapScreen(cp);
         }
     }
 }

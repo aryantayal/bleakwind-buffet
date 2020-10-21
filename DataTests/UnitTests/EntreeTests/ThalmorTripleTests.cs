@@ -6,7 +6,6 @@
 
 using System.ComponentModel;
 using Xunit;
-
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entree;
 
@@ -17,83 +16,84 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAnEntree()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             Assert.IsAssignableFrom<Entree>(tt);
         }
+
         [Fact]
         public void ShouldIncludeBunByDefault()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             Assert.True(tt.Bun);
         }
 
         [Fact]
         public void ShouldIncludeKetchupByDefault()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             Assert.True(tt.Ketchup);
         }
 
         [Fact]
         public void ShouldIncludeMustardByDefault()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             Assert.True(tt.Mustard);
         }
 
         [Fact]
         public void ShouldIncludePickleByDefault()
         {
-            ThalmorTriple tt = new ThalmorTriple(); 
+            var tt = new ThalmorTriple();
             Assert.True(tt.Pickle);
         }
 
         [Fact]
         public void ShouldIncludeCheeseByDefault()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             Assert.True(tt.Cheese);
         }
 
         [Fact]
         public void ShouldIncludeTomatoByDefault()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             Assert.True(tt.Tomato);
         }
 
         [Fact]
         public void ShouldIncludeLettuceByDefault()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             Assert.True(tt.Lettuce);
         }
 
         [Fact]
         public void ShouldIncludeMayoByDefault()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             Assert.True(tt.Mayo);
         }
 
         [Fact]
         public void ShouldIncludeBaconByDefault()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             Assert.True(tt.Bacon);
         }
 
         [Fact]
         public void ShouldIncludeEggByDefault()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             Assert.True(tt.Egg);
         }
 
         [Fact]
         public void ShouldBeAbleToSetBun()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             tt.Bun = true;
             Assert.True(tt.Bun);
             tt.Bun = false;
@@ -103,7 +103,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAbleToSetKetchup()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             tt.Ketchup = true;
             Assert.True(tt.Ketchup);
             tt.Ketchup = false;
@@ -113,7 +113,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAbleToSetMustard()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             tt.Mustard = true;
             Assert.True(tt.Mustard);
             tt.Mustard = false;
@@ -123,7 +123,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAbleToSetPickle()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             tt.Pickle = true;
             Assert.True(tt.Pickle);
             tt.Pickle = false;
@@ -133,7 +133,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAbleToSetCheese()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             tt.Cheese = true;
             Assert.True(tt.Cheese);
             tt.Cheese = false;
@@ -143,7 +143,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAbleToSetTomato()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             tt.Tomato = true;
             Assert.True(tt.Tomato);
             tt.Tomato = false;
@@ -153,7 +153,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAbleToSetLettuce()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             tt.Lettuce = true;
             Assert.True(tt.Lettuce);
             tt.Lettuce = false;
@@ -163,7 +163,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAbleToSetMayo()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             tt.Mayo = true;
             Assert.True(tt.Mayo);
             tt.Mayo = false;
@@ -173,7 +173,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAbleToSetBacon()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             tt.Bacon = true;
             Assert.True(tt.Bacon);
             tt.Bacon = false;
@@ -183,7 +183,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAbleToSetEgg()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             tt.Egg = true;
             Assert.True(tt.Egg);
             tt.Egg = false;
@@ -193,16 +193,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             Assert.Equal(8.32, tt.Price);
-
         }
 
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
-            
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             uint cal = 943;
             Assert.Equal(cal, tt.Calories);
         }
@@ -211,11 +209,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [InlineData(true, true, true, true, true, true, true, true, true, true)]
         [InlineData(false, false, false, false, false, false, false, false, false, false)]
         public void ShouldReturnCorrectSpecialInstructions(bool includeBun, bool includeKetchup, bool includeMustard,
-                                                                    bool includePickle, bool includeCheese, bool includeTomato,
-                                                                    bool includeLettuce, bool includeMayo,
-                                                                    bool includeBacon, bool includeEgg)
+            bool includePickle, bool includeCheese, bool includeTomato,
+            bool includeLettuce, bool includeMayo,
+            bool includeBacon, bool includeEgg)
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             tt.Bun = includeBun;
             tt.Ketchup = includeKetchup;
             tt.Mustard = includeMustard;
@@ -234,16 +232,16 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             else if (!includeBacon) Assert.Contains("Hold bacon", tt.SpecialInstructions);
             else if (!includeEgg) Assert.Contains("Hold egg", tt.SpecialInstructions);
             else Assert.Empty(tt.SpecialInstructions);
-
         }
 
         [Fact]
         public void ShouldReturnCorrectToString()
         {
-            ThalmorTriple tt = new ThalmorTriple();
-            string name = "Thalmor Triple";
+            var tt = new ThalmorTriple();
+            var name = "Thalmor Triple";
             Assert.Equal(name, tt.ToString());
         }
+
         [Fact]
         public void ChangingKetchupNotifiesKetchupProperty()
         {
@@ -251,6 +249,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "Ketchup", () => { TT.Ketchup = true; });
             Assert.PropertyChanged(TT, "Ketchup", () => { TT.Ketchup = false; });
         }
+
         [Fact]
         public void ChangingMustardNotifiesMustardProperty()
         {
@@ -258,6 +257,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "Mustard", () => { TT.Mustard = true; });
             Assert.PropertyChanged(TT, "Mustard", () => { TT.Mustard = false; });
         }
+
         [Fact]
         public void ChangingTomatoNotifiesTomatoProperty()
         {
@@ -265,6 +265,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "Tomato", () => { TT.Tomato = true; });
             Assert.PropertyChanged(TT, "Tomato", () => { TT.Tomato = false; });
         }
+
         [Fact]
         public void ChangingMayoNotifiesMayoProperty()
         {
@@ -272,6 +273,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "Mayo", () => { TT.Mayo = true; });
             Assert.PropertyChanged(TT, "Mayo", () => { TT.Mayo = false; });
         }
+
         [Fact]
         public void ChangingEggNotifiesEggProperty()
         {
@@ -279,6 +281,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "Egg", () => { TT.Egg = true; });
             Assert.PropertyChanged(TT, "Egg", () => { TT.Egg = false; });
         }
+
         [Fact]
         public void ChangingBaconNotifiesBaconProperty()
         {
@@ -286,6 +289,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "Bacon", () => { TT.Bacon = true; });
             Assert.PropertyChanged(TT, "Bacon", () => { TT.Bacon = false; });
         }
+
         [Fact]
         public void ChangingLettuceNotifiesLettuceProperty()
         {
@@ -293,6 +297,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "Lettuce", () => { TT.Lettuce = true; });
             Assert.PropertyChanged(TT, "Lettuce", () => { TT.Lettuce = false; });
         }
+
         [Fact]
         public void ChangingKetchupNotifiesSpecialInstructionsProperty()
         {
@@ -300,6 +305,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Ketchup = true; });
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Ketchup = false; });
         }
+
         [Fact]
         public void ChangingMustardNotifiesSpecialInstructionsProperty()
         {
@@ -307,6 +313,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Mustard = true; });
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Mustard = false; });
         }
+
         [Fact]
         public void ChangingTomatoNotifiesSpecialInstructionsProperty()
         {
@@ -314,6 +321,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Tomato = true; });
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Tomato = false; });
         }
+
         [Fact]
         public void ChangingMayoNotifiesSpecialInstructionsProperty()
         {
@@ -321,6 +329,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Mayo = true; });
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Mayo = false; });
         }
+
         [Fact]
         public void ChangingEggNotifiesSpecialInstructionsProperty()
         {
@@ -328,6 +337,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Egg = true; });
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Egg = false; });
         }
+
         [Fact]
         public void ChangingBaconNotifiesSpecialInstructionsProperty()
         {
@@ -335,6 +345,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Bacon = true; });
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Bacon = false; });
         }
+
         [Fact]
         public void ChangingLettuceNotifiesSpecialInstructionsProperty()
         {
@@ -342,10 +353,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Lettuce = true; });
             Assert.PropertyChanged(TT, "SpecialInstructions", () => { TT.Lettuce = false; });
         }
+
         [Fact]
         public void InheritsInterface()
         {
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(tt);
         }
     }

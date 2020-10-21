@@ -8,19 +8,19 @@
         Title="Bleakwind Buffet Point Of Sale" Height="550" Width="900">
     <Grid Background="#2A363B">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="1.5*" />
         </Grid.ColumnDefinitions>
         <TextBlock FontWeight="Bold" TextAlignment="Center" FontSize="17" Foreground="#FF847C">
             Bleakwind Buffet Order
         </TextBlock>
 
         <Border Name="ButtonBorder" Grid.Column="0">
-            <local:MenuSelector Margin="20,20,20,20"/>
+            <local:MenuSelector Margin="20,20,20,20" />
         </Border>
 
         <Border Name="OrderBorder" Grid.Column="1">
-            <local:OrderCompnent Margin="20,20,20,20"/>
+            <local:OrderCompnent Margin="20,20,20,20" />
         </Border>
 
     </Grid>

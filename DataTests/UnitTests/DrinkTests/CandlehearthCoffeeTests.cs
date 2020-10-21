@@ -6,7 +6,6 @@
 
 using System.ComponentModel;
 using Xunit;
-
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
@@ -18,42 +17,42 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeADrink()
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             Assert.IsAssignableFrom<Drink>(ch);
         }
 
         [Fact]
         public void ShouldNotIncludeIceByDefault()
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             Assert.False(ch.Ice);
         }
 
         [Fact]
         public void ShouldNotBeDecafByDefault()
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             Assert.False(ch.Decaf);
         }
 
         [Fact]
         public void ShouldNotHaveRoomForCreamByDefault()
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             Assert.False(ch.RoomForCream);
         }
 
         [Fact]
         public void ShouldBeSmallByDefault()
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             Assert.Equal(Size.Small, ch.Size);
         }
 
         [Fact]
         public void ShouldBeAbleToSetIce()
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             ch.Ice = true;
             Assert.True(ch.Ice);
             ch.Ice = false;
@@ -63,7 +62,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAbleToSetDecaf()
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             ch.Decaf = true;
             Assert.True(ch.Decaf);
             ch.Decaf = false;
@@ -73,7 +72,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAbleToSetRoomForCream()
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             ch.RoomForCream = true;
             Assert.True(ch.RoomForCream);
             ch.RoomForCream = false;
@@ -83,7 +82,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             ch.Size = Size.Large;
             Assert.Equal(Size.Large, ch.Size);
             ch.Size = Size.Medium;
@@ -98,7 +97,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, 1.75)]
         public void ShouldHaveCorrectPriceForSize(Size size, double price)
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             ch.Size = size;
             Assert.Equal(price, ch.Price);
         }
@@ -109,7 +108,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, 20)]
         public void ShouldHaveCorrectCaloriesForSize(Size size, uint cal)
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             ch.Size = size;
             Assert.Equal(cal, ch.Calories);
         }
@@ -121,13 +120,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(false, false)]
         public void ShouldHaveCorrectSpecialInstructions(bool includeIce, bool includeCream)
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             ch.Ice = includeIce;
             ch.RoomForCream = includeCream;
             if (includeIce) Assert.Contains("Add ice", ch.SpecialInstructions);
             else if (includeCream) Assert.Contains("Add Room for cream", ch.SpecialInstructions);
             else Assert.Empty(ch.SpecialInstructions);
-
         }
 
         [Theory]
@@ -139,7 +137,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(false, Size.Large, "Large Candlehearth Coffee")]
         public void ShouldReturnCorrectToStringBasedOnSize(bool decaf, Size size, string name)
         {
-            CandlehearthCoffee ch = new CandlehearthCoffee();
+            var ch = new CandlehearthCoffee();
             ch.Size = size;
             ch.Decaf = decaf;
             Assert.Equal(name, ch.ToString());
@@ -152,6 +150,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(CC, "Ice", () => { CC.Ice = true; });
             Assert.PropertyChanged(CC, "Ice", () => { CC.Ice = false; });
         }
+
         [Fact]
         public void ChangingCreamNotifiesCreamProperty()
         {
@@ -159,6 +158,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(CC, "Cream", () => { CC.RoomForCream = true; });
             Assert.PropertyChanged(CC, "Cream", () => { CC.RoomForCream = false; });
         }
+
         [Fact]
         public void ChangingDecafNotifiesDecafProperty()
         {
@@ -166,6 +166,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(CC, "Decaf", () => { CC.Decaf = true; });
             Assert.PropertyChanged(CC, "Decaf", () => { CC.Decaf = false; });
         }
+
         [Fact]
         public void ChangingSizeNotifiesSizeProperty()
         {
@@ -183,6 +184,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(CC, "Price", () => { CC.Size = Size.Medium; });
             Assert.PropertyChanged(CC, "Price", () => { CC.Size = Size.Medium; });
         }
+
         [Fact]
         public void ChangingSizeNotifiesCaloriesProperty()
         {
@@ -195,9 +197,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void InheritsInterface()
         {
-            CandlehearthCoffee chc = new CandlehearthCoffee();
+            var chc = new CandlehearthCoffee();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(chc);
         }
-        
     }
 }

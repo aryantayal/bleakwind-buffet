@@ -25,10 +25,14 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkPage : UserControl
     {
-        public DrinkPage()
+        public DrinkPage(Combo c)
         {
             InitializeComponent();
+            combo = c;
         }
+
+        private Combo combo = new Combo();
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -37,14 +41,14 @@ namespace PointOfSale
         private void bCandlehearth_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            CandleheartCoffee mo = new CandleheartCoffee();
+            var mo = new CandleheartCoffee();
             orderControl.swapScreen(mo);
-            BleakwindBuffet.Data.Drinks.CandlehearthCoffee item = new BleakwindBuffet.Data.Drinks.CandlehearthCoffee();
+            var item = new CandlehearthCoffee();
             //Order o = (Order)orderControl.DataContext;
             mo.DataContext = item;
-            Combo c = new Combo();
-            c.Drink = item;
+            combo.Drink = item;
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -53,14 +57,14 @@ namespace PointOfSale
         private void bWarriorW_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             orderControl.swapScreen(ww);
-            BleakwindBuffet.Data.Drinks.WarriorWater item = new BleakwindBuffet.Data.Drinks.WarriorWater();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Drinks.WarriorWater();
+            var o = (Order) orderControl.DataContext;
             ww.DataContext = item;
-            Combo c = new Combo();
-            c.Drink = item;
+            combo.Drink = item;
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -69,13 +73,14 @@ namespace PointOfSale
         private void bAretino_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            AretinoAppleJuice aaj = new AretinoAppleJuice();
+            var aaj = new AretinoAppleJuice();
             orderControl.swapScreen(aaj);
-            BleakwindBuffet.Data.Drinks.AretinoAppleJuice item = new BleakwindBuffet.Data.Drinks.AretinoAppleJuice();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Drinks.AretinoAppleJuice();
+            var o = (Order) orderControl.DataContext;
             aaj.DataContext = item;
-            o.Add(item);
+            combo.Drink = item;
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -84,13 +89,14 @@ namespace PointOfSale
         private void bMakath_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            cMarkarthMilk mm = new cMarkarthMilk();
+            var mm = new cMarkarthMilk();
             orderControl.swapScreen(mm);
-            BleakwindBuffet.Data.Drinks.MarkarthMilk item = new MarkarthMilk();
-            Order o = (Order)orderControl.DataContext;
+            var item = new MarkarthMilk();
+            var o = (Order) orderControl.DataContext;
             mm.DataContext = item;
-            o.Add(item);
+            combo.Drink = item;
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -99,12 +105,12 @@ namespace PointOfSale
         private void bSalor_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            SailorSoda ss = new SailorSoda();
+            var ss = new SailorSoda();
             orderControl.swapScreen(ss);
-            BleakwindBuffet.Data.Drinks.SailorSoda item = new BleakwindBuffet.Data.Drinks.SailorSoda();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Drinks.SailorSoda();
+            var o = (Order) orderControl.DataContext;
             ss.DataContext = item;
-            o.Add(item);
+            combo.Drink = item;
         }
     }
 }

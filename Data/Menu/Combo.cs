@@ -26,6 +26,10 @@ namespace BleakwindBuffet.Data
 
         private Entree.Entree entree;
 
+        public Combo()
+        {
+        }
+
         /// <summary>
         /// An Entree item in the combo
         /// </summary>
@@ -122,20 +126,12 @@ namespace BleakwindBuffet.Data
             get
             {
                 var si = new List<string>();
-                if (Entree != null)
-                {
-                    si.Add(Entree.ToString() + Environment.NewLine);
-                    si.Add(Entree.SpecialInstructions.ToString() + Environment.NewLine);
-                }
-
-                if (Drink != null)
-                {
-                    si.Add(Drink.ToString() + Environment.NewLine);
-                    si.Add(Drink.SpecialInstructions.ToString() + Environment.NewLine);
-                }
-
-                if (Side != null) si.Add(Side.SpecialInstructions.ToString());
-
+                si.Add(Entree.ToString());
+                si.AddRange(Entree.SpecialInstructions);
+                si.Add(Side.ToString());
+                si.AddRange(Side.SpecialInstructions);
+                si.Add(Drink.ToString());
+                si.AddRange(Drink.SpecialInstructions);
                 return si;
             }
         }

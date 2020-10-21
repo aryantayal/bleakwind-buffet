@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 using PointOfSale1;
 using Size = BleakwindBuffet.Data.Enums.Size;
 
@@ -25,12 +26,12 @@ namespace PointOfSale
         /// 
         /// </summary>
         private BleakwindBuffet.Data.Drinks.AretinoAppleJuice aj = new BleakwindBuffet.Data.Drinks.AretinoAppleJuice();
+
         public AretinoAppleJuice()
         {
             InitializeComponent();
             //this.DataContext = new BleakwindBuffet.Data.Drinks.AretinoAppleJuice();
             DataContext = aj;
-
         }
 
         /// <summary>
@@ -41,7 +42,7 @@ namespace PointOfSale
         private void doneButton_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            MenuSelector ms = new MenuSelector();
+            var ms = new MenuSelector();
             orderControl.swapScreen(ms);
         }
 
@@ -49,21 +50,26 @@ namespace PointOfSale
         private void ComboBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DataContext is AretinoAppleJuice)
-            {
                 foreach (ComboBox s in e.AddedItems)
                 {
                     if (s.Name == "Small") aj.Size = Size.Small;
                     if (s.Name == "Medium") aj.Size = Size.Medium;
                     if (s.Name == "Large") aj.Size = Size.Large;
                 }
-            }
         }
 
         private void Cancel_OnClick(object includeSender, RoutedEventArgs includeE)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            MenuSelector ms = new MenuSelector();
+            var ms = new MenuSelector();
             orderControl.swapScreen(ms);
+        }
+
+        private void DoneComboButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<MainWindow>();
+            var cp = new ComboPage();
+            orderControl.swapScreen(cp);
         }
     }
 }

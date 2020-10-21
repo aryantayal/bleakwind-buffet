@@ -23,11 +23,13 @@ namespace PointOfSale.Drink
     public partial class SailorSoda : UserControl
     {
         private BleakwindBuffet.Data.Drinks.SailorSoda ss = new BleakwindBuffet.Data.Drinks.SailorSoda();
+
         public SailorSoda()
         {
             InitializeComponent();
             DataContext = ss;
         }
+
         /// <summary>
         /// After user selects the specification the done button it takes it back to the main menu selector
         /// </summary>
@@ -36,9 +38,10 @@ namespace PointOfSale.Drink
         private void doneButton_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            MenuSelector ms = new MenuSelector();
+            var ms = new MenuSelector();
             orderControl.swapScreen(ms);
         }
+
         /*
         private void ComboBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -69,8 +72,15 @@ namespace PointOfSale.Drink
         private void Cancel_OnClick(object includeSender, RoutedEventArgs includeE)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            MenuSelector ms = new MenuSelector();
+            var ms = new MenuSelector();
             orderControl.swapScreen(ms);
+        }
+
+        private void DoneComboButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<MainWindow>();
+            var cp = new ComboPage();
+            orderControl.swapScreen(cp);
         }
     }
 }

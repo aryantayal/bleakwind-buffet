@@ -15,6 +15,11 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class CandlehearthCoffee : Drink, INotifyPropertyChanged
     {
+        public CandlehearthCoffee()
+        {
+            Size = Size.Small;
+        }
+
         public override Size Size
         {
             get => size;
@@ -24,18 +29,19 @@ namespace BleakwindBuffet.Data.Drinks
                 switch (value)
                 {
                     case Size.Small:
-                        this.Price = .75;
-                        this.Calories = 7;
+                        Price = .75;
+                        Calories = 7;
                         break;
                     case Size.Medium:
-                        this.Price = 1.25;
-                        this.Calories = 10;
+                        Price = 1.25;
+                        Calories = 10;
                         break;
                     case Size.Large:
-                        this.Price = 1.75;
-                        this.Calories = 20;
+                        Price = 1.75;
+                        Calories = 20;
                         break;
                 }
+
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
@@ -43,12 +49,12 @@ namespace BleakwindBuffet.Data.Drinks
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
-    
+
         private bool ice = false;
 
         public bool Ice
         {
-            get { return ice; }
+            get => ice;
             set
             {
                 ice = value;
@@ -65,7 +71,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <param name="roomForCream"> the bool for the cream</param>
         public bool RoomForCream
         {
-            get { return roomForCream; }
+            get => roomForCream;
             set
             {
                 roomForCream = value;
@@ -82,7 +88,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <param name="decaf">decaf bool for the drink</param>
         public bool Decaf
         {
-            get { return decaf; }
+            get => decaf;
             set
             {
                 decaf = value;
@@ -100,10 +106,10 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 if (Ice) instructions.Add("Add ice");
                 if (RoomForCream) instructions.Add("Add Room for cream");
-                if(Decaf) instructions.Add("Decaf");
+                if (Decaf) instructions.Add("Decaf");
                 return instructions;
             }
         }

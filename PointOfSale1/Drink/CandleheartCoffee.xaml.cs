@@ -23,10 +23,11 @@ namespace PointOfSale.Drink
     public partial class CandleheartCoffee : UserControl
     {
         private CandlehearthCoffee cc = new CandlehearthCoffee();
+
         public CandleheartCoffee()
         {
             InitializeComponent();
-            DataContext=cc;
+            DataContext = cc;
         }
 
         /// <summary>
@@ -37,40 +38,45 @@ namespace PointOfSale.Drink
         private void doneButton_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            MenuSelector ms = new MenuSelector();
+            var ms = new MenuSelector();
             orderControl.swapScreen(ms);
         }
 
         private void IceBox_OnClick(object sender, RoutedEventArgs e)
         {
-            BleakwindBuffet.Data.Drinks.CandlehearthCoffee cc = new CandlehearthCoffee();
+            var cc = new CandlehearthCoffee();
             cc.Ice = true;
         }
 
 
         private void CreamBox_OnClick(object sender, RoutedEventArgs e)
         {
-            BleakwindBuffet.Data.Drinks.CandlehearthCoffee cc = new CandlehearthCoffee();
+            var cc = new CandlehearthCoffee();
             cc.RoomForCream = true;
         }
 
         private void DecafBox_OnClick(object sender, RoutedEventArgs e)
         {
-            BleakwindBuffet.Data.Drinks.CandlehearthCoffee cc = new CandlehearthCoffee();
+            var cc = new CandlehearthCoffee();
             cc.Decaf = true;
         }
 
         private void ComboBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DataContext is CandlehearthCoffee)
-            {
                 foreach (ComboBox s in e.AddedItems)
                 {
                     if (s.Name == "Small") cc.Size = Size.Small;
                     if (s.Name == "Medium") cc.Size = Size.Medium;
                     if (s.Name == "Large") cc.Size = Size.Large;
                 }
-            }
+        }
+
+        private void DoneComboButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<MainWindow>();
+            var cp = new ComboPage();
+            orderControl.swapScreen(cp);
         }
     }
 }

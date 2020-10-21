@@ -16,6 +16,11 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class SailorSoda : Drink, INotifyPropertyChanged
     {
+        public SailorSoda()
+        {
+            Size = Size.Small;
+        }
+
         public override Size Size
         {
             get => size;
@@ -25,16 +30,16 @@ namespace BleakwindBuffet.Data.Drinks
                 switch (value)
                 {
                     case Size.Small:
-                        this.Price = 1.42;
-                        this.Calories = 117;
+                        Price = 1.42;
+                        Calories = 117;
                         break;
                     case Size.Medium:
-                        this.Price = 1.74;
-                        this.Calories = 153;
+                        Price = 1.74;
+                        Calories = 153;
                         break;
                     case Size.Large:
-                        this.Price = 2.07;
-                        this.Calories = 205;
+                        Price = 2.07;
+                        Calories = 205;
                         break;
                 }
 
@@ -55,7 +60,7 @@ namespace BleakwindBuffet.Data.Drinks
 
         public bool Ice
         {
-            get { return ice; }
+            get => ice;
             set
             {
                 ice = value;
@@ -72,7 +77,7 @@ namespace BleakwindBuffet.Data.Drinks
 
         public SodaFlavor Flavor
         {
-            get { return flavor; }
+            get => flavor;
             set
             {
                 flavor = value;
@@ -91,7 +96,7 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 if (!Ice) instructions.Add("Hold ice");
                 return instructions;
             }

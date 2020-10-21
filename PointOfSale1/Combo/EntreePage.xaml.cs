@@ -24,10 +24,14 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreePage : UserControl
     {
-        public EntreePage()
+        public EntreePage(Combo c)
         {
             InitializeComponent();
+            combo = c;
         }
+
+        private Combo combo = new Combo();
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -35,14 +39,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void bBriarheartBurger_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<PointOfSale1.MainWindow>();
-            BurgerBriar bb = new BurgerBriar();
+            var orderControl = this.FindAncestor<MainWindow>();
+            var bb = new BurgerBriar();
             orderControl.swapScreen(bb);
-            BleakwindBuffet.Data.Entree.BriarheartBurger item = new BriarheartBurger();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BriarheartBurger();
+            var o = (Order) orderControl.DataContext;
             bb.DataContext = item;
-            o.Add(item);
+            combo.Entree = item;
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -50,14 +55,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void bDoubleDragur_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<PointOfSale1.MainWindow>();
-            DoubleDragur dd = new DoubleDragur();
+            var orderControl = this.FindAncestor<MainWindow>();
+            var dd = new DoubleDragur();
             orderControl.swapScreen(dd);
-            BleakwindBuffet.Data.Entree.DoubleDraugr item = new DoubleDraugr();
-            Order o = (Order)orderControl.DataContext;
+            var item = new DoubleDraugr();
+            var o = (Order) orderControl.DataContext;
             dd.DataContext = item;
-            o.Add(item);
+            combo.Entree = item;
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -65,14 +71,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void bSmokehouse_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<PointOfSale1.MainWindow>();
-            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            var orderControl = this.FindAncestor<MainWindow>();
+            var ss = new SmokehouseSkeleton();
             orderControl.swapScreen(ss);
-            BleakwindBuffet.Data.Entree.SmokehouseSkeleton item = new BleakwindBuffet.Data.Entree.SmokehouseSkeleton();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Entree.SmokehouseSkeleton();
+            var o = (Order) orderControl.DataContext;
             ss.DataContext = item;
-            o.Add(item);
+            combo.Entree = item;
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -80,14 +87,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void bGarden_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<PointOfSale1.MainWindow>();
-            GardenOrcOmelette goo = new GardenOrcOmelette();
+            var orderControl = this.FindAncestor<MainWindow>();
+            var goo = new GardenOrcOmelette();
             orderControl.swapScreen(goo);
-            BleakwindBuffet.Data.Entree.GardenOrcOmelette item = new BleakwindBuffet.Data.Entree.GardenOrcOmelette();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Entree.GardenOrcOmelette();
+            var o = (Order) orderControl.DataContext;
             goo.DataContext = item;
-            o.Add(item);
+            combo.Entree = item;
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -95,24 +103,26 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void bPhillyP_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<PointOfSale1.MainWindow>();
-            Entree.cPhilly pp = new Entree.cPhilly();
+            var orderControl = this.FindAncestor<MainWindow>();
+            var pp = new cPhilly();
             orderControl.swapScreen(pp);
-            BleakwindBuffet.Data.Entree.PhillyPoacher item = new PhillyPoacher();
-            Order o = (Order)orderControl.DataContext;
+            var item = new PhillyPoacher();
+            var o = (Order) orderControl.DataContext;
             pp.DataContext = item;
-            o.Add(item);
+            combo.Entree = item;
         }
+
         private void bThugs_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<PointOfSale1.MainWindow>();
-            cThugs t = new cThugs();
+            var orderControl = this.FindAncestor<MainWindow>();
+            var t = new cThugs();
             orderControl.swapScreen(t);
-            BleakwindBuffet.Data.Entree.ThugsTBone item = new ThugsTBone();
-            Order o = (Order)orderControl.DataContext;
+            var item = new ThugsTBone();
+            var o = (Order) orderControl.DataContext;
             t.DataContext = item;
-            o.Add(item);
+            combo.Entree = item;
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -121,12 +131,12 @@ namespace PointOfSale
         private void bTahlmorTriple_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             orderControl.swapScreen(tt);
-            BleakwindBuffet.Data.Entree.ThalmorTriple item = new BleakwindBuffet.Data.Entree.ThalmorTriple();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Entree.ThalmorTriple();
+            var o = (Order) orderControl.DataContext;
             tt.DataContext = item;
-            o.Add(item);
+            combo.Entree = item;
         }
     }
 }

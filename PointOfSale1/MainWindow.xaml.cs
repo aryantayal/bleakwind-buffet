@@ -26,6 +26,7 @@ namespace PointOfSale1
             InitializeComponent();
             DataContext = new Order();
         }
+
         /// <summary>
         /// Sends the page to swap the pages
         /// </summary>

@@ -6,7 +6,6 @@
 
 using System.ComponentModel;
 using Xunit;
-
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
@@ -15,41 +14,38 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class WarriorWaterTests
     {
-
         [Fact]
         public void ShouldBeADrink()
         {
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             Assert.IsAssignableFrom<Drink>(ww);
         }
 
         [Fact]
         public void ShouldIncludeIceByDefault()
         {
-
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             Assert.True(ww.Ice);
         }
 
         [Fact]
         public void ShouldNotIncludeLemonByDefault()
         {
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             Assert.False(ww.Lemon);
-
         }
 
         [Fact]
         public void ShouldBeSmallByDefault()
         {
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             Assert.Equal(Size.Small, ww.Size);
         }
 
         [Fact]
         public void ShouldBeAbleToSetIce()
         {
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             ww.Ice = true;
             Assert.True(ww.Ice);
             ww.Ice = false;
@@ -59,7 +55,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAbleToSetLemon()
         {
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             ww.Lemon = true;
             Assert.True(ww.Lemon);
             ww.Lemon = false;
@@ -69,7 +65,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             ww.Size = Size.Large;
             Assert.Equal(Size.Large, ww.Size);
             ww.Size = Size.Medium;
@@ -84,7 +80,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, 0.0)]
         public void ShouldHaveCorrectPriceForSize(Size size, double price)
         {
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             ww.Size = size;
             Assert.Equal(price, ww.Price);
         }
@@ -95,7 +91,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, 0)]
         public void ShouldHaveCorrectCaloriesForSize(Size size, uint cal)
         {
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             ww.Size = size;
             Assert.Equal(cal, ww.Calories);
         }
@@ -107,7 +103,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(false, false)]
         public void ShouldHaveCorrectSpecialInstructions(bool includeIce, bool includeLemon)
         {
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             ww.Ice = includeIce;
             ww.Lemon = includeLemon;
             if (!includeIce) Assert.Contains("Hold ice", ww.SpecialInstructions);
@@ -121,7 +117,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         [InlineData(Size.Large, "Large Warrior Water")]
         public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name)
         {
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             ww.Size = size;
             Assert.Equal(name, ww.ToString());
         }
@@ -179,6 +175,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Size = Size.Medium; });
             Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Size = Size.Large; });
         }
+
         [Fact]
         public void ChangingLemonNotifiesSpecialInstructionsProperty()
         {
@@ -186,10 +183,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Lemon = true; });
             Assert.PropertyChanged(WW, "SpecialInstructions", () => { WW.Lemon = false; });
         }
+
         [Fact]
         public void InheritsInterface()
         {
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(ww);
         }
     }

@@ -21,12 +21,14 @@ namespace PointOfSale.Drink
     /// </summary>
     public partial class cMarkarthMilk : UserControl
     {
-        private  MarkarthMilk mm = new MarkarthMilk();
+        private MarkarthMilk mm = new MarkarthMilk();
+
         public cMarkarthMilk()
         {
             InitializeComponent();
             DataContext = mm;
         }
+
         /// <summary>
         /// After user selects the specification the done button it takes it back to the main menu selector
         /// </summary>
@@ -35,27 +37,33 @@ namespace PointOfSale.Drink
         private void doneButton_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            MenuSelector ms = new MenuSelector();
+            var ms = new MenuSelector();
             orderControl.swapScreen(ms);
         }
 
         private void ComboBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DataContext is MarkarthMilk)
+                foreach (ComboBox s in e.AddedItems)
                 {
-                    foreach (ComboBox s in e.AddedItems)
-                    {
-                        if (s.Name == "Small") mm.Size = BleakwindBuffet.Data.Enums.Size.Small;
-                        if (s.Name == "Medium") mm.Size = BleakwindBuffet.Data.Enums.Size.Medium;
-                        if (s.Name == "Large") mm.Size = BleakwindBuffet.Data.Enums.Size.Medium;
-                    }
+                    if (s.Name == "Small") mm.Size = BleakwindBuffet.Data.Enums.Size.Small;
+                    if (s.Name == "Medium") mm.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+                    if (s.Name == "Large") mm.Size = BleakwindBuffet.Data.Enums.Size.Medium;
                 }
         }
+
         private void Cancel_OnClick(object includeSender, RoutedEventArgs includeE)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            MenuSelector ms = new MenuSelector();
+            var ms = new MenuSelector();
             orderControl.swapScreen(ms);
+        }
+
+        private void DoneComboButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<MainWindow>();
+            var cp = new ComboPage();
+            orderControl.swapScreen(cp);
         }
     }
 }

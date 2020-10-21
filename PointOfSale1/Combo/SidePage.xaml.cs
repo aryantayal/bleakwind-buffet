@@ -25,10 +25,14 @@ namespace PointOfSale
     /// </summary>
     public partial class SidePage : UserControl
     {
-        public SidePage()
+        public SidePage(Combo c)
         {
             InitializeComponent();
+            combo = c;
         }
+
+        private Combo combo = new Combo();
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -37,13 +41,14 @@ namespace PointOfSale
         private void bVokunSalad_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            VokunSalad vs = new VokunSalad();
+            var vs = new VokunSalad();
             orderControl.swapScreen(vs);
-            BleakwindBuffet.Data.Sides.VokunSalad item = new BleakwindBuffet.Data.Sides.VokunSalad();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Sides.VokunSalad();
+            var o = (Order) orderControl.DataContext;
             vs.DataContext = item;
-            o.Add(item);
+            combo.Side = item;
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -52,13 +57,14 @@ namespace PointOfSale
         private void bFriedM_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            FriedMiraak fm = new FriedMiraak();
+            var fm = new FriedMiraak();
             orderControl.swapScreen(fm);
-            BleakwindBuffet.Data.Sides.FriedMiraak item = new BleakwindBuffet.Data.Sides.FriedMiraak();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Sides.FriedMiraak();
+            var o = (Order) orderControl.DataContext;
             fm.DataContext = item;
-            o.Add(item);
+            combo.Side = item;
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -67,13 +73,14 @@ namespace PointOfSale
         private void bMadOtar_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            MadOtar mo = new MadOtar();
+            var mo = new MadOtar();
             orderControl.swapScreen(mo);
-            BleakwindBuffet.Data.Sides.MadOtarGrits item = new MadOtarGrits();
-            Order o = (Order)orderControl.DataContext;
+            var item = new MadOtarGrits();
+            var o = (Order) orderControl.DataContext;
             mo.DataContext = item;
-            o.Add(item);
+            combo.Side = item;
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -82,12 +89,12 @@ namespace PointOfSale
         private void bDragonW_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            DragonbornWaffleFries df = new DragonbornWaffleFries();
+            var df = new DragonbornWaffleFries();
             orderControl.swapScreen(df);
-            BleakwindBuffet.Data.Sides.DragonbornWaffleFries item = new BleakwindBuffet.Data.Sides.DragonbornWaffleFries();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Sides.DragonbornWaffleFries();
+            var o = (Order) orderControl.DataContext;
             df.DataContext = item;
-            o.Add(item);
+            combo.Side = item;
         }
     }
 }

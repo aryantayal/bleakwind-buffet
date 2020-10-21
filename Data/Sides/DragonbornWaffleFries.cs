@@ -30,18 +30,19 @@ namespace BleakwindBuffet.Data.Sides
                 switch (value)
                 {
                     case Size.Small:
-                        this.Price = .42;
-                        this.Calories = 77;
+                        Price = .42;
+                        Calories = 77;
                         break;
                     case Size.Medium:
-                        this.Price = 0.76;
-                        this.Calories = 89;
+                        Price = 0.76;
+                        Calories = 89;
                         break;
                     case Size.Large:
-                        this.Price = 0.96;
-                        this.Calories = 100;
+                        Price = 0.96;
+                        Calories = 100;
                         break;
                 }
+
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
@@ -59,7 +60,7 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 return instructions;
             }
         }

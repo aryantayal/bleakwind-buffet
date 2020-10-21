@@ -34,14 +34,13 @@ namespace BleakwindBuffet.Data.Entree
         /// <param name="ketchup">ketchup</param>
         public bool Ketchup
         {
-            get { return ketchup; }
+            get => ketchup;
             set
             {
                 ketchup = value;
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Ketchup");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                
             }
         }
 
@@ -49,7 +48,7 @@ namespace BleakwindBuffet.Data.Entree
 
         public bool Bun
         {
-            get { return bun; }
+            get => bun;
             set
             {
                 bun = value;
@@ -75,7 +74,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Mustard");
                 NotifyOfPropertyChanged("SpecialInstructions");
-               
             }
         }
 
@@ -133,7 +131,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Lettuce");
                 NotifyOfPropertyChanged("SpecialInstructions");
-               
             }
         }
 
@@ -153,7 +150,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Tomato");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                
             }
         }
 
@@ -186,7 +182,7 @@ namespace BleakwindBuffet.Data.Entree
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 if (!Bun) instructions.Add("Hold bun");
                 if (!Ketchup) instructions.Add("Hold ketchup");
                 if (!Mustard) instructions.Add("Hold mustard");

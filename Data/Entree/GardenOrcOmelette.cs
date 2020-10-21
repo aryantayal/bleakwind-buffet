@@ -41,7 +41,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Broccoli");
                 NotifyOfPropertyChanged("SpecialInstructions");
-             
             }
         }
 
@@ -60,7 +59,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Mushrooms");
                 NotifyOfPropertyChanged("SpecialInstructions");
-               
             }
         }
 
@@ -79,7 +77,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Tomato");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                
             }
         }
 
@@ -109,7 +106,7 @@ namespace BleakwindBuffet.Data.Entree
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 if (!Broccoli) instructions.Add("Hold broccoli");
                 if (!Mushrooms) instructions.Add("Hold mushrooms");
                 if (!Tomato) instructions.Add("Hold tomato");

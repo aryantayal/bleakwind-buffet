@@ -39,6 +39,7 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -46,16 +47,15 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void bBriarheartBurger_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<MainWindow>(); 
-            BurgerBriar bb = new BurgerBriar();
+            var orderControl = this.FindAncestor<MainWindow>();
+            var bb = new BurgerBriar();
             orderControl.swapScreen(bb);
-            BleakwindBuffet.Data.Entree.BriarheartBurger item = new BriarheartBurger();
-            Order o = (Order) orderControl.DataContext;
+            var item = new BriarheartBurger();
+            var o = (Order) orderControl.DataContext;
             bb.DataContext = item;
             o.Add(item);
-
-            
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -64,13 +64,14 @@ namespace PointOfSale
         private void bSalor_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            SailorSoda ss = new SailorSoda();
+            var ss = new SailorSoda();
             orderControl.swapScreen(ss);
-            BleakwindBuffet.Data.Drinks.SailorSoda item = new BleakwindBuffet.Data.Drinks.SailorSoda();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Drinks.SailorSoda();
+            var o = (Order) orderControl.DataContext;
             ss.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -79,13 +80,14 @@ namespace PointOfSale
         private void bVokunSalad_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            VokunSalad vs = new VokunSalad();
+            var vs = new VokunSalad();
             orderControl.swapScreen(vs);
-            BleakwindBuffet.Data.Sides.VokunSalad item = new BleakwindBuffet.Data.Sides.VokunSalad();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Sides.VokunSalad();
+            var o = (Order) orderControl.DataContext;
             vs.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -94,13 +96,14 @@ namespace PointOfSale
         private void bDoubleDragur_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            DoubleDragur dd = new DoubleDragur();
+            var dd = new DoubleDragur();
             orderControl.swapScreen(dd);
-            BleakwindBuffet.Data.Entree.DoubleDraugr item =new DoubleDraugr();
-            Order o = (Order)orderControl.DataContext;
+            var item = new DoubleDraugr();
+            var o = (Order) orderControl.DataContext;
             dd.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -109,13 +112,14 @@ namespace PointOfSale
         private void bMakath_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            cMarkarthMilk mm = new cMarkarthMilk();
+            var mm = new cMarkarthMilk();
             orderControl.swapScreen(mm);
-            BleakwindBuffet.Data.Drinks.MarkarthMilk item = new MarkarthMilk();
-            Order o = (Order)orderControl.DataContext;
+            var item = new MarkarthMilk();
+            var o = (Order) orderControl.DataContext;
             mm.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -124,13 +128,14 @@ namespace PointOfSale
         private void bFriedM_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            FriedMiraak fm = new FriedMiraak();
+            var fm = new FriedMiraak();
             orderControl.swapScreen(fm);
-            BleakwindBuffet.Data.Sides.FriedMiraak item = new BleakwindBuffet.Data.Sides.FriedMiraak();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Sides.FriedMiraak();
+            var o = (Order) orderControl.DataContext;
             fm.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -139,13 +144,14 @@ namespace PointOfSale
         private void bAretino_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            AretinoAppleJuice aaj = new AretinoAppleJuice();
+            var aaj = new AretinoAppleJuice();
             orderControl.swapScreen(aaj);
-            BleakwindBuffet.Data.Drinks.AretinoAppleJuice item = new BleakwindBuffet.Data.Drinks.AretinoAppleJuice();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Drinks.AretinoAppleJuice();
+            var o = (Order) orderControl.DataContext;
             aaj.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -154,13 +160,14 @@ namespace PointOfSale
         private void bMadOtar_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            MadOtar mo = new MadOtar();
+            var mo = new MadOtar();
             orderControl.swapScreen(mo);
-            BleakwindBuffet.Data.Sides.MadOtarGrits item = new MadOtarGrits();
-            Order o = (Order)orderControl.DataContext;
+            var item = new MadOtarGrits();
+            var o = (Order) orderControl.DataContext;
             mo.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -169,13 +176,14 @@ namespace PointOfSale
         private void bDragonW_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            DragonbornWaffleFries df = new DragonbornWaffleFries();
-            orderControl.swapScreen(df); 
-            BleakwindBuffet.Data.Sides.DragonbornWaffleFries item = new BleakwindBuffet.Data.Sides.DragonbornWaffleFries();
-            Order o = (Order)orderControl.DataContext;
+            var df = new DragonbornWaffleFries();
+            orderControl.swapScreen(df);
+            var item = new BleakwindBuffet.Data.Sides.DragonbornWaffleFries();
+            var o = (Order) orderControl.DataContext;
             df.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -184,13 +192,14 @@ namespace PointOfSale
         private void bCandlehearth_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            CandleheartCoffee mo = new CandleheartCoffee();
+            var mo = new CandleheartCoffee();
             orderControl.swapScreen(mo);
-            BleakwindBuffet.Data.Drinks.CandlehearthCoffee item = new BleakwindBuffet.Data.Drinks.CandlehearthCoffee();
-            Order o = (Order)orderControl.DataContext;
+            var item = new CandlehearthCoffee();
+            var o = (Order) orderControl.DataContext;
             mo.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -199,13 +208,14 @@ namespace PointOfSale
         private void bSmokehouse_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            SmokehouseSkeleton ss = new SmokehouseSkeleton();
+            var ss = new SmokehouseSkeleton();
             orderControl.swapScreen(ss);
-            BleakwindBuffet.Data.Entree.SmokehouseSkeleton item = new BleakwindBuffet.Data.Entree.SmokehouseSkeleton();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Entree.SmokehouseSkeleton();
+            var o = (Order) orderControl.DataContext;
             ss.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -214,13 +224,14 @@ namespace PointOfSale
         private void bGarden_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            GardenOrcOmelette goo = new GardenOrcOmelette();
+            var goo = new GardenOrcOmelette();
             orderControl.swapScreen(goo);
-            BleakwindBuffet.Data.Entree.GardenOrcOmelette item = new BleakwindBuffet.Data.Entree.GardenOrcOmelette();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Entree.GardenOrcOmelette();
+            var o = (Order) orderControl.DataContext;
             goo.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -229,13 +240,14 @@ namespace PointOfSale
         private void bWarriorW_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            WarriorWater ww = new WarriorWater();
+            var ww = new WarriorWater();
             orderControl.swapScreen(ww);
-            BleakwindBuffet.Data.Drinks.WarriorWater item = new BleakwindBuffet.Data.Drinks.WarriorWater();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Drinks.WarriorWater();
+            var o = (Order) orderControl.DataContext;
             ww.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -244,10 +256,10 @@ namespace PointOfSale
         private void bPhillyP_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            cPhilly pp = new cPhilly();
+            var pp = new cPhilly();
             orderControl.swapScreen(pp);
-            BleakwindBuffet.Data.Entree.PhillyPoacher item = new PhillyPoacher();
-            Order o = (Order)orderControl.DataContext;
+            var item = new PhillyPoacher();
+            var o = (Order) orderControl.DataContext;
             pp.DataContext = item;
             o.Add(item);
         }
@@ -255,13 +267,14 @@ namespace PointOfSale
         private void bThugs_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            cThugs t = new cThugs();
+            var t = new cThugs();
             orderControl.swapScreen(t);
-            BleakwindBuffet.Data.Entree.ThugsTBone item = new ThugsTBone();
-            Order o = (Order)orderControl.DataContext;
+            var item = new ThugsTBone();
+            var o = (Order) orderControl.DataContext;
             t.DataContext = item;
             o.Add(item);
         }
+
         /// <summary>
         /// Opens the customization page upon click
         /// </summary>
@@ -270,10 +283,10 @@ namespace PointOfSale
         private void bTahlmorTriple_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            ThalmorTriple tt = new ThalmorTriple();
+            var tt = new ThalmorTriple();
             orderControl.swapScreen(tt);
-            BleakwindBuffet.Data.Entree.ThalmorTriple item = new BleakwindBuffet.Data.Entree.ThalmorTriple();
-            Order o = (Order)orderControl.DataContext;
+            var item = new BleakwindBuffet.Data.Entree.ThalmorTriple();
+            var o = (Order) orderControl.DataContext;
             tt.DataContext = item;
             o.Add(item);
         }
@@ -281,7 +294,7 @@ namespace PointOfSale
         private void bCombo_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<MainWindow>();
-            ComboPage cp = new ComboPage();
+            var cp = new ComboPage();
             orderControl.swapScreen(cp);
         }
     }

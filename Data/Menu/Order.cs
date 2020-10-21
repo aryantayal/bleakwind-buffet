@@ -45,11 +45,7 @@ namespace BleakwindBuffet.Data
 
         public uint Number { get; }
 
-        public IEnumerable <IOrderItem> Items
-        {
-            get => order;
-        }
-
+        public IEnumerable<IOrderItem> Items => order;
 
 
         /// <summary>
@@ -85,7 +81,7 @@ namespace BleakwindBuffet.Data
         /// <summary>
         /// Total cost of the order
         /// </summary>
-        public double TotalCost => (Subtotal + Tax);
+        public double TotalCost => Subtotal + Tax;
 
         public uint Calories { get; }
 
@@ -119,7 +115,8 @@ namespace BleakwindBuffet.Data
         public void Add(IOrderItem item)
         {
             order.Add(item);
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
+            CollectionChanged?.Invoke(this,
+                new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
             NotifyOfPropertyChanged("Calories");
             NotifyOfPropertyChanged("Subtotal");
             NotifyOfPropertyChanged("Tax");
@@ -133,7 +130,8 @@ namespace BleakwindBuffet.Data
         /// <param name="item"></param>
         public void Remove(IOrderItem item)
         {
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item, order.IndexOf(item)));
+            CollectionChanged?.Invoke(this,
+                new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item, order.IndexOf(item)));
             order.Remove(item);
             NotifyOfPropertyChanged("Calories");
             NotifyOfPropertyChanged("Subtotal");

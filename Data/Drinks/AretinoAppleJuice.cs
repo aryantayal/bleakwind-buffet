@@ -16,6 +16,11 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class AretinoAppleJuice : Drink
     {
+        public AretinoAppleJuice()
+        {
+            Size = Size.Small;
+        }
+
         public override Size Size
         {
             get => size;
@@ -25,18 +30,19 @@ namespace BleakwindBuffet.Data.Drinks
                 switch (value)
                 {
                     case Size.Small:
-                        this.Price = .62;
-                        this.Calories = 44;
+                        Price = .62;
+                        Calories = 44;
                         break;
                     case Size.Medium:
-                        this.Price = 0.87;
-                        this.Calories = 88;
+                        Price = 0.87;
+                        Calories = 88;
                         break;
                     case Size.Large:
-                        this.Price = 1.01;
-                        this.Calories = 132;
+                        Price = 1.01;
+                        Calories = 132;
                         break;
                 }
+
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Size");
                 NotifyOfPropertyChanged("Calories");
@@ -44,7 +50,7 @@ namespace BleakwindBuffet.Data.Drinks
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
-        
+
 
         /// <summary>
         /// Gets/sets room for the ice
@@ -54,7 +60,7 @@ namespace BleakwindBuffet.Data.Drinks
 
         public bool Ice
         {
-            get { return ice; }
+            get => ice;
             set
             {
                 ice = value;
@@ -72,7 +78,7 @@ namespace BleakwindBuffet.Data.Drinks
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 if (Ice) instructions.Add("Add ice");
                 return instructions;
             }

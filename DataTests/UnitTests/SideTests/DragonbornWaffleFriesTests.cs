@@ -6,7 +6,6 @@
 
 using System.ComponentModel;
 using Xunit;
-
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
@@ -18,20 +17,21 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [Fact]
         public void ShouldBeASide()
         {
-            DragonbornWaffleFries dbw = new DragonbornWaffleFries();
+            var dbw = new DragonbornWaffleFries();
             Assert.IsAssignableFrom<Side>(dbw);
         }
+
         [Fact]
         public void ShouldBeSmallByDefault()
         {
-            DragonbornWaffleFries dbw = new DragonbornWaffleFries();
+            var dbw = new DragonbornWaffleFries();
             Assert.Equal(Size.Small, dbw.Size);
         }
 
         [Fact]
         public void ShouldBeAbleToSetSize()
         {
-            DragonbornWaffleFries dbw = new DragonbornWaffleFries();
+            var dbw = new DragonbornWaffleFries();
             dbw.Size = Size.Large;
             Assert.Equal(Size.Large, dbw.Size);
             dbw.Size = Size.Medium;
@@ -43,7 +43,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [Fact]
         public void ShouldReturnCorrectSpecialInstructions()
         {
-            DragonbornWaffleFries dbw = new DragonbornWaffleFries();
+            var dbw = new DragonbornWaffleFries();
             Assert.Empty(dbw.SpecialInstructions);
         }
 
@@ -53,7 +53,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, 0.96)]
         public void ShouldReturnCorrectPriceBasedOnSize(Size size, double price)
         {
-            DragonbornWaffleFries dbw = new DragonbornWaffleFries();
+            var dbw = new DragonbornWaffleFries();
             dbw.Size = size;
             Assert.Equal(price, dbw.Price);
         }
@@ -64,7 +64,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, 100)]
         public void ShouldReturnCorrectCaloriesBasedOnSize(Size size, uint calories)
         {
-            DragonbornWaffleFries dbw = new DragonbornWaffleFries();
+            var dbw = new DragonbornWaffleFries();
             dbw.Size = size;
             Assert.Equal(calories, dbw.Calories);
         }
@@ -75,10 +75,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
         [InlineData(Size.Large, "Large Dragonborn Waffle Fries")]
         public void ShouldReturnCorrectToStringBasedOnSize(Size size, string name)
         {
-            DragonbornWaffleFries dbw = new DragonbornWaffleFries();
+            var dbw = new DragonbornWaffleFries();
             dbw.Size = size;
             Assert.Equal(name, dbw.ToString());
         }
+
         [Fact]
         public void ChangingSizeNotifiesSizeProperty()
         {
@@ -87,6 +88,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.PropertyChanged(DBF, "Size", () => { DBF.Size = Size.Medium; });
             Assert.PropertyChanged(DBF, "Size", () => { DBF.Size = Size.Large; });
         }
+
         [Fact]
         public void ChangingSizeNotifiesPriceProperty()
         {
@@ -95,6 +97,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.PropertyChanged(DBF, "Price", () => { DBF.Size = Size.Medium; });
             Assert.PropertyChanged(DBF, "Price", () => { DBF.Size = Size.Medium; });
         }
+
         [Fact]
         public void ChangingSizeNotifiesCaloriesProperty()
         {
@@ -103,10 +106,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.PropertyChanged(DBF, "Calories", () => { DBF.Size = Size.Medium; });
             Assert.PropertyChanged(DBF, "Calories", () => { DBF.Size = Size.Large; });
         }
+
         [Fact]
         public void InheritsInterface()
         {
-            DragonbornWaffleFries dbf = new DragonbornWaffleFries();
+            var dbf = new DragonbornWaffleFries();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(dbf);
         }
     }

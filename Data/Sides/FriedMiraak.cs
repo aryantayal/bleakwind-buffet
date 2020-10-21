@@ -14,6 +14,11 @@ namespace BleakwindBuffet.Data.Sides
 {
     public class FriedMiraak : Side
     {
+        public FriedMiraak()
+        {
+            Size = Size.Small;
+        }
+
         public override Size Size
         {
             get => size;
@@ -23,16 +28,16 @@ namespace BleakwindBuffet.Data.Sides
                 switch (value)
                 {
                     case Size.Small:
-                        this.Price = 1.78;
-                        this.Calories = 151;
+                        Price = 1.78;
+                        Calories = 151;
                         break;
                     case Size.Medium:
-                        this.Price = 2.01;
-                        this.Calories = 236;
+                        Price = 2.01;
+                        Calories = 236;
                         break;
                     case Size.Large:
-                        this.Price = 2.88;
-                        this.Calories = 306;
+                        Price = 2.88;
+                        Calories = 306;
                         break;
                 }
 
@@ -51,7 +56,7 @@ namespace BleakwindBuffet.Data.Sides
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 return instructions;
             }
         }

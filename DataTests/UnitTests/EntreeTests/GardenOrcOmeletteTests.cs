@@ -6,7 +6,6 @@
 
 using System.ComponentModel;
 using Xunit;
-
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entree;
 
@@ -17,41 +16,42 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAnEntree()
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            var go = new GardenOrcOmelette();
             Assert.IsAssignableFrom<Entree>(go);
         }
+
         [Fact]
         public void ShouldIncludeBroccoliByDefault()
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            var go = new GardenOrcOmelette();
             Assert.True(go.Broccoli);
         }
 
         [Fact]
         public void ShouldIncludeMushroomsByDefault()
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            var go = new GardenOrcOmelette();
             Assert.True(go.Mushrooms);
         }
 
         [Fact]
         public void ShouldIncludeTomatoByDefault()
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            var go = new GardenOrcOmelette();
             Assert.True(go.Tomato);
         }
 
         [Fact]
         public void ShouldIncludeCheddarByDefault()
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            var go = new GardenOrcOmelette();
             Assert.True(go.Cheddar);
         }
 
         [Fact]
         public void ShouldBeAbleToSetBroccoli()
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            var go = new GardenOrcOmelette();
             go.Broccoli = true;
             Assert.True(go.Broccoli);
             go.Broccoli = false;
@@ -61,7 +61,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAbleToSetMushrooms()
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            var go = new GardenOrcOmelette();
             go.Broccoli = true;
             Assert.True(go.Broccoli);
             go.Broccoli = false;
@@ -71,7 +71,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAbleToSetTomato()
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            var go = new GardenOrcOmelette();
             go.Tomato = true;
             Assert.True(go.Tomato);
             go.Tomato = false;
@@ -81,7 +81,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldBeAbleToSetCheddar()
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            var go = new GardenOrcOmelette();
             go.Cheddar = true;
             Assert.True(go.Cheddar);
             go.Cheddar = false;
@@ -91,15 +91,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldReturnCorrectPrice()
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            var go = new GardenOrcOmelette();
             Assert.Equal(4.57, go.Price);
-
         }
 
         [Fact]
         public void ShouldReturnCorrectCalories()
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            var go = new GardenOrcOmelette();
             uint cal = 404;
             Assert.Equal(cal, go.Calories);
         }
@@ -108,9 +107,9 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [InlineData(true, true, true, true)]
         [InlineData(false, false, false, false)]
         public void ShouldReturnCorrectSpecialInstructions(bool includeBroccoli, bool includeMushrooms,
-                                                            bool includeTomato, bool includeCheddar)
+            bool includeTomato, bool includeCheddar)
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
+            var go = new GardenOrcOmelette();
 
             go.Broccoli = includeBroccoli;
             go.Mushrooms = includeMushrooms;
@@ -127,10 +126,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         [Fact]
         public void ShouldReturnCorrectToString()
         {
-            GardenOrcOmelette go = new GardenOrcOmelette();
-            string name = "Garden Orc Omelette";
+            var go = new GardenOrcOmelette();
+            var name = "Garden Orc Omelette";
             Assert.Equal(name, go.ToString());
         }
+
         [Fact]
         public void ChangingBroccoliNotifiesBroccoliProperty()
         {
@@ -138,6 +138,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(GOO, "Broccoli", () => { GOO.Broccoli = true; });
             Assert.PropertyChanged(GOO, "Broccoli", () => { GOO.Broccoli = false; });
         }
+
         [Fact]
         public void ChangingMushroomsNotifiesMushroomProperty()
         {
@@ -145,6 +146,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(GOO, "Mushrooms", () => { GOO.Mushrooms = true; });
             Assert.PropertyChanged(GOO, "Mushrooms", () => { GOO.Mushrooms = false; });
         }
+
         [Fact]
         public void ChangingTomatoNotifiesTomatoProperty()
         {
@@ -152,6 +154,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(GOO, "Tomato", () => { GOO.Tomato = true; });
             Assert.PropertyChanged(GOO, "Tomato", () => { GOO.Tomato = false; });
         }
+
         [Fact]
         public void ChangingCheddarNotifiesCheddarProperty()
         {
@@ -159,6 +162,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(GOO, "Cheddar", () => { GOO.Cheddar = true; });
             Assert.PropertyChanged(GOO, "Cheddar", () => { GOO.Cheddar = false; });
         }
+
         [Fact]
         public void ChangingBroccoliNotifiesSpecialInstructionsProperty()
         {
@@ -166,6 +170,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(GOO, "SpecialInstructions", () => { GOO.Broccoli = true; });
             Assert.PropertyChanged(GOO, "SpecialInstructions", () => { GOO.Broccoli = false; });
         }
+
         [Fact]
         public void ChangingMushroomsNotifiesSpecialInstructionsProperty()
         {
@@ -173,6 +178,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(GOO, "SpecialInstructions", () => { GOO.Mushrooms = true; });
             Assert.PropertyChanged(GOO, "SpecialInstructions", () => { GOO.Mushrooms = false; });
         }
+
         [Fact]
         public void ChangingTomatoNotifiesSpecialInstructionsProperty()
         {
@@ -180,10 +186,11 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.PropertyChanged(GOO, "SpecialInstructions", () => { GOO.Tomato = true; });
             Assert.PropertyChanged(GOO, "SpecialInstructions", () => { GOO.Tomato = false; });
         }
+
         [Fact]
         public void InheritsInterface()
         {
-            GardenOrcOmelette goo = new GardenOrcOmelette();
+            var goo = new GardenOrcOmelette();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(goo);
         }
     }

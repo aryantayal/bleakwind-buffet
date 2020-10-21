@@ -36,7 +36,7 @@ namespace BleakwindBuffet.Data.Entree
             get
             {
                 NotifyOfPropertyChanged("Name");
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 return instructions;
             }
         }

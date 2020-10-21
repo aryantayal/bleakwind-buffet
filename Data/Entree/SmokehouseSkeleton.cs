@@ -41,7 +41,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("SausageLink");
                 NotifyOfPropertyChanged("SpecialInstructions");
-               
             }
         }
 
@@ -60,7 +59,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Egg");
                 NotifyOfPropertyChanged("SpecialInstructions");
-              
             }
         }
 
@@ -79,7 +77,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Hashbrowns");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                
             }
         }
 
@@ -98,7 +95,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("Name");
                 NotifyOfPropertyChanged("Pancake");
                 NotifyOfPropertyChanged("SpecialInstructions");
-                
             }
         }
 
@@ -110,7 +106,7 @@ namespace BleakwindBuffet.Data.Entree
         {
             get
             {
-                List<string> instructions = new List<string>();
+                var instructions = new List<string>();
                 if (!SausageLink) instructions.Add("Hold sausage");
                 if (!Egg) instructions.Add("Hold eggs");
                 if (!HashBrowns) instructions.Add("Hold hashbrowns");

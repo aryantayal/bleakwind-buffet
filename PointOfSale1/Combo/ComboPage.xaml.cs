@@ -11,6 +11,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
+using PointOfSale1;
 
 namespace PointOfSale
 {
@@ -22,27 +24,38 @@ namespace PointOfSale
         public ComboPage()
         {
             InitializeComponent();
+            var c = new Combo();
+            DataContext = c;
         }
 
         private void Entree_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<PointOfSale1.MainWindow>();
-            EntreePage ep = new EntreePage();
+            var orderControl = this.FindAncestor<MainWindow>();
+            var ep = new EntreePage((Combo) DataContext);
             orderControl.swapScreen(ep);
         }
 
         private void Side_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<PointOfSale1.MainWindow>();
-            SidePage sp = new SidePage();
+            var orderControl = this.FindAncestor<MainWindow>();
+            var sp = new SidePage((Combo) DataContext);
             orderControl.swapScreen(sp);
         }
 
         private void Drink_Click(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<PointOfSale1.MainWindow>();
-            DrinkPage dp = new DrinkPage();
+            var orderControl = this.FindAncestor<MainWindow>();
+            var dp = new DrinkPage((Combo) DataContext);
             orderControl.swapScreen(dp);
+        }
+
+        private void ComboDone_OnClick(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<MainWindow>();
+            var item = new Combo();
+            var o = (Order) orderControl.DataContext;
+            DataContext = item;
+            o.Add(item);
         }
     }
 }
