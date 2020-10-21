@@ -100,7 +100,7 @@ namespace PointOfSale
         #region Cashregister
 
         /// <summary>
-        ///     The Pennies contained within the CashDrawer
+        ///     The Pennies 
         /// </summary>
         public int Pennies
         {
@@ -109,7 +109,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        ///     The Nickels contained within the CashDrawer
+        ///     The Nickels 
         /// </summary>
         public int Nickels
         {
@@ -118,7 +118,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        ///     The Dimes contained within the CashDrawer
+        ///     The Dimes 
         /// </summary>
         public int Dimes
         {
@@ -170,16 +170,6 @@ namespace PointOfSale
             get => CashDrawer.Twos;
             set => CashDrawer.Twos = value;
         }
-
-        /// <summary>
-        ///     The Fives contained within the CashDrawer
-        /// </summary>
-        public int Fives
-        {
-            get => CashDrawer.Fives;
-            set => CashDrawer.Fives = value;
-        }
-
         /// <summary>
         ///     The Tens contained within the CashDrawer
         /// </summary>
@@ -189,14 +179,6 @@ namespace PointOfSale
             set => CashDrawer.Tens = value;
         }
 
-        /// <summary>
-        ///     The Twenties contained within the CashDrawer
-        /// </summary>
-        public int Twenties
-        {
-            get => CashDrawer.Twenties;
-            set => CashDrawer.Twenties = value;
-        }
 
         /// <summary>
         ///     The Fifties contained within the CashDrawer
@@ -215,6 +197,24 @@ namespace PointOfSale
             get => CashDrawer.Hundreds;
             set => CashDrawer.Hundreds = value;
         }
+        /// <summary>
+        ///     The Fives contained within the CashDrawer
+        /// </summary>
+        public int Fives
+        {
+            get => CashDrawer.Fives;
+            set => CashDrawer.Fives = value;
+        }
+
+        /// <summary>
+        ///     The Twenties contained within the CashDrawer
+        /// </summary>
+        public int Twenties
+        {
+            get => CashDrawer.Twenties;
+            set => CashDrawer.Twenties = value;
+        }
+
 
         #endregion
 
