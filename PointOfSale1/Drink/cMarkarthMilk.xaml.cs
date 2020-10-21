@@ -1,27 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using BleakwindBuffet.Data.Drinks;
 using PointOfSale.ExtensionMethod;
 using PointOfSale1;
+using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace PointOfSale.Drink
 {
     /// <summary>
-    /// Interaction logic for MarkarthMilk.xaml
+    ///     Interaction logic for MarkarthMilk.xaml
     /// </summary>
     public partial class cMarkarthMilk : UserControl
     {
-        private MarkarthMilk mm = new MarkarthMilk();
+        private readonly MarkarthMilk mm = new MarkarthMilk();
 
         public cMarkarthMilk()
         {
@@ -30,7 +21,7 @@ namespace PointOfSale.Drink
         }
 
         /// <summary>
-        /// After user selects the specification the done button it takes it back to the main menu selector
+        ///     After user selects the specification the done button it takes it back to the main menu selector
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -46,9 +37,9 @@ namespace PointOfSale.Drink
             if (DataContext is MarkarthMilk)
                 foreach (ComboBox s in e.AddedItems)
                 {
-                    if (s.Name == "Small") mm.Size = BleakwindBuffet.Data.Enums.Size.Small;
-                    if (s.Name == "Medium") mm.Size = BleakwindBuffet.Data.Enums.Size.Medium;
-                    if (s.Name == "Large") mm.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+                    if (s.Name == "Small") mm.Size = Size.Small;
+                    if (s.Name == "Medium") mm.Size = Size.Medium;
+                    if (s.Name == "Large") mm.Size = Size.Medium;
                 }
         }
 

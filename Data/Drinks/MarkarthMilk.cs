@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
-using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
-using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     public class MarkarthMilk : Drink, INotifyPropertyChanged
     {
+        private bool ice;
+
         public MarkarthMilk()
         {
             Size = Size.Small;
@@ -46,8 +44,6 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        private bool ice = false;
-
         public bool Ice
         {
             get => ice;
@@ -61,7 +57,7 @@ namespace BleakwindBuffet.Data.Drinks
 
 
         /// <summary>
-        /// Gets the instructions for the drink. 
+        ///     Gets the instructions for the drink.
         /// </summary>
         /// <param name="ice">ice</param>
         public override List<string> SpecialInstructions
@@ -75,7 +71,7 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// ToString override for the drink. 
+        ///     ToString override for the drink.
         /// </summary>
         /// <param name="size">size of the drink</param>
         public override string ToString()

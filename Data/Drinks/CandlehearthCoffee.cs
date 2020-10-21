@@ -4,17 +4,20 @@
  * Purpose: Class used to represent the Sailor Soda drink 
  */
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 using BleakwindBuffet.Data.Enums;
-using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     public class CandlehearthCoffee : Drink, INotifyPropertyChanged
     {
+        private bool decaf;
+
+        private bool ice;
+
+        private bool roomForCream;
+
         public CandlehearthCoffee()
         {
             Size = Size.Small;
@@ -50,8 +53,6 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        private bool ice = false;
-
         public bool Ice
         {
             get => ice;
@@ -63,10 +64,8 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        private bool roomForCream = false;
-
         /// <summary>
-        /// get/set the room for cream
+        ///     get/set the room for cream
         /// </summary>
         /// <param name="roomForCream"> the bool for the cream</param>
         public bool RoomForCream
@@ -80,10 +79,8 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        private bool decaf = false;
-
         /// <summary>
-        /// get/set decaf
+        ///     get/set decaf
         /// </summary>
         /// <param name="decaf">decaf bool for the drink</param>
         public bool Decaf
@@ -98,7 +95,7 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// Gets the instructions for the drink. 
+        ///     Gets the instructions for the drink.
         /// </summary>
         /// <param name="ice">ice for drink</param>
         /// <param name="roomForCream"> the bool for the cream</param>
@@ -115,13 +112,13 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// ToString override for the drink. 
+        ///     ToString override for the drink.
         /// </summary>
         /// <param name="size">size of the drink</param>
         public override string ToString()
         {
             if (Decaf) return Size + " Decaf Candlehearth Coffee";
-            else return Size + " Candlehearth Coffee";
+            return Size + " Candlehearth Coffee";
         }
     }
 }

@@ -5,11 +5,8 @@
  */
 
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using Xunit;
 using BleakwindBuffet.Data;
-using BleakwindBuffet.Data.Sides;
-using BleakwindBuffet.Data.Enums;
+using Xunit;
 
 namespace BleakwindBuffet.DataTests.UnitTests
 {

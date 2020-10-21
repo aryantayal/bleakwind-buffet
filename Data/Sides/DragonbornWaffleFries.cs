@@ -4,13 +4,8 @@
 * Purpose: Class used to represent the Mad Otar Grits side
 */
 
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
 using BleakwindBuffet.Data.Enums;
-using BleakwindBuffet.Data;
-using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
@@ -53,9 +48,10 @@ namespace BleakwindBuffet.Data.Sides
 
 
         /// <summary>
-        /// sends an empty list
+        ///     sends an empty list
         /// </summary>
-        /// /// <param name="instructions">the instructions for the burger</param>
+        /// ///
+        /// <param name="instructions">the instructions for the burger</param>
         public override List<string> SpecialInstructions
         {
             get
@@ -66,7 +62,7 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
-        /// ToString override for the side
+        ///     ToString override for the side
         /// </summary>
         public override string ToString()
         {

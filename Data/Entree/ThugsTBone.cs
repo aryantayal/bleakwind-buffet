@@ -4,33 +4,28 @@
  * Purpose: Class used to represent the Thugs T-Bone
  */
 
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using BleakwindBuffet.Data.Entree;
-using BleakwindBuffet.Data.Enums;
-using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
     public class ThugsTBone : Entree
     {
         /// <summary>
-        /// Gets the price of the entree.
+        ///     Gets the price of the entree.
         /// </summary>
         public override double Price => 6.44;
 
         /// <summary>
-        /// Gets the calories of the entree.
+        ///     Gets the calories of the entree.
         /// </summary>
         public override uint Calories => 982;
 
 
         /// <summary>
-        /// Gets/sets the instructions for the entree 
+        ///     Gets/sets the instructions for the entree
         /// </summary>
-        /// /// <param name="instructions">the instructions for the burger</param>
+        /// ///
+        /// <param name="instructions">the instructions for the burger</param>
         public override List<string> SpecialInstructions
         {
             get
@@ -42,7 +37,7 @@ namespace BleakwindBuffet.Data.Entree
         }
 
         /// <summary>
-        /// ToString override for the entree 
+        ///     ToString override for the entree
         /// </summary>
         public override string ToString()
         {

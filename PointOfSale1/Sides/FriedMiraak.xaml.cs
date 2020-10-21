@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using PointOfSale.ExtensionMethod;
 using PointOfSale1;
 using Size = BleakwindBuffet.Data.Enums.Size;
@@ -17,11 +7,11 @@ using Size = BleakwindBuffet.Data.Enums.Size;
 namespace PointOfSale.Sides
 {
     /// <summary>
-    /// Interaction logic for FriedMiraak.xaml
+    ///     Interaction logic for FriedMiraak.xaml
     /// </summary>
     public partial class FriedMiraak : UserControl
     {
-        private BleakwindBuffet.Data.Sides.FriedMiraak fm = new BleakwindBuffet.Data.Sides.FriedMiraak();
+        private readonly BleakwindBuffet.Data.Sides.FriedMiraak fm = new BleakwindBuffet.Data.Sides.FriedMiraak();
 
         public FriedMiraak()
         {
@@ -30,7 +20,7 @@ namespace PointOfSale.Sides
         }
 
         /// <summary>
-        /// After user selects the specification the done button it takes it back to the main menu selector
+        ///     After user selects the specification the done button it takes it back to the main menu selector
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

@@ -88,17 +88,17 @@
         <TextBlock Background="#FECEAB" Grid.Column="6" Grid.Row="7" TextAlignment="Center" FontSize="22" Margin="4">1¢</TextBlock>
 
         <local:CurrencyControl Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="4" x:Name="DollarC"
-                               Change="{Binding Path=Change100c}" Value="{Binding Path=Paid100C}" />
+                               Change="{Binding Path=ChangeDollars}" Value="{Binding Path=Paid100C}" />
         <local:CurrencyControl Grid.Column="7" Grid.Row="3" Grid.ColumnSpan="4" x:Name="FiftyC"
-                               Change="{Binding Path=Change50c}" Value="{Binding Path=Paid50C}" />
+                               Change="{Binding Path=ChangeHalfDollars}" Value="{Binding Path=Paid50C}" />
         <local:CurrencyControl Grid.Column="7" Grid.Row="4" Grid.ColumnSpan="4" x:Name="Quarter"
-                               Change="{Binding Path=Change25c}" Value="{Binding Path=Paid25C}" />
+                               Change="{Binding Path=ChangeQuarters}" Value="{Binding Path=Paid25C}" />
         <local:CurrencyControl Grid.Column="7" Grid.Row="5" Grid.ColumnSpan="4" x:Name="Dime"
-                               Change="{Binding Path=Change10c}" Value="{Binding Path=Paid10C}" />
+                               Change="{Binding Path=ChangeDimes}" Value="{Binding Path=Paid10C}" />
         <local:CurrencyControl Grid.Column="7" Grid.Row="6" Grid.ColumnSpan="4" x:Name="Nickel"
-                               Change="{Binding Path=Change5c}" Value="{Binding Path=Paid5C}" />
+                               Change="{Binding Path=ChangeNickels}" Value="{Binding Path=Paid5C}" />
         <local:CurrencyControl Grid.Column="7" Grid.Row="7" Grid.ColumnSpan="4" x:Name="Penny"
-                               Change="{Binding Path=Change1c}" Value="{Binding Path=Paid1C}" />
+                               Change="{Binding Path=ChangePennies}" Value="{Binding Path=Paid1C}" />
 
 
         <TextBlock Grid.RowSpan="2" Grid.Column="0" Grid.Row="8" Foreground="GhostWhite" Padding="8,4,4,4"
@@ -121,11 +121,12 @@
             <LineBreak /> Owed:
         </TextBlock>
         <TextBlock Grid.Column="7" Grid.Row="8" Grid.RowSpan="2" Background="#99B898" Margin="5,20,5,20" FontSize="19"
-                   Padding="3,10,0,0" Text="{Binding Path=CurrentChangeDue}">
-            $0.00
-        </TextBlock>
+                   Padding="3,10,0,0" Text="{Binding Path=CurrentChangeDue}" />
 
-        <Button Grid.Column="8" Grid.Row="8" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="15" Background="#99B898">Finalize Sale</Button>
+        <Button Grid.Column="8" Grid.Row="8" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="15" Name="FinalizeButton"
+                Click="FinalizeButton_OnClick" Background="#99B898">
+            Finalize Sale
+        </Button>
 
 
     </Grid>

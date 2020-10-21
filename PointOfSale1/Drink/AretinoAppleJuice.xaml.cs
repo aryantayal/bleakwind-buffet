@@ -1,31 +1,20 @@
-﻿using PointOfSale.ExtensionMethod;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using BleakwindBuffet.Data;
+using PointOfSale.ExtensionMethod;
 using PointOfSale1;
 using Size = BleakwindBuffet.Data.Enums.Size;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for AretinoAppleJuice.xaml
+    ///     Interaction logic for AretinoAppleJuice.xaml
     /// </summary>
     public partial class AretinoAppleJuice : UserControl
     {
         /// <summary>
-        /// 
         /// </summary>
-        private BleakwindBuffet.Data.Drinks.AretinoAppleJuice aj = new BleakwindBuffet.Data.Drinks.AretinoAppleJuice();
+        private readonly BleakwindBuffet.Data.Drinks.AretinoAppleJuice aj =
+            new BleakwindBuffet.Data.Drinks.AretinoAppleJuice();
 
         public AretinoAppleJuice()
         {
@@ -35,7 +24,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// After user selects the specification the done button it takes it back to the main menu selector
+        ///     After user selects the specification the done button it takes it back to the main menu selector
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using PointOfSale.Drink;
@@ -21,20 +11,21 @@ using WarriorWater = PointOfSale.Drink.WarriorWater;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for DrinkPage.xaml
+    ///     Interaction logic for DrinkPage.xaml
     /// </summary>
     public partial class DrinkPage : UserControl
     {
+        private readonly Combo combo;
+
         public DrinkPage(Combo c)
         {
             InitializeComponent();
             combo = c;
         }
 
-        private Combo combo = new Combo();
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -50,7 +41,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -60,13 +51,13 @@ namespace PointOfSale
             var ww = new WarriorWater();
             orderControl.swapScreen(ww);
             var item = new BleakwindBuffet.Data.Drinks.WarriorWater();
-            var o = (Order) orderControl.DataContext;
+            //var o = (Order) orderControl.DataContext;
             ww.DataContext = item;
             combo.Drink = item;
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -76,13 +67,13 @@ namespace PointOfSale
             var aaj = new AretinoAppleJuice();
             orderControl.swapScreen(aaj);
             var item = new BleakwindBuffet.Data.Drinks.AretinoAppleJuice();
-            var o = (Order) orderControl.DataContext;
+            //var o = (Order) orderControl.DataContext;
             aaj.DataContext = item;
             combo.Drink = item;
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -98,7 +89,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

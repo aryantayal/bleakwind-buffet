@@ -4,18 +4,19 @@
  * Purpose: Class used to represent the Aretino Apple Juice drink 
  */
 
-using System;
 using System.Collections.Generic;
-using System.Text;
-using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
-using BleakwindBuffet.Data;
-using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     public class AretinoAppleJuice : Drink
     {
+        /// <summary>
+        ///     Gets/sets room for the ice
+        /// </summary>
+        /// <param name="ice">ice for drink</param>
+        private bool ice;
+
         public AretinoAppleJuice()
         {
             Size = Size.Small;
@@ -51,13 +52,6 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-
-        /// <summary>
-        /// Gets/sets room for the ice
-        /// </summary>
-        /// <param name="ice">ice for drink</param>
-        private bool ice = false;
-
         public bool Ice
         {
             get => ice;
@@ -71,7 +65,7 @@ namespace BleakwindBuffet.Data.Drinks
 
 
         /// <summary>
-        /// Gets the instructions for the drink. 
+        ///     Gets the instructions for the drink.
         /// </summary>
         /// <param name="instructions">the instructions for the item</param>
         public override List<string> SpecialInstructions
@@ -85,7 +79,7 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// ToString override for the drink. 
+        ///     ToString override for the drink.
         /// </summary>
         /// <param name="size">size of the drink</param>
         public override string ToString()

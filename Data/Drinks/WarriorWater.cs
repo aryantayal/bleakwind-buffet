@@ -4,18 +4,22 @@
  * Purpose: Class used to represent the Warrior Water drink 
  */
 
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
-using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
-using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     public class WarriorWater : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        ///     Gets/sets ice for the drink.
+        /// </summary>
+        /// <param name="ice">ice</param>
+        private bool ice = true;
+
+        private bool lemon;
+
         public WarriorWater()
         {
             Size = Size.Small;
@@ -51,12 +55,6 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
-        /// Gets/sets ice for the drink.
-        /// </summary>
-        /// <param name="ice">ice</param>
-        private bool ice = true;
-
         public bool Ice
         {
             get => ice;
@@ -68,10 +66,8 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        private bool lemon = false;
-
         /// <summary>
-        /// get/set the lemon
+        ///     get/set the lemon
         /// </summary>
         /// <param name="lemon">bool lemon for water</param>
         public bool Lemon
@@ -86,7 +82,7 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// Gets the instructions for the drink. 
+        ///     Gets the instructions for the drink.
         /// </summary>
         /// <param name="ice">ice</param>
         public override List<string> SpecialInstructions
@@ -101,7 +97,7 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// ToString override for the drink. 
+        ///     ToString override for the drink.
         /// </summary>
         /// <param name="size">size of the drink</param>
         public override string ToString()

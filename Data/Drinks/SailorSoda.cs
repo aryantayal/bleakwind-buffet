@@ -4,18 +4,27 @@
  * Purpose: Class used to represent the Sailor Soda drink 
  */
 
-using BleakwindBuffet.Data.Drinks;
-using BleakwindBuffet.Data.Enums;
-using BleakwindBuffet.Data;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
+using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     public class SailorSoda : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        ///     Gets the price of the drink
+        /// </summary>
+        /// <param name="flavor">flavor of the drink</param>
+        private SodaFlavor flavor = SodaFlavor.Cherry;
+
+
+        /// <summary>
+        ///     Gets/sets ice for the drink.
+        /// </summary>
+        /// <param name="ice">ice</param>
+        private bool ice = true;
+
         public SailorSoda()
         {
             Size = Size.Small;
@@ -51,13 +60,6 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-
-        /// <summary>
-        /// Gets/sets ice for the drink.
-        /// </summary>
-        /// <param name="ice">ice</param> 
-        private bool ice = true;
-
         public bool Ice
         {
             get => ice;
@@ -68,12 +70,6 @@ namespace BleakwindBuffet.Data.Drinks
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
-
-        /// <summary>
-        /// Gets the price of the drink
-        /// </summary>
-        /// <param name="flavor">flavor of the drink</param>
-        private SodaFlavor flavor = SodaFlavor.Cherry;
 
         public SodaFlavor Flavor
         {
@@ -88,7 +84,7 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// Gets the instructions for the drink. 
+        ///     Gets the instructions for the drink.
         /// </summary>
         /// <param name="ice">ice</param>
         /// <param name="instructions">the instructions for the drink</param>
@@ -103,7 +99,7 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// ToString override for the drink. 
+        ///     ToString override for the drink.
         /// </summary>
         /// <param name="ice">ice</param>
         /// <param name="ice">ice</param>

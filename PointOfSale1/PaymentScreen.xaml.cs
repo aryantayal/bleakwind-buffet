@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using BleakwindBuffet.Data;
 using PointOfSale.ExtensionMethod;
 using PointOfSale1;
@@ -18,7 +8,7 @@ using RoundRegister;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for PaymentScreen.xaml
+    ///     Interaction logic for PaymentScreen.xaml
     /// </summary>
     public partial class PaymentScreen : UserControl
     {
@@ -61,13 +51,13 @@ namespace PointOfSale
         public void PrintReciept()
         {
             var order = (Order) DataContext;
-            RecieptPrinter.PrintLine("Order Number:" + order.Number.ToString());
+            RecieptPrinter.PrintLine("Order Number:" + order.Number);
             foreach (var item in order.Items)
             {
-                RecieptPrinter.PrintLine(item.ToString() + "....$" + item.Price);
+                RecieptPrinter.PrintLine(item + "....$" + item.Price);
                 foreach (var s in item.SpecialInstructions) RecieptPrinter.PrintLine(s);
-                RecieptPrinter.PrintLine("Subtotal....$" + order.Subtotal.ToString());
-                RecieptPrinter.PrintLine("Tax....$" + order.Tax.ToString());
+                RecieptPrinter.PrintLine("Subtotal....$" + order.Subtotal);
+                RecieptPrinter.PrintLine("Tax....$" + order.Tax);
                 RecieptPrinter.PrintLine("Payment Method Used.... Card");
                 RecieptPrinter.CutTape();
             }

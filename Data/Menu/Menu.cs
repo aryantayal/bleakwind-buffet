@@ -1,20 +1,19 @@
-﻿using BleakwindBuffet.Data.Drinks;
+﻿using System;
+using System.Collections.Generic;
+using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entree;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BleakwindBuffet.Data
 {
     /// <summary>
-    /// A public static class that represents the menu 
+    ///     A public static class that represents the menu
     /// </summary>
     public static class Menu
     {
         /// <summary>
-        /// An IEnumerable<IOrderItem> that returns all the entrees
+        ///     An IEnumerable<IOrderItem> that returns all the entrees
         /// </summary>
         /// <returns>A list of the all the available entrees</returns>
         public static IEnumerable<IOrderItem> Entrees()
@@ -31,7 +30,7 @@ namespace BleakwindBuffet.Data
         }
 
         /// <summary>
-        /// An IEnumerable<IOrderItem> that returns all the sides
+        ///     An IEnumerable<IOrderItem> that returns all the sides
         /// </summary>
         /// <returns>A list of the all the available sides</returns>
         public static IEnumerable<IOrderItem> Sides()
@@ -40,22 +39,22 @@ namespace BleakwindBuffet.Data
 
             foreach (Size s in Enum.GetValues(typeof(Size)))
             {
-                side.Add(new DragonbornWaffleFries()
+                side.Add(new DragonbornWaffleFries
                 {
                     Size = s
                 });
 
-                side.Add(new FriedMiraak()
+                side.Add(new FriedMiraak
                 {
                     Size = s
                 });
 
-                side.Add(new MadOtarGrits()
+                side.Add(new MadOtarGrits
                 {
                     Size = s
                 });
 
-                side.Add(new VokunSalad()
+                side.Add(new VokunSalad
                 {
                     Size = s
                 });
@@ -65,7 +64,7 @@ namespace BleakwindBuffet.Data
         }
 
         /// <summary>
-        /// An IEnumerable<IOrderItem> that returns all the drinks
+        ///     An IEnumerable<IOrderItem> that returns all the drinks
         /// </summary>
         /// <returns>A list of the available drinks</returns>
         public static IEnumerable<IOrderItem> Drinks()
@@ -74,28 +73,28 @@ namespace BleakwindBuffet.Data
 
             foreach (Size s in Enum.GetValues(typeof(Size)))
             {
-                drink.Add(new AretinoAppleJuice()
+                drink.Add(new AretinoAppleJuice
                 {
                     Size = s
                 });
 
-                drink.Add(new CandlehearthCoffee()
+                drink.Add(new CandlehearthCoffee
                 {
                     Size = s
                 });
 
-                drink.Add(new MarkarthMilk()
+                drink.Add(new MarkarthMilk
                 {
                     Size = s
                 });
 
-                drink.Add(new WarriorWater()
+                drink.Add(new WarriorWater
                 {
                     Size = s
                 });
 
                 foreach (SodaFlavor sf in Enum.GetValues(typeof(SodaFlavor)))
-                    drink.Add(new SailorSoda()
+                    drink.Add(new SailorSoda
                     {
                         Size = s,
                         Flavor = sf
@@ -106,7 +105,7 @@ namespace BleakwindBuffet.Data
         }
 
         /// <summary>
-        /// An IEnumerable<IOrderItem> that returns the full menu.
+        ///     An IEnumerable<IOrderItem> that returns the full menu.
         /// </summary>
         /// <returns>A list containing all of the items on the menu</returns>
         public static IEnumerable<IOrderItem> FullMenu()

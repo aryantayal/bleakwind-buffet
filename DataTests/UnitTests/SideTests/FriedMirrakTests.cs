@@ -5,10 +5,9 @@
  */
 
 using System.ComponentModel;
-using Xunit;
-using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
+using Xunit;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {

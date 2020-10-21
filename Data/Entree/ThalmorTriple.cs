@@ -4,32 +4,69 @@
  * Purpose: Class used to represent the Thalmor Triple
  */
 
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using BleakwindBuffet.Data.Entree;
-using BleakwindBuffet.Data.Enums;
-using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
     public class ThalmorTriple : Entree
     {
         /// <summary>
-        /// Gets the price for the burger
+        ///     get/set for bacon
         /// </summary>
-        public override double Price => 8.32;
+        /// <param name="bacon">bool for the bacon</param>
+        private bool bacon = true;
 
         /// <summary>
-        /// gets the calories for the burger
+        ///     get/set for cheese
         /// </summary>
-        public override uint Calories => 943;
+        /// <param name="cheese">bool for the cheese on the burger</param>
+        private bool cheese = true;
+
+        private bool egg = true;
 
         private bool ketchup = true;
 
         /// <summary>
-        /// get/set for ketchup
+        ///     get/set for lettuce
+        /// </summary>
+        /// <param name="lettuce">bool for the lettuce on the burger</param>
+        private bool lettuce = true;
+
+        /// <summary>
+        ///     get/set for mayo
+        /// </summary>
+        /// <param name="mayo">bool for mayo</param>
+        private bool mayo = true;
+
+        /// <summary>
+        ///     get/set for mustard
+        /// </summary>
+        /// <param name="mustard">mustard for the burger</param>
+        private bool mustard = true;
+
+        private bool pickle = true;
+
+
+        private List<string> specialInstructions = new List<string>();
+
+        /// <summary>
+        ///     get/set for tomato
+        /// </summary>
+        /// <param name="tomato">bool for tomato</param>
+        private bool tomato = true;
+
+        /// <summary>
+        ///     Gets the price for the burger
+        /// </summary>
+        public override double Price => 8.32;
+
+        /// <summary>
+        ///     gets the calories for the burger
+        /// </summary>
+        public override uint Calories => 943;
+
+        /// <summary>
+        ///     get/set for ketchup
         /// </summary>
         /// <param name="ketchup">ketchup</param>
         public bool Ketchup
@@ -45,15 +82,9 @@ namespace BleakwindBuffet.Data.Entree
         }
 
         /// <summary>
-        /// get/set for bun
+        ///     get/set for bun
         /// </summary>
         public bool Bun { get; set; } = true;
-
-        /// <summary>
-        /// get/set for mustard
-        /// </summary>
-        /// <param name="mustard">mustard for the burger</param>
-        private bool mustard = true;
 
         public bool Mustard
         {
@@ -68,10 +99,8 @@ namespace BleakwindBuffet.Data.Entree
             }
         }
 
-        private bool pickle = true;
-
         /// <summary>
-        /// get/set for pickle
+        ///     get/set for pickle
         /// </summary>
         /// <param name="pickle">bool for pickle on the burger</param>
         public bool Pickle
@@ -88,12 +117,6 @@ namespace BleakwindBuffet.Data.Entree
             }
         }
 
-        /// <summary>
-        /// get/set for cheese
-        /// </summary>
-        /// <param name="cheese">bool for the cheese on the burger</param>
-        private bool cheese = true;
-
         public bool Cheese
         {
             get => cheese;
@@ -106,12 +129,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
-
-        /// <summary>
-        /// get/set for lettuce
-        /// </summary>
-        /// <param name="lettuce">bool for the lettuce on the burger</param>
-        private bool lettuce = true;
 
         public bool Lettuce
         {
@@ -126,12 +143,6 @@ namespace BleakwindBuffet.Data.Entree
             }
         }
 
-        /// <summary>
-        /// get/set for tomato
-        /// </summary>
-        /// <param name="tomato">bool for tomato</param>
-        private bool tomato = true;
-
         public bool Tomato
         {
             get => tomato;
@@ -143,12 +154,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
-
-        /// <summary>
-        /// get/set for mayo
-        /// </summary>
-        ///<param name="mayo">bool for mayo</param>
-        private bool mayo = true;
 
         public bool Mayo
         {
@@ -163,12 +168,6 @@ namespace BleakwindBuffet.Data.Entree
             }
         }
 
-        /// <summary>
-        /// get/set for bacon
-        /// </summary>
-        /// <param name="bacon">bool for the bacon</param>
-        private bool bacon = true;
-
         public bool Bacon
         {
             get => bacon;
@@ -181,10 +180,8 @@ namespace BleakwindBuffet.Data.Entree
             }
         }
 
-        private bool egg = true;
-
         /// <summary>
-        /// get/set for egg
+        ///     get/set for egg
         /// </summary>
         /// <param name="egg">bool for the egg</param>
         public bool Egg
@@ -199,11 +196,8 @@ namespace BleakwindBuffet.Data.Entree
             }
         }
 
-
-        private List<string> specialInstructions = new List<string>();
-
         /// <summary>
-        /// Gets/sets the instructions for the entree 
+        ///     Gets/sets the instructions for the entree
         /// </summary>
         /// <param name="instructions">the instructions for the burger</param>
         public override List<string> SpecialInstructions
@@ -225,7 +219,7 @@ namespace BleakwindBuffet.Data.Entree
         }
 
         /// <summary>
-        /// ToString override for the entree 
+        ///     ToString override for the entree
         /// </summary>
         public override string ToString()
         {

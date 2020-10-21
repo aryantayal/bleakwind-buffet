@@ -4,33 +4,39 @@
  * Purpose: Class used to represent the Philly Poacher
  */
 
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using BleakwindBuffet.Data.Entree;
-using BleakwindBuffet.Data.Enums;
-using BleakwindBuffet.Data;
 
 namespace BleakwindBuffet.Data.Entree
 {
     public class PhillyPoacher : Entree
     {
         /// <summary>
-        /// Gets the price of the entree.
+        ///     Gets/sets the mushrooms for the entree.
+        /// </summary>
+        /// <param name="onion">bool for onion</param>
+        private bool onion = true;
+
+        /// <summary>
+        ///     Gets/sets the rolls for the entree.
+        /// </summary>
+        /// <param name="roll">bool for roll</param>
+        private bool roll = true;
+
+        /// <summary>
+        ///     Gets/sets the sirloin for the entree.
+        /// </summary>
+        /// <param name="sirloin">bool for sirloin</param>
+        private bool sirloin = true;
+
+        /// <summary>
+        ///     Gets the price of the entree.
         /// </summary>
         public override double Price => 7.23;
 
         /// <summary>
-        /// Gets the calories of the entree.
+        ///     Gets the calories of the entree.
         /// </summary>
         public override uint Calories => 784;
-
-        /// <summary>
-        /// Gets/sets the sirloin for the entree. 
-        /// </summary>
-        /// <param name="sirloin">bool for sirloin</param>
-        private bool sirloin = true;
 
         public bool Sirloin
         {
@@ -44,12 +50,6 @@ namespace BleakwindBuffet.Data.Entree
             }
         }
 
-        /// <summary>
-        /// Gets/sets the mushrooms for the entree. 
-        /// </summary>
-        /// <param name="onion">bool for onion</param>
-        private bool onion = true;
-
         public bool Onion
         {
             get => onion;
@@ -61,12 +61,6 @@ namespace BleakwindBuffet.Data.Entree
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
-
-        /// <summary>
-        /// Gets/sets the rolls for the entree. 
-        /// </summary>
-        /// <param name="roll">bool for roll</param>
-        private bool roll = true;
 
         public bool Roll
         {
@@ -82,7 +76,7 @@ namespace BleakwindBuffet.Data.Entree
 
 
         /// <summary>
-        /// Gets/sets the instructions for the entree 
+        ///     Gets/sets the instructions for the entree
         /// </summary>
         /// <param name="instructions">instructions for the entree</param>
         public override List<string> SpecialInstructions
@@ -98,7 +92,7 @@ namespace BleakwindBuffet.Data.Entree
         }
 
         /// <summary>
-        /// ToString override for the entree 
+        ///     ToString override for the entree
         /// </summary>
         public override string ToString()
         {

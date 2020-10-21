@@ -5,9 +5,8 @@
  */
 
 using System.ComponentModel;
-using Xunit;
-using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entree;
+using Xunit;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {

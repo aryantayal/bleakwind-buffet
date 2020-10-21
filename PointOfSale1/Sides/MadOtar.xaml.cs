@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Printing;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using BleakwindBuffet.Data.Sides;
 using PointOfSale.ExtensionMethod;
 using PointOfSale1;
@@ -19,11 +8,11 @@ using Size = BleakwindBuffet.Data.Enums.Size;
 namespace PointOfSale.Sides
 {
     /// <summary>
-    /// Interaction logic for MadOtar.xaml
+    ///     Interaction logic for MadOtar.xaml
     /// </summary>
     public partial class MadOtar : UserControl
     {
-        private MadOtarGrits mo = new MadOtarGrits();
+        private readonly MadOtarGrits mo = new MadOtarGrits();
 
         public MadOtar()
         {
@@ -32,7 +21,7 @@ namespace PointOfSale.Sides
         }
 
         /// <summary>
-        /// After user selects the specification the done button it takes it back to the main menu selector
+        ///     After user selects the specification the done button it takes it back to the main menu selector
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

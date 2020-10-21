@@ -12,7 +12,7 @@ namespace PointOfSale.ExtensionMethod
     public static class ExtensionMethod
     {
         /// <summary>
-        /// Finds the control passed to the function
+        ///     Finds the control passed to the function
         /// </summary>
         /// <typeparam name="T">Some control</typeparam>
         /// <param name="element"></param>

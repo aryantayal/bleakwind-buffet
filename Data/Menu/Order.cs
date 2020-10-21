@@ -1,55 +1,28 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 
 namespace BleakwindBuffet.Data
 {
     /// <summary>
-    /// Representation of an order
+    ///     Representation of an order
     /// </summary>
     public class Order : INotifyPropertyChanged, ICollection, INotifyCollectionChanged
     {
-        private double salesTaxRate = 0.12;
         private static uint nextOrderNumber = 1;
 
         /// <summary>
-        /// PropertyChanged event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
-
-        public int Count => throw new NotImplementedException();
-        public bool IsSynchronized => throw new NotImplementedException();
-
-        public object SyncRoot => throw new NotImplementedException();
-
-        /// <summary>
-        /// Notifies when property updates
-        /// </summary>
-        /// <param name="property">name of property</param>
-        private void NotifyOfPropertyChanged(string property)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-        }
-
-        /// <summary>
-        /// order item
+        ///     order item
         /// </summary>
         public List<IOrderItem> order = new List<IOrderItem>();
 
-        public uint Number { get; }
-
-        public IEnumerable<IOrderItem> Items => order;
+        private readonly double salesTaxRate = 0.12;
 
 
         /// <summary>
-        /// Constructs a new instance of Order
+        ///     Constructs a new instance of Order
         /// </summary>
         public Order()
         {
@@ -58,8 +31,12 @@ namespace BleakwindBuffet.Data
             nextOrderNumber++;
         }
 
+        public uint Number { get; }
+
+        public IEnumerable<IOrderItem> Items => order;
+
         /// <summary>
-        /// Cost of order before tax
+        ///     Cost of order before tax
         /// </summary>
         public double Subtotal
         {
@@ -74,12 +51,12 @@ namespace BleakwindBuffet.Data
         }
 
         /// <summary>
-        /// Sales tax rate of the order
+        ///     Sales tax rate of the order
         /// </summary>
         public double Tax => salesTaxRate * Subtotal;
 
         /// <summary>
-        /// Total cost of the order
+        ///     Total cost of the order
         /// </summary>
         public double TotalCost => Subtotal + Tax;
 
@@ -96,6 +73,37 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        public int Count => throw new NotImplementedException();
+        public bool IsSynchronized => throw new NotImplementedException();
+
+        public object SyncRoot => throw new NotImplementedException();
+
+        public void CopyTo(Array array, int index)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return order.GetEnumerator();
+        }
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
+
+        /// <summary>
+        ///     PropertyChanged event handler
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        ///     Notifies when property updates
+        /// </summary>
+        /// <param name="property">name of property</param>
+        private void NotifyOfPropertyChanged(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
+
         private void ItemChanges(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "Price")
@@ -109,7 +117,7 @@ namespace BleakwindBuffet.Data
         }
 
         /// <summary>
-        /// Adds a new item to the current order
+        ///     Adds a new item to the current order
         /// </summary>
         /// <param name="item"></param>
         public void Add(IOrderItem item)
@@ -125,7 +133,7 @@ namespace BleakwindBuffet.Data
         }
 
         /// <summary>
-        /// Removes an item from the current order
+        ///     Removes an item from the current order
         /// </summary>
         /// <param name="item"></param>
         public void Remove(IOrderItem item)
@@ -138,16 +146,6 @@ namespace BleakwindBuffet.Data
             NotifyOfPropertyChanged("Tax");
             NotifyOfPropertyChanged("TotalCost");
             item.PropertyChanged -= ItemChanges;
-        }
-
-        public void CopyTo(Array array, int index)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            return order.GetEnumerator();
         }
     }
 }

@@ -1,22 +1,120 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using BleakwindBuffet.Data.Drinks;
-using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Entree;
 using BleakwindBuffet.Data.Sides;
 
 namespace BleakwindBuffet.Data
 {
     public class Combo : IOrderItem
     {
+        private Drink drink = new WarriorWater();
+        private Entree.Entree entree = new DoubleDraugr();
+        private Side side = new VokunSalad();
+
+
+        public Combo()
+        {
+            entree.PropertyChanged += ItemChangeListener;
+            drink.PropertyChanged += ItemChangeListener;
+            side.PropertyChanged += ItemChangeListener;
+        }
+
         /// <summary>
-        /// Event handler for property updates
+        ///     An Entree item in the combo
+        /// </summary>
+        public Entree.Entree Entree
+        {
+            get => entree;
+            set
+            {
+                entree.PropertyChanged -= ItemChangeListener;
+                entree = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ComboEntree"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                entree.PropertyChanged += ItemChangeListener;
+            }
+        }
+
+
+        /// <summary>
+        ///     A Drink item in the combo
+        /// </summary>
+        public Drink Drink
+        {
+            get => drink;
+            set
+            {
+                drink.PropertyChanged -= ItemChangeListener;
+                drink = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ComboDrink"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                drink.PropertyChanged += ItemChangeListener;
+            }
+        }
+
+
+        /// <summary>
+        ///     A side item in the combo
+        /// </summary>
+        public Side Side
+        {
+            get => side;
+            set
+            {
+                side.PropertyChanged -= ItemChangeListener;
+                side = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ComboSide"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                side.PropertyChanged += ItemChangeListener;
+            }
+        }
+
+        /// <summary>
+        ///     Event handler for property updates
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// Notifies when property updates
+        ///     The calories of the combo items
+        /// </summary>
+        public uint Calories => drink.Calories + entree.Calories + side.Calories;
+
+        /// <summary>
+        ///     The price of the combo items
+        /// </summary>
+        public double Price => drink.Price + entree.Price + side.Price - 1;
+
+        /// <summary>
+        ///     The items and their special instructions that are in the combo
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                var instructions = new List<string>();
+
+                instructions.Add(entree.ToString());
+                instructions.AddRange(entree.SpecialInstructions);
+
+                instructions.Add(drink.ToString());
+                instructions.AddRange(drink.SpecialInstructions);
+
+                instructions.Add(side.ToString());
+
+                return instructions;
+            }
+        }
+
+
+        /// <summary>
+        ///     Notifies when property updates
         /// </summary>
         /// <param name="property">name of property</param>
         private void NotifyOfPropertyChanged(string property)
@@ -24,115 +122,30 @@ namespace BleakwindBuffet.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
-        private Entree.Entree entree;
-
-        public Combo()
+        public void ItemChangeListener(object sender, PropertyChangedEventArgs e)
         {
-        }
-
-        /// <summary>
-        /// An Entree item in the combo
-        /// </summary>
-        public Entree.Entree Entree
-        {
-            get => entree;
-            set
+            //Size, flavor, special instructions
+            if (e.PropertyName == "Size")
             {
-                entree = value;
-                NotifyOfPropertyChanged("Entree");
-                NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Calories");
-                NotifyOfPropertyChanged("SpecialInstructions");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
-        }
-
-        private Drink drink;
-
-        /// <summary>
-        /// A Drink item in the combo
-        /// </summary>
-        public Drink Drink
-        {
-            get => drink;
-            set
+            else if (e.PropertyName == "Flavor")
             {
-                drink = value;
-                NotifyOfPropertyChanged("Drink");
-                NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Calories");
-                NotifyOfPropertyChanged("SpecialInstructions");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
-        }
-
-        private Side side;
-
-        /// <summary>
-        /// A side item in the combo
-        /// </summary>
-        public Side Side
-        {
-            get => side;
-            set
+            else if (e.PropertyName == "SpecialInstructions")
             {
-                side = value;
-                NotifyOfPropertyChanged("Side");
-                NotifyOfPropertyChanged("Price");
-                NotifyOfPropertyChanged("Calories");
-                NotifyOfPropertyChanged("SpecialInstructions");
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
             }
-        }
-
-        /// <summary>
-        /// The calories of the combo items
-        /// </summary>
-        public uint Calories
-        {
-            get
+            else
             {
-                uint cal = 0;
-                if (Entree != null) cal += Entree.Calories;
-
-                if (Drink != null) cal += Drink.Calories;
-
-                if (Side != null) cal += Side.Calories;
-
-                return cal;
-            }
-        }
-
-        /// <summary>
-        /// The price of the combo items
-        /// </summary>
-        public double Price
-        {
-            get
-            {
-                var price = 0.0;
-                if (Entree != null) price += Entree.Price;
-
-                if (Drink != null) price += Drink.Price;
-
-                if (Side != null) price += Side.Price;
-
-                return price - 1.0;
-            }
-        }
-
-        /// <summary>
-        /// The items and their special instructions that are in the combo
-        /// </summary>
-        public List<string> SpecialInstructions
-        {
-            get
-            {
-                var si = new List<string>();
-                si.Add(Entree.ToString());
-                si.AddRange(Entree.SpecialInstructions);
-                si.Add(Side.ToString());
-                si.AddRange(Side.SpecialInstructions);
-                si.Add(Drink.ToString());
-                si.AddRange(Drink.SpecialInstructions);
-                return si;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
     }

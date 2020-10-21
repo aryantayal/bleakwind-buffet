@@ -4,10 +4,7 @@
  * Purpose: Class used to represent the Fried Miraak side
  */
 
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
@@ -49,9 +46,10 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
-        /// sends an empty list
+        ///     sends an empty list
         /// </summary>
-        /// /// <param name="instructions">the instructions for the item</param>
+        /// ///
+        /// <param name="instructions">the instructions for the item</param>
         public override List<string> SpecialInstructions
         {
             get
@@ -62,7 +60,7 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
-        /// ToString override for the side
+        ///     ToString override for the side
         /// </summary>
         public override string ToString()
         {

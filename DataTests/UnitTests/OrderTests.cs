@@ -4,14 +4,12 @@
  * Purpose: Test the OrderTests.cs class in the Data library
  */
 
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entree;
-using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
+using BleakwindBuffet.Data.Sides;
+using Xunit;
 
 namespace BleakwindBuffet.DataTests.UnitTests
 {
@@ -25,7 +23,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
             var vs = new VokunSalad();
             var o = new Order();
 
-            o.Add((IOrderItem) b);
+            o.Add(b);
 
             Assert.Equal(6.32, o.Subtotal, 2);
             Assert.Equal(0.76, o.Tax, 2);
@@ -40,7 +38,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
             var vs = new VokunSalad();
             var o = new Order();
             vs.Size = Size.Small;
-            o.Add((IOrderItem) vs);
+            o.Add(vs);
 
             Assert.Equal(.93, o.Subtotal, 2);
             Assert.Equal(.11, o.Tax, 2);
@@ -55,7 +53,7 @@ namespace BleakwindBuffet.DataTests.UnitTests
             var vs = new VokunSalad();
             var o = new Order();
             aj.Size = Size.Small;
-            o.Add((IOrderItem) aj);
+            o.Add(aj);
             Assert.Equal(.62, o.Subtotal, 2);
             Assert.Equal(.07, o.Tax, 2);
             Assert.Equal(.69, o.TotalCost, 2);

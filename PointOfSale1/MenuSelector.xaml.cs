@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entree;
@@ -28,12 +18,12 @@ using WarriorWater = PointOfSale.Drink.WarriorWater;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for MenuSelector.xaml
+    ///     Interaction logic for MenuSelector.xaml
     /// </summary>
     public partial class MenuSelector : UserControl
     {
         /// <summary>
-        /// Initalizes the Menu selector
+        ///     Initalizes the Menu selector
         /// </summary>
         public MenuSelector()
         {
@@ -41,7 +31,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -57,7 +47,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -73,7 +63,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -89,7 +79,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -105,7 +95,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -121,7 +111,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -137,7 +127,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -153,7 +143,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -169,7 +159,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -185,7 +175,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -201,7 +191,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -217,7 +207,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -233,7 +223,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -249,7 +239,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -276,7 +266,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

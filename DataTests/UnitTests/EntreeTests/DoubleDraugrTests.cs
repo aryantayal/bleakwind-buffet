@@ -4,12 +4,9 @@
  * Purpose: Test the DoubleDraugr.cs class in the Data library
  */
 
-using System;
 using System.ComponentModel;
-using Xunit;
-using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entree;
-using BleakwindBuffet.Data.Enums;
+using Xunit;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {

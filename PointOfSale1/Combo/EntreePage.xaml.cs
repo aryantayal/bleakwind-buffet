@@ -1,39 +1,30 @@
-﻿using BleakwindBuffet.Data;
+﻿using System.Windows;
+using System.Windows.Controls;
+using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entree;
 using PointOfSale.Entree;
 using PointOfSale.ExtensionMethod;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using PointOfSale1;
 using GardenOrcOmelette = PointOfSale.Entree.GardenOrcOmelette;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for EntreePage.xaml
+    ///     Interaction logic for EntreePage.xaml
     /// </summary>
     public partial class EntreePage : UserControl
     {
+        private readonly Combo combo;
+
         public EntreePage(Combo c)
         {
             InitializeComponent();
             combo = c;
         }
 
-        private Combo combo = new Combo();
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -49,7 +40,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -65,7 +56,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -81,7 +72,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -97,7 +88,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -124,7 +115,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Opens the customization page upon click
+        ///     Opens the customization page upon click
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

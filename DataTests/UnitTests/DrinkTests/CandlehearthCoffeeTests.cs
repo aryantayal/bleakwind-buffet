@@ -5,10 +5,9 @@
  */
 
 using System.ComponentModel;
-using Xunit;
-using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
+using Xunit;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
