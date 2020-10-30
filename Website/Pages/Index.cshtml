@@ -1,4 +1,10 @@
 ﻿@page
+@using BleakwindBuffet.Data
+@using BleakwindBuffet.Data.Entree
+@using System.Security.Cryptography
+@using BleakwindBuffet.Data.Drinks
+@using BleakwindBuffet.Data.Enums
+@using BleakwindBuffet.Data.Sides
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -16,16 +22,77 @@
     </p>
 </div>
 <div class="menu-items">
-    <h2>Entrees</h2>
-    <div class="menu-items-entrees">
-
-    </div>
-    <h2>Sides</h2>
-    <div class="menu-items-sides">
-
-    </div>
-    <h2>Drinks</h2>
-    <div class="menu-items-drinks">
-
-    </div>
+	<h2> Entrees</h2>
+	<div class="menu-items-entrees">
+		@foreach (Entree entree in Menu.Entrees())
+		{
+			<div class="menu-item">
+				<table>
+					<tr>
+						<th colspan="2"><h3>@entree.Name</h3></th>
+					</tr>
+					<tr>
+						<td>Price</td>
+						<td>$@entree.Price</td>
+					</tr>
+					<tr>
+						<td>Calories</td>
+						<td>@entree.Calories</td>
+					</tr>
+				</table>
+			</div>
+		}
+	</div>
+	<br />
+	<br />
+	<h2>Sides</h2>
+	<div class="menu-items-sides">
+		@foreach (Side side in Menu.Sides())
+		{
+			<div class="menu-item">
+				<table>
+					<tr>
+						<th colspan="2"><h3>@side.Name</h3></th>
+					</tr>
+					<tr>
+						<td>Price</td>
+						<td>$@side.Price</td>
+					</tr>
+					<tr>
+						<td>Calories</td>
+						<td>@side.Calories</td>
+					</tr>
+				</table>
+			</div>
+		}
+	</div>
+	<br />
+	<br />
+	<h2>Drinks</h2>
+	<div class="menu-items-drinks">
+		@foreach (Drink d in Menu.Drinks())
+		{
+			<div class="menu-item">
+				<table>
+					<tr>
+						<th colspan="2"><h3>@d.Name</h3></th>
+					</tr>
+					<tr>
+						<td>Price</td>
+						<td>$@d.Price</td>
+					</tr>
+					<tr>
+						<td>Calories</td>
+						<td>@d.Calories</td>
+					</tr>
+				</table>
+			</div>
+		}
+	</div>
+	<br />
+	<br />
+	<h2>Combo</h2>
+	<div class="menu-items-combo">
+		<p>Any entree, side, and drink can be combined into a Combo for a $1 discount</p>
+	</div>
 </div>

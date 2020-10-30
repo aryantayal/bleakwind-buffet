@@ -50,7 +50,17 @@ button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
 }
-
+table, th, td {
+	border: 1px solid black;
+}
+td {
+	padding: 10px;
+	text-align: center;
+}
+th {
+	text-align: center;
+	padding: 20px;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
