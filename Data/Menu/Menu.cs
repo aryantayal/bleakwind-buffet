@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security;
+using System.Xml;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entree;
 using BleakwindBuffet.Data.Enums;
@@ -121,6 +124,131 @@ namespace BleakwindBuffet.Data
             menu.AddRange(drink);
 
             return menu;
+        }
+        public static IEnumerable<IOrderItem> All
+        {
+            get { return FullMenu(); }
+        }
+        public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> j, string terms)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            if (terms == null)
+            {
+                return j;
+            }
+
+            foreach (IOrderItem item in j)
+            {
+                if (item.ToString() != null &&
+                    item.ToString().ToLower().Contains(terms.ToLower()))
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
+
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> list,
+            IEnumerable<string> category)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            if (category == null || category.Count() == 0) return list;
+
+            foreach (IOrderItem item in list)
+            {
+                if (category.Contains("entree"))
+                {
+                    if (item is Entree.Entree)
+                    {
+                        results.Add(item);
+                    }
+                }
+                if (category.Contains("drink"))
+                {
+                    if (item is Drink)
+                    {
+                        results.Add(item);
+                    }
+                }
+                if (category.Contains("side"))
+                {
+                    if (item is Side)
+                    {
+                        results.Add(item);
+                    }
+                }
+            }
+
+            return results;
+        }
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> list,
+            double? min, double? max)
+        {
+            if (min == null && max == null) return list;
+            var results = new List<IOrderItem>();
+
+            if (min == null)
+            {
+                foreach (IOrderItem item in list)
+                {
+                    if (item.Price <= max) results.Add(item);
+
+                }
+                return results;
+            }
+            if (max == null)
+            {
+                foreach (IOrderItem item in list)
+                {
+                    if (item.Price >= min) results.Add(item);
+                }
+                return results;
+            }
+
+            foreach (IOrderItem item in list)
+            {
+                if (item.Price >= min && item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> list,
+            double? min, double? max)
+        {
+            if (min == null && max == null) return list;
+            var results = new List<IOrderItem>();
+
+            if (min == null)
+            {
+                foreach (IOrderItem item in list)
+                {
+                    if (item.Calories <= max) results.Add(item);
+
+                }
+                return results;
+            }
+            if (max == null)
+            {
+                foreach (IOrderItem item in list)
+                {
+                    if (item.Calories >= min) results.Add(item);
+                }
+                return results;
+            }
+
+            foreach (IOrderItem item in list)
+            {
+                if (item.Calories >= min && item.Calories <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
         }
     }
 }
