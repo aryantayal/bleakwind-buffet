@@ -21,8 +21,9 @@
         You’ve had a hard adventure and earned your loot, so spend it with us!.
     </p>
 </div>
+
 <form class="search">
-    <input type="text" id="search" name="search" value="@Model.SearchTerms" />
+    <input type="text" id="search" name="SearchItem" value="@Model.SearchTerms" />
     <input type="submit" value="Search" />
 
     <h3>Menu Category</h3>
@@ -50,23 +51,24 @@
             Max
             <input type="number" id="maximum-price" name="PriceMax" min="0" max="10" step="1" placeholder="10"/>
         </label>
-    <h3>Calories</h3>
-    <div class="filter-calories">
-        <label>
-            Min
-            <input type="number" id="minimum-price" name="CalMin" min="0" max="981" step="1" placeholder="0"/>
-        </label>
-        <label>
-            Max
-            <input type="number" id="maximum-price" name="CalMax" min="0" max="1000" step="1" placeholder="1000" />
-        </label>
-    </div>
+        <h3>Calories</h3>
+        <div class="filter-calories">
+            <label>
+                Min
+                <input type="number" id="minimum-price" name="CalMin" min="0" max="981" step="1" placeholder="0"/>
+            </label>
+            <label>
+                Max
+                <input type="number" id="maximum-price" name="CalMax" min="0" max="1000" step="1" placeholder="1000" />
+            </label>
+        </div>
     </div>
 </form>
+
 <div class="menu-items">
     <h2> Entrees</h2>
     <div class="menu-items-entrees">
-        @foreach (Entree entree in Menu.Entrees())
+        @foreach (Entree entree in Model.Entree)
         {
             <div class="menu-item">
                 <table>
@@ -89,7 +91,7 @@
     <br />
     <h2>Sides</h2>
     <div class="menu-items-sides">
-        @foreach (Side side in Menu.Sides())
+        @foreach (Side side in @Model.Side)
         {
             <div class="menu-item">
                 <table>
@@ -112,7 +114,7 @@
     <br />
     <h2>Drinks</h2>
     <div class="menu-items-drinks">
-        @foreach (Drink d in Menu.Drinks())
+        @foreach (Drink d in @Model.Drink)
         {
             <div class="menu-item">
                 <table>

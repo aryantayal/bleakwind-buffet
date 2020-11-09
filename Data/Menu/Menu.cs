@@ -159,21 +159,21 @@ namespace BleakwindBuffet.Data
 
             foreach (IOrderItem item in list)
             {
-                if (category.Contains("entree"))
+                if (category.Contains("Entree"))
                 {
                     if (item is Entree.Entree)
                     {
                         results.Add(item);
                     }
                 }
-                if (category.Contains("drink"))
+                if (category.Contains("Drink"))
                 {
                     if (item is Drink)
                     {
                         results.Add(item);
                     }
                 }
-                if (category.Contains("side"))
+                if (category.Contains("Side"))
                 {
                     if (item is Side)
                     {
