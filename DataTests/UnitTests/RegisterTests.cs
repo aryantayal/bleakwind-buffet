@@ -21,15 +21,16 @@ namespace BleakwindBuffet.DataTests.UnitTests
         public void ShouldBeAnINofityPropertyChanged()
         {
             double test = 0;
-            CashPayViewModel drawer = new CashPayViewModel(test);
+            var drawer = new CashPayViewModel(test);
             drawer.ResetDrawer();
             Assert.IsAssignableFrom<INotifyPropertyChanged>(drawer);
         }
+
         [Fact]
         public void Defaults_Should_Be_Zero_ChangeAndPaid()
         {
             double test = 0;
-            CashPayViewModel drawer = new CashPayViewModel(test);
+            var drawer = new CashPayViewModel(test);
             drawer.ResetDrawer();
             Assert.Equal(0, drawer.ChangePennies);
             Assert.Equal(0, drawer.ChangeNickels);
@@ -63,15 +64,15 @@ namespace BleakwindBuffet.DataTests.UnitTests
 
             Assert.Equal(474, drawer.Total);
         }
+
         [Fact]
         public void Defaults_Should_Be_ZeroEnoughMoney()
         {
             double test = 0;
-            CashPayViewModel drawer = new CashPayViewModel(test);
+            var drawer = new CashPayViewModel(test);
             drawer.ResetDrawer();
             Assert.Equal(0, drawer.TotalCost);
             Assert.True(drawer.EnoughMoney);
         }
-
     }
 }

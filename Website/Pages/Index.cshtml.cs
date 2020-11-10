@@ -38,20 +38,11 @@ namespace Website.Pages
             Drink = new List<IOrderItem>();
             Side = new List<IOrderItem>();
 
-            foreach (IOrderItem item in OrderItems)
+            foreach (var item in OrderItems)
             {
-                if (item is Entree)
-                {
-                    Entree.Add(item);
-                }
-                if (item is Drink)
-                {
-                    Drink.Add(item);
-                }
-                if (item is Side)
-                {
-                    Side.Add(item);
-                }
+                if (item is Entree) Entree.Add(item);
+                if (item is Drink) Drink.Add(item);
+                if (item is Side) Side.Add(item);
             }
         }
     }

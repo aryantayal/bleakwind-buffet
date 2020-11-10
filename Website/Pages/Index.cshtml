@@ -23,21 +23,21 @@
 </div>
 
 <form class="search">
-    <input type="text" id="search" name="SearchItem" value="@Model.SearchTerms" />
-    <input type="submit" value="Search" />
+    <input type="text" id="search" name="SearchItem" value="@Model.SearchTerms"/>
+    <input type="submit" value="Search"/>
 
     <h3>Menu Category</h3>
     <div class="filter-category">
         <label>
-            <input type="checkbox" name="category" value="Entree" />
+            <input type="checkbox" name="category" value="Entree"/>
             Entree
         </label>
         <label>
-            <input type="checkbox" name="category" value="Side" />
+            <input type="checkbox" name="category" value="Side"/>
             Side
         </label>
         <label>
-            <input type="checkbox" name="category" value="Drink" />
+            <input type="checkbox" name="category" value="Drink"/>
             Drink
         </label>
     </div>
@@ -45,11 +45,11 @@
     <div class="filter-price">
         <label>
             Min
-            <input type="number" id="minimum-price" name="PriceMin" min="0" max="8.30" step="1" placeholder="0"/>
+            <input type="number" id="minimum-price" name="PriceMin" min="0" max="8.30" step=".1" placeholder="0"/>
         </label>
         <label>
             Max
-            <input type="number" id="maximum-price" name="PriceMax" min="0" max="10" step="1" placeholder="10"/>
+            <input type="number" id="maximum-price" name="PriceMax" min="0" max="10" step=".1" placeholder="10"/>
         </label>
         <h3>Calories</h3>
         <div class="filter-calories">
@@ -59,7 +59,7 @@
             </label>
             <label>
                 Max
-                <input type="number" id="maximum-price" name="CalMax" min="0" max="1000" step="1" placeholder="1000" />
+                <input type="number" id="maximum-price" name="CalMax" min="0" max="1000" step="1" placeholder="1000"/>
             </label>
         </div>
     </div>
@@ -73,7 +73,9 @@
             <div class="menu-item">
                 <table>
                     <tr>
-                        <th colspan="2"><h3>@entree.Name</h3></th>
+                        <th colspan="2">
+                            <h3>@entree.Name</h3>
+                        </th>
                     </tr>
                     <tr>
                         <td>Price</td>
@@ -87,8 +89,8 @@
             </div>
         }
     </div>
-    <br />
-    <br />
+    <br/>
+    <br/>
     <h2>Sides</h2>
     <div class="menu-items-sides">
         @foreach (Side side in @Model.Side)
@@ -96,7 +98,9 @@
             <div class="menu-item">
                 <table>
                     <tr>
-                        <th colspan="2"><h3>@side.Name</h3></th>
+                        <th colspan="2">
+                            <h3>@side.Name</h3>
+                        </th>
                     </tr>
                     <tr>
                         <td>Price</td>
@@ -110,8 +114,8 @@
             </div>
         }
     </div>
-    <br />
-    <br />
+    <br/>
+    <br/>
     <h2>Drinks</h2>
     <div class="menu-items-drinks">
         @foreach (Drink d in @Model.Drink)
@@ -119,7 +123,9 @@
             <div class="menu-item">
                 <table>
                     <tr>
-                        <th colspan="2"><h3>@d.Name</h3></th>
+                        <th colspan="2">
+                            <h3>@d.Name</h3>
+                        </th>
                     </tr>
                     <tr>
                         <td>Price</td>
@@ -133,13 +139,10 @@
             </div>
         }
     </div>
-    <br />
-    <br />
+    <br/>
+    <br/>
     <h2>Combo</h2>
     <div class="menu-items-combo">
         <p>Any entree, side, and drink can be combined into a Combo for a $1 discount</p>
     </div>
 </div>
-
-
-

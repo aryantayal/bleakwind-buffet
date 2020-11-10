@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using RoundRegister;
+
 /// <summary>
 /// this class is the view model for the cash register
 /// </summary>
@@ -9,6 +10,7 @@ namespace PointOfSale
     public class CashPayViewModel : INotifyPropertyChanged
     {
         #region private variables
+
         private double orderCost = 0;
         private int Paid100c;
         private int Paid10c;
@@ -40,6 +42,7 @@ namespace PointOfSale
         private double amountDue;
         private int Change100c;
         private int Change10c;
+
         #endregion
 
         public CashPayViewModel(double totalCost)
@@ -82,6 +85,7 @@ namespace PointOfSale
                 return currentPayment;
             }
         }
+
         /// <summary>
         /// Calculates the amount due
         /// </summary>
@@ -170,6 +174,7 @@ namespace PointOfSale
             get => CashDrawer.Twos;
             set => CashDrawer.Twos = value;
         }
+
         /// <summary>
         ///     The Tens contained within the CashDrawer
         /// </summary>
@@ -197,6 +202,7 @@ namespace PointOfSale
             get => CashDrawer.Hundreds;
             set => CashDrawer.Hundreds = value;
         }
+
         /// <summary>
         ///     The Fives contained within the CashDrawer
         /// </summary>
@@ -214,7 +220,6 @@ namespace PointOfSale
             get => CashDrawer.Twenties;
             set => CashDrawer.Twenties = value;
         }
-
 
         #endregion
 
