@@ -45,7 +45,13 @@ namespace BleakwindBuffet.Data.Sides
                 NotifyOfPropertyChanged("SpecialInstructions");
             }
         }
-
+        /// <summary>
+        /// drescription for the side
+        /// </summary>
+        public override string Description
+        {
+            get => "Crispy fried potato waffle fries.";
+        }
 
         /// <summary>
         ///     sends an empty list

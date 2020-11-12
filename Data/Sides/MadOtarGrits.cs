@@ -59,7 +59,13 @@ namespace BleakwindBuffet.Data.Sides
                 return instructions;
             }
         }
-
+        /// <summary>
+        /// drescription for the side
+        /// </summary>
+        public override string Description
+        {
+            get => "Cheesey Grits.";
+        }
         /// <summary>
         ///     ToString override for the side
         /// </summary>

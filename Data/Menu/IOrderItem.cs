@@ -30,6 +30,6 @@ namespace BleakwindBuffet.Data
         /// <summary>
         /// the description for each item
         /// </summary>
-        List<string> Description { get; }
+        string Description { get; }
     }
 }
