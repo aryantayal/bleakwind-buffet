@@ -70,23 +70,24 @@
     <div class="menu-items-entrees">
         @foreach (Entree entree in Model.Entree)
         {
-            <div class="menu-item">
-                <table>
-                    <tr>
-                        <th colspan="2">
-                            <h3>@entree.Name</h3>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>Price</td>
-                        <td>$@entree.Price</td>
-                    </tr>
-                    <tr>
-                        <td>Calories</td>
-                        <td>@entree.Calories</td>
-                    </tr>
-                </table>
-            </div>
+        <div class="menu-item">
+            <table>
+                <tr>
+                    <th colspan="2">
+                        <h3>@entree.Name</h3>
+                    </th>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>$@entree.Price</td>
+                </tr>
+                <tr>
+                    <td>Calories</td>
+                    <td>@entree.Calories</td>
+                </tr>
+            </table>
+            <h3>@entree.Description</h3>
+        </div>
         }
     </div>
     <br/>
@@ -95,23 +96,24 @@
     <div class="menu-items-sides">
         @foreach (Side side in @Model.Side)
         {
-            <div class="menu-item">
-                <table>
-                    <tr>
-                        <th colspan="2">
-                            <h3>@side.Name</h3>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>Price</td>
-                        <td>$@side.Price</td>
-                    </tr>
-                    <tr>
-                        <td>Calories</td>
-                        <td>@side.Calories</td>
-                    </tr>
-                </table>
-            </div>
+        <div class="menu-item">
+            <table>
+                <tr>
+                    <th colspan="2">
+                        <h3>@side.Name</h3>
+                    </th>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>$@side.Price</td>
+                </tr>
+                <tr>
+                    <td>Calories</td>
+                    <td>@side.Calories</td>
+                </tr>
+            </table>
+            <h3>@side.Description</h3>
+        </div>
         }
     </div>
     <br/>
@@ -136,9 +138,11 @@
                         <td>@d.Calories</td>
                     </tr>
                 </table>
+                <h3>@d.Description</h3>
             </div>
         }
     </div>
+
     <br/>
     <br/>
     <h2>Combo</h2>

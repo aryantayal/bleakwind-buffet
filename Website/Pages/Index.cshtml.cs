@@ -24,6 +24,7 @@ namespace Website.Pages
 
         public List<IOrderItem> Drink { get; set; }
 
+
         public void OnGet(string SearchItem, IEnumerable<string> category,
             double? PriceMax, double? PriceMin, double? CalMax, double? CalMin)
         {
