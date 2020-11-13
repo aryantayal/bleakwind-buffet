@@ -70,7 +70,7 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
         /// <summary>
-        /// drescription for the drink
+        /// description for the drink
         /// </summary>
         public override string Description
         {

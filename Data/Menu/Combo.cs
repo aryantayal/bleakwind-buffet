@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Entree;
@@ -112,6 +113,10 @@ namespace BleakwindBuffet.Data
             }
         }
 
+        public string Description
+        {
+            get { throw new NotImplementedException(); }
+        }
 
         /// <summary>
         ///     Notifies when property updates

@@ -27,9 +27,7 @@ namespace BleakwindBuffet.Data
         ///     The special instructions needed when the item is ordered
         /// </summary>
         List<string> SpecialInstructions { get; }
-        /// <summary>
-        /// the description for each item
-        /// </summary>
+
         string Description { get; }
     }
 }

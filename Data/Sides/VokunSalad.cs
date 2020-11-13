@@ -58,7 +58,13 @@ namespace BleakwindBuffet.Data.Sides
                 return instructions;
             }
         }
-
+        /// <summary>
+        /// description for the side
+        /// </summary>
+        public override string Description
+        {
+            get => "A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges.";
+        }
         /// <summary>
         ///     ToString override for the side
         /// </summary>
