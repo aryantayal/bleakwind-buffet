@@ -16,17 +16,36 @@ namespace Website.Pages
 {
     public class IndexModel : PageModel
     {
+        /// <summary>
+        /// list being displayed
+        /// </summary>
         public IEnumerable<IOrderItem> OrderItems { get; protected set; }
-
+        /// <summary>
+        /// the search keyword put in
+        /// </summary>
         public string SearchTerms { get; set; }
-
+        /// <summary>
+        /// Entree constructor
+        /// </summary>
         public List<IOrderItem> Entree { get; set; }
-
+        /// <summary>
+        /// side constructor
+        /// </summary>
         public List<IOrderItem> Side { get; set; }
-
+        /// <summary>
+        /// drink constructor
+        /// </summary>
         public List<IOrderItem> Drink { get; set; }
 
-
+        /// <summary>
+        /// The linq commands for the search
+        /// </summary>
+        /// <param name="SearchItem"></param>
+        /// <param name="category"></param>
+        /// <param name="PriceMax"></param>
+        /// <param name="PriceMin"></param>
+        /// <param name="CalMax"></param>
+        /// <param name="CalMin"></param>
         public void OnGet(string SearchItem, IEnumerable<string> category,
             double? PriceMax, double? PriceMin, double? CalMax, double? CalMin)
         {
@@ -82,8 +101,6 @@ namespace Website.Pages
             OrderItems = Menu.FilterByCategory(OrderItems, category);
             OrderItems = Menu.FilterByPrice(OrderItems, PriceMin, PriceMax);
             OrderItems = Menu.FilterByCalories(OrderItems, CalMin, CalMax);
-
-            
             */
         }
     }
