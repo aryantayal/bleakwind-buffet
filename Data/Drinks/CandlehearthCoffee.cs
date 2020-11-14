@@ -110,13 +110,12 @@ namespace BleakwindBuffet.Data.Drinks
                 return instructions;
             }
         }
+
         /// <summary>
         /// drescription for the drink
         /// </summary>
-        public override string Description
-        {
-            get => "Fair trade, fresh ground dark roast coffee.";
-        }
+        public override string Description => "Fair trade, fresh ground dark roast coffee.";
+
         /// <summary>
         ///     ToString override for the drink.
         /// </summary>

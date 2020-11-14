@@ -113,10 +113,7 @@ namespace BleakwindBuffet.Data
             }
         }
 
-        public string Description
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public string Description => throw new NotImplementedException();
 
         /// <summary>
         ///     Notifies when property updates

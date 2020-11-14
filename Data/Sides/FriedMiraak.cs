@@ -58,13 +58,12 @@ namespace BleakwindBuffet.Data.Sides
                 return instructions;
             }
         }
+
         /// <summary>
         /// drescription for the side
         /// </summary>
-        public override string Description
-        {
-            get => "Perfectly prepared hash brown pancakes.";
-        }
+        public override string Description => "Perfectly prepared hash brown pancakes.";
+
         /// <summary>
         ///     ToString override for the side
         /// </summary>

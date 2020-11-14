@@ -90,13 +90,13 @@ namespace BleakwindBuffet.Data.Entree
                 return instructions;
             }
         }
+
         /// <summary>
         /// Description for the entree
         /// </summary>
-        public override string Description
-        {
-            get => "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
-        }
+        public override string Description =>
+            "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
+
         /// <summary>
         ///     ToString override for the entree
         /// </summary>

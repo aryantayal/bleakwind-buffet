@@ -127,10 +127,8 @@ namespace BleakwindBuffet.Data.Entree
             }
         }
 
-        public override string Description
-        {
-            get => "Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.";
-        }
+        public override string Description =>
+            "Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.";
 
 
         /// <summary>

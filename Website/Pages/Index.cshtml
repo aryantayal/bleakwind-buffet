@@ -27,17 +27,17 @@
     <input type="submit" value="Search"/>
 
     <h3>Menu Category</h3>
-    <div class="filter-category">
+    <div class=" filter-category">
         <label>
-            <input type="checkbox" name="category" value="Entree"/>
+            <input type="checkbox" name="category" value="Entree" checked="true"/>
             Entree
         </label>
         <label>
-            <input type="checkbox" name="category" value="Side"/>
+            <input type="checkbox" name="category" value="Side" checked="true"/>
             Side
         </label>
         <label>
-            <input type="checkbox" name="category" value="Drink"/>
+            <input type="checkbox" name="category" value="Drink" checked="true"/>
             Drink
         </label>
     </div>
@@ -64,101 +64,76 @@
         </div>
     </div>
 </form>
-
+<h2>Combo</h2>
+<div class="menu-items-combo">
+    <p>Any entree, side, and drink can be combined into a Combo for a $1 discount</p>
+</div>
 <div class="menu-items">
-    <h2> Entrees</h2>
-    <div class="col">
-        @foreach (Entree entree in Model.Entree)
+    <h2 class="type"> Entrees</h2>
+    <div class="m">
+        @foreach (var entree in Model.OrderItems)
         {
-        <div class="menu-item">
-            <table>
-                <tr>
-                    <th colspan="2">
-                        <h3>@entree.Name</h3>
-                    </th>
-                </tr>
-                <tr>
-                    <th colspan="2">
+            if (entree is Entree)
+            {
+                <div class="card menu-item-entrees">
+                    <div class="name-base ">
+                        <p class="name">@entree.ToString()</p>
+                    </div>
+                    <div class="content">
                         <p>@entree.Description</p>
-                    </th>
-                </tr>
-                <tr>
-                    <td>Price</td>
-                    <td>$@entree.Price</td>
-                </tr>
-                <tr>
-                    <td>Calories</td>
-                    <td>@entree.Calories</td>
-                </tr>
-            </table>
-        </div>
+                        <p>Price: $@entree.Price</p>
+                        <p>Calories: @entree.Calories</p>
+                    </div>
+
+                </div>
+            }
         }
     </div>
     <br/>
     <br/>
-    <h2>Sides</h2>
-    <div class="col">
-        @foreach (Side side in @Model.Side)
+    <h2 class="type">Sides</h2>
+    <div class="m">
+        @foreach (var side in Model.OrderItems)
         {
-        <div class="menu-item">
-            <table>
-                <tr>
-                    <th colspan="2">
-                        <h3>@side.Name</h3>
-                    </th>
-                </tr>
-                <tr>
-                    <th colspan="2">
+            if (side is Side)
+            {
+                <div class="card menu-item-sides">
+                    <div class="name-base ">
+                        <p class="name">@side.ToString()</p>
+                    </div>
+                    <div class="content">
                         <p>@side.Description</p>
-                    </th>
-                </tr>
-                <tr>
-                    <td>Price</td>
-                    <td>$@side.Price</td>
-                </tr>
-                <tr>
-                    <td>Calories</td>
-                    <td>@side.Calories</td>
-                </tr>
-            </table>
-        </div>
+                        <p>Price: $@side.Price</p>
+                        <p>Calories: @side.Calories</p>
+                    </div>
+
+                </div>
+            }
         }
     </div>
     <br/>
     <br/>
-    <h2>Drinks</h2>
-    <div class="col">
-        @foreach (Drink d in @Model.Drink)
+    <h2 class="type">Drinks</h2>
+    <div class="m">
+        @foreach (var drink in Model.OrderItems)
         {
-            <div class="menu-item">
-                <table>
-                    <tr>
-                        <th colspan="2">
-                            <h3>@d.Name</h3>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th colspan="2">
-                            <p>@d.Description</p>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>Price</td>
-                        <td>$@d.Price</td>
-                    </tr>
-                    <tr>
-                        <td>Calories</td>
-                        <td>@d.Calories</td>
-                    </tr>
-                </table>
-            </div>
+            if (drink is Drink)
+            {
+                <div class="card menu-item-drinks">
+                    <div class="name-base ">
+                        <p class="name">@drink.ToString()</p>
+                    </div>
+                    <div class="content">
+                        <p>@drink.Description</p>
+                        <p>Price: $@drink.Price</p>
+                        <p>Calories: @drink.Calories</p>
+                    </div>
+
+                </div>
+            }
         }
     </div>
 
     <br/>
     <br/>
-    <h2>Combo</h2>
-    <div class="menu-items-combo">
-        <p>Any entree, side, and drink can be combined into a Combo for a $1 discount</p>
-    </div>
 </div>

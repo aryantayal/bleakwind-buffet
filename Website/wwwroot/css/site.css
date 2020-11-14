@@ -43,18 +43,6 @@ button.accept-policy {
     line-height: inherit;
 }
 
-table, th, td { border: 1px solid black; }
-
-td {
-    padding: 10px;
-    text-align: center;
-}
-
-th {
-    text-align: center;
-    padding: 20px;
-}
-
 /* Sticky footer styles
 -------------------------------------------------- */
 
@@ -64,8 +52,8 @@ html {
 }
 
 body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .footer {
@@ -76,8 +64,9 @@ body {
     line-height: 60px; /* Vertically center the text there */
 }
 
+img { width: 100%; }
+
 form {
-    
     background-color: lightgray;
     flex-grow: 0;
     padding: 50px;
@@ -85,6 +74,18 @@ form {
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto auto;
 }
+
+
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+
 
 .filter-price {
     width: 105px;
@@ -102,12 +103,56 @@ form {
 
 .maximum-price { width: 50px; }
 
-.menu-items > div {
+.menu-items {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
 }
 
-.col {
+.menu-item-drinks { background-color: #F0B7A4; }
+
+.menu-item-sides { background-color: #568EA6; }
+
+.menu-item-entrees { background-color: #305F72; }
+
+.card {
+    width: 350px;
+    height: 270px;
+    margin: 50px;
+    border-radius: 40px;
+    box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.2);
+    transition: .3s box-shadow, .3s margin-top ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 2px 12px 32px rgba(0, 0, 0, 5);
+    margin-top: 30px;
+}
+
+.type { justify-content: center; }
+
+.name-base {
     float: left;
-    width: 33%;
+    display: flex;
+    width: 360px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 0 auto;
+    margin-top: -25px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-top: 80px;
+}
+
+.content {
+    padding: 15px 35px;
+    margin: 10px;
+    font-size: 16px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 490px) {
+    .menu-items { flex-direction: column; }
 }
