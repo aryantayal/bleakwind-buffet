@@ -101,3 +101,13 @@ form {
 .minimum-price { width: 50px; }
 
 .maximum-price { width: 50px; }
+
+.menu-items > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    float: left;
+    width: 33%;
+}

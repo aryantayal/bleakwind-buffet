@@ -67,7 +67,7 @@
 
 <div class="menu-items">
     <h2> Entrees</h2>
-    <div class="menu-items-entrees">
+    <div class="col">
         @foreach (Entree entree in Model.Entree)
         {
         <div class="menu-item">
@@ -75,6 +75,11 @@
                 <tr>
                     <th colspan="2">
                         <h3>@entree.Name</h3>
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <p>@entree.Description</p>
                     </th>
                 </tr>
                 <tr>
@@ -86,14 +91,13 @@
                     <td>@entree.Calories</td>
                 </tr>
             </table>
-            <h3>@entree.Description</h3>
         </div>
         }
     </div>
     <br/>
     <br/>
     <h2>Sides</h2>
-    <div class="menu-items-sides">
+    <div class="col">
         @foreach (Side side in @Model.Side)
         {
         <div class="menu-item">
@@ -101,6 +105,11 @@
                 <tr>
                     <th colspan="2">
                         <h3>@side.Name</h3>
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <p>@side.Description</p>
                     </th>
                 </tr>
                 <tr>
@@ -112,14 +121,13 @@
                     <td>@side.Calories</td>
                 </tr>
             </table>
-            <h3>@side.Description</h3>
         </div>
         }
     </div>
     <br/>
     <br/>
     <h2>Drinks</h2>
-    <div class="menu-items-drinks">
+    <div class="col">
         @foreach (Drink d in @Model.Drink)
         {
             <div class="menu-item">
@@ -127,6 +135,11 @@
                     <tr>
                         <th colspan="2">
                             <h3>@d.Name</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <p>@d.Description</p>
                         </th>
                     </tr>
                     <tr>
@@ -138,7 +151,6 @@
                         <td>@d.Calories</td>
                     </tr>
                 </table>
-                <h3>@d.Description</h3>
             </div>
         }
     </div>
